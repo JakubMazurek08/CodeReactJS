@@ -1,0 +1,977 @@
+2025-05-07 15:14:51,725 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:14:51,922 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.192s
+2025-05-07 15:14:51,937 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.207s
+2025-05-07 15:14:51,937 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:14:51,938 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:14:51,960 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:14:51,970 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:14:52,316 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:14:52,405 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.068s
+2025-05-07 15:14:52,420 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.083s
+2025-05-07 15:14:52,420 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:14:52,420 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:14:52,436 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:14:52,442 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:15:14,819 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:15:15,430 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:15:16,227 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:15:16,388 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.155s
+2025-05-07 15:15:16,393 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.160s
+2025-05-07 15:15:16,394 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:15:16,394 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:15:16,416 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:15:16,426 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:15:16,811 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:15:16,969 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.153s
+2025-05-07 15:15:16,970 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:15:16,970 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:15:16,975 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.159s
+2025-05-07 15:15:16,986 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:15:16,995 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:15:27,104 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\sample_jobs.py', reloading
+2025-05-07 15:15:27,701 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\sample_jobs.py', reloading
+2025-05-07 15:15:28,226 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:15:28,297 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.067s
+2025-05-07 15:15:28,298 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:15:28,298 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:15:28,313 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:15:28,317 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.087s
+2025-05-07 15:15:28,320 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:15:28,763 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:15:28,850 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.083s
+2025-05-07 15:15:28,851 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.083s
+2025-05-07 15:15:28,851 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:15:28,851 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:15:28,864 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:15:28,871 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:15:51,860 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:15:51,935 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.070s
+2025-05-07 15:15:51,937 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.072s
+2025-05-07 15:15:51,937 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:15:51,937 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:15:51,962 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+2025-05-07 15:15:51,963 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 15:15:51,964 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:15:53,316 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:15:53,418 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.097s
+2025-05-07 15:15:53,419 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:15:53,419 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:15:53,436 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:15:53,444 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.123s
+2025-05-07 15:15:53,444 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:16:58,569 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:16:58] "OPTIONS /api/search HTTP/1.1" 200 -
+2025-05-07 15:16:58,818 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:17:37,161 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['React', 'JavaScript (JS)', 'TypeScript (TS)', 'React Native', 'HTML/CSS', 'Bash', 'Kotlin', 'Java', 'Rust', 'C', 'gotowac']
+2025-05-07 15:17:37,161 - __main__ - INFO - Poziom doœwiadczenia: mid
+2025-05-07 15:17:37,845 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:17:37] "POST /api/search HTTP/1.1" 200 -
+2025-05-07 15:17:52,166 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:17:52] "OPTIONS /api/search HTTP/1.1" 200 -
+2025-05-07 15:17:52,474 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:18:14,184 - __main__ - ERROR - B³¹d podczas przetwarzania odpowiedzi AI: Extra data: line 1 column 52 (char 51) (próba 1/2)
+2025-05-07 15:18:14,184 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:18:53,237 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['React']
+2025-05-07 15:18:53,237 - __main__ - INFO - Poziom doœwiadczenia: junior
+2025-05-07 15:18:54,256 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:18:54] "POST /api/search HTTP/1.1" 200 -
+2025-05-07 15:20:25,073 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:20:25] "OPTIONS /api/search HTTP/1.1" 200 -
+2025-05-07 15:20:25,340 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:20:28,388 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.070s
+2025-05-07 15:20:51,993 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.057s
+2025-05-07 15:20:53,507 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.062s
+2025-05-07 15:21:03,586 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['Python']
+2025-05-07 15:21:03,587 - __main__ - INFO - Poziom doœwiadczenia: junior
+2025-05-07 15:21:04,004 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:21:04] "POST /api/search HTTP/1.1" 200 -
+2025-05-07 15:22:08,126 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:22:08] "OPTIONS /api/search HTTP/1.1" 200 -
+2025-05-07 15:22:08,375 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:22:16,617 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: []
+2025-05-07 15:22:16,617 - __main__ - INFO - Poziom doœwiadczenia: mid
+2025-05-07 15:22:16,618 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:22:16] "[31m[1mPOST /api/search HTTP/1.1[0m" 400 -
+2025-05-07 15:22:54,924 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:22:54] "OPTIONS /api/search HTTP/1.1" 200 -
+2025-05-07 15:22:55,229 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:23:06,973 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['Python']
+2025-05-07 15:23:06,973 - __main__ - INFO - Poziom doœwiadczenia: mid
+2025-05-07 15:23:07,994 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:23:07] "POST /api/search HTTP/1.1" 200 -
+2025-05-07 15:25:28,493 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.103s
+2025-05-07 15:25:52,082 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.088s
+2025-05-07 15:25:53,594 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.085s
+2025-05-07 15:29:28,547 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:29:28,770 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:29:28,882 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:29:30,134 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:29:30,297 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.159s
+2025-05-07 15:29:30,298 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.160s
+2025-05-07 15:29:30,298 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:29:30,299 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:29:30,324 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:29:30,333 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:29:31,576 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:29:31,695 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.115s
+2025-05-07 15:29:31,695 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.116s
+2025-05-07 15:29:31,696 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:29:31,696 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:29:31,709 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:29:31,734 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:29:48,951 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:29:49,053 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:29:49,268 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:29:50,068 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:29:50,177 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.103s
+2025-05-07 15:29:50,177 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.104s
+2025-05-07 15:29:50,178 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:29:50,178 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:29:50,192 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:29:50,200 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:29:50,429 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:29:50,504 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.069s
+2025-05-07 15:29:50,505 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:29:50,505 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:29:50,509 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.074s
+2025-05-07 15:29:50,526 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:29:50,534 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:30:27,111 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:30:27,958 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:30:28,108 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:30:28,255 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:30:28,353 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.093s
+2025-05-07 15:30:28,353 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:30:28,354 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:30:28,356 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.097s
+2025-05-07 15:30:28,371 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:30:28,379 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:30:29,066 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:30:29,141 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.069s
+2025-05-07 15:30:29,141 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:30:29,142 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:30:29,143 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.072s
+2025-05-07 15:30:29,163 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:30:29,175 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:30:52,178 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.095s
+2025-05-07 15:31:14,248 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:31:14,355 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:31:14,487 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:31:15,368 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:31:15,492 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.119s
+2025-05-07 15:31:15,493 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:31:15,494 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:31:15,503 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.129s
+2025-05-07 15:31:15,522 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:31:15,536 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:31:15,665 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:31:15,739 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.070s
+2025-05-07 15:31:15,740 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:31:15,740 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:31:15,754 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.084s
+2025-05-07 15:31:15,755 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:31:15,762 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:32:08,517 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:32:08,522 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:32:08,691 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:32:09,804 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:32:09,806 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:32:09,903 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.095s
+2025-05-07 15:32:09,904 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.095s
+2025-05-07 15:32:09,905 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:32:09,905 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:32:09,917 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.106s
+2025-05-07 15:32:09,918 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:32:09,918 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.107s
+2025-05-07 15:32:09,918 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:32:09,923 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:32:09,932 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:32:09,936 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:32:09,945 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:32:33,406 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:32:33,407 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:32:33,577 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:32:34,604 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:32:34,618 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:32:34,744 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.135s
+2025-05-07 15:32:34,744 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.135s
+2025-05-07 15:32:34,745 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:32:34,745 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:32:34,745 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.121s
+2025-05-07 15:32:34,746 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:32:34,746 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:32:34,761 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:32:34,761 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:32:34,769 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.145s
+2025-05-07 15:32:34,769 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:32:34,770 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:34:46,067 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:34:46,143 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.072s
+2025-05-07 15:34:46,144 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:34:46,153 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.082s
+2025-05-07 15:34:46,161 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:34:46,186 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+2025-05-07 15:34:46,186 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 15:34:46,188 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:34:46,985 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:34:47,055 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.066s
+2025-05-07 15:34:47,056 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.066s
+2025-05-07 15:34:47,056 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:34:47,056 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:34:47,069 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:34:47,075 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:37:01,901 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:37:01] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:37:03,401 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:37:03] "POST /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:37:15,077 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:37:15] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:37:15,773 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:37:15] "POST /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:37:24,276 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:37:24] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:37:24,931 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:37:24] "POST /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:37:34,832 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.087s
+2025-05-07 15:39:46,318 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.156s
+2025-05-07 15:39:47,141 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.085s
+2025-05-07 15:41:00,398 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:41:00,417 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:41:00,542 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:41:01,462 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:41:01,615 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.149s
+2025-05-07 15:41:01,616 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.149s
+2025-05-07 15:41:01,616 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:41:01,617 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:41:01,629 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:41:01,636 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:41:03,349 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:41:03,451 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.098s
+2025-05-07 15:41:03,452 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.099s
+2025-05-07 15:41:03,452 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:41:03,463 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:41:03,477 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:41:03,483 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:42:51,292 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:42:51,443 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:42:52,078 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:42:52,499 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:42:52,587 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.082s
+2025-05-07 15:42:52,587 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.083s
+2025-05-07 15:42:52,588 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:42:52,588 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:42:52,603 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:42:52,610 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:42:53,174 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:42:53,254 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.075s
+2025-05-07 15:42:53,254 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.076s
+2025-05-07 15:42:53,255 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:42:53,255 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:42:53,273 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:42:53,280 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:44:46,414 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.095s
+2025-05-07 15:45:11,349 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:45:11] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:45:11,614 - __main__ - INFO - [MATCH-JOBS] Wyszukiwanie dla: keyword='Kucharz', profile_length=134
+2025-05-07 15:45:12,254 - __main__ - INFO - [MATCH-JOBS] Znaleziono 56 ofert pracy w bazie danych
+2025-05-07 15:45:12,255 - __main__ - INFO - [MATCH-JOBS] Kontekst s³owa kluczowego: U¿ytkownik szuka pracy jako 'Kucharz', co mo¿e oznaczaæ równie¿: szef kuchni, cook, culinary, head chef, chef, kucharz
+2025-05-07 15:45:12,255 - __main__ - INFO - [MATCH-JOBS] Oferta 0: ID=None, tytu³=None, firma=None
+2025-05-07 15:45:12,255 - __main__ - INFO - [MATCH-JOBS] Oferta 1: ID=job1, tytu³=Backend Developer, firma=San Francisco Solutions Pty Ltd
+2025-05-07 15:45:12,255 - __main__ - INFO - [MATCH-JOBS] Oferta 2: ID=job10, tytu³=DevOps Engineer, firma=Tokyo Corp SA
+2025-05-07 15:45:12,255 - __main__ - INFO - [MATCH-JOBS] Oferta 3: ID=job11, tytu³=Internist, firma=New York Studio S.A.
+2025-05-07 15:45:12,256 - __main__ - INFO - [MATCH-JOBS] Oferta 4: ID=job12, tytu³=Nurse, firma=Los Angeles Tech SA
+2025-05-07 15:45:12,256 - __main__ - INFO - [MATCH-JOBS] Wysy³am zapytanie do AI
+2025-05-07 15:45:12,256 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:45:35,756 - __main__ - ERROR - [MATCH-JOBS] Nie znaleziono odpowiedzi JSON od AI. OdpowiedŸ: <think>
+Okay, let's tackle this query. The user wants a detailed analysis of job matches based on three criteria: company name, skill/experience match, and title semantic match. First, I need to check if the candidate mentioned a specific company. If so, those job offers from that company should be prioritized. 
+
+Next, I have to look at the skills and experience the candidate has versus the job requirements. It's important to consider semantic matches here, not just exact words. For example, if the candidate has "project management" experience and the job requires "leading projects," that's a good match.
+
+Then, the third point is about the job title. Even if the candidate's title is in a different language, like "Szef Kuchni" vs. "Chef," I need to check for semantic equivalence. The user mentioned that if there's a keyword match even in different languages, it should get a high percentage, at least 70%.
+
+But wait, the user hasn't provided the candidate's details. Oh, right, the initial prompt might have that, but looking back, the user hasn't included any candidate information. Hmm, maybe the previous messages had it? Wait, no. The user provided a list of job offers and instructions, but no candidate data. That's a problem. Without knowing the candidate's skills, company preferences, or titles, how can I perform the analysis?
+
+Wait, maybe I misread. Let me check again. The user's query says: "Wykonaj szczegó³ow¹ analizê dopasowania, bior¹c pod uwagê..." which translates to "Perform a detailed matching analysis, considering..." but then the user didn't provide any candidate information. That's an issue. How can I proceed without the candidate's details?
+
+Wait, maybe the candidate's information was in the initial prompt? Let me check the history. The user provided a list of job offers and then the instructions. There's no mention of a candidate's details here. So this is a problem. Without the candidate's data, I can't perform the analysis. 
+
+But the user might have intended to include the candidate's information in the query, but it's missing. In that case, I should respond that the candidate's details are missing. However, the user might have made a mistake. Alternatively, maybe the candidate's details are in the job offers? No, that doesn't make sense. 
+
+Wait, perhaps the candidate's details are in the previous messages. Let me check. The user's message starts with "Wykonaj szczegó³ow¹ analizê dopasowania..." which is the instruction, but the actual candidate data isn't present. Therefore, the correct response is to inform the user that the candidate's information is missing. But the user might have intended to provide it, and perhaps there's an error. 
+
+In this case, since the user hasn't provided the candidate's details, I can't proceed with the analysis. Therefore, the answer should be that the candidate's information is missing, making it impossible to perform the required analysis. However, the user's example response includes a JSON array, which suggests that maybe there was a mistake in the input, and the candidate's data wasn't included. 
+
+Alternatively, perhaps the candidate's details are in the job titles? No, that's not the case. So the correct approach is to state that the candidate's information is missing. But since the user expects a JSON response, maybe they provided the candidate's data in the initial prompt, and I missed it. Let me check again. 
+
+Looking back, the user's message includes a list of job offers and then the instructions. There's no candidate data. Therefore, the answer should be that the candidate's details are missing. But the user might have intended to include them and made a mistake. In any case, without the candidate's information, the analysis can't be done. So the correct response is to point out that the candidate's data is missing.
+</think>
+
+{"error": "Brak danych kandydata do analizy dopasowania. Aby przeprowadziæ analizê, nale¿y podaæ informacje o kandydacie, takie jak nazwa firmy, umiejêtnoœci, doœwiadczenie oraz tytu³ (np. 'Szef Kuchni')."}
+2025-05-07 15:45:35,758 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:45:35] "[35m[1mPOST /api/match-jobs HTTP/1.1[0m" 500 -
+2025-05-07 15:47:32,049 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:47:32] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:47:32,314 - __main__ - INFO - [MATCH-JOBS] Wyszukiwanie dla: keyword='Kucharz', profile_length=134
+2025-05-07 15:47:32,769 - __main__ - INFO - [MATCH-JOBS] Znaleziono 56 ofert pracy w bazie danych
+2025-05-07 15:47:32,769 - __main__ - INFO - [MATCH-JOBS] Kontekst s³owa kluczowego: U¿ytkownik szuka pracy jako 'Kucharz', co mo¿e oznaczaæ równie¿: szef kuchni, cook, culinary, head chef, chef, kucharz
+2025-05-07 15:47:32,769 - __main__ - INFO - [MATCH-JOBS] Oferta 0: ID=None, tytu³=None, firma=None
+2025-05-07 15:47:32,770 - __main__ - INFO - [MATCH-JOBS] Oferta 1: ID=job1, tytu³=Backend Developer, firma=San Francisco Solutions Pty Ltd
+2025-05-07 15:47:32,770 - __main__ - INFO - [MATCH-JOBS] Oferta 2: ID=job10, tytu³=DevOps Engineer, firma=Tokyo Corp SA
+2025-05-07 15:47:32,770 - __main__ - INFO - [MATCH-JOBS] Oferta 3: ID=job11, tytu³=Internist, firma=New York Studio S.A.
+2025-05-07 15:47:32,771 - __main__ - INFO - [MATCH-JOBS] Oferta 4: ID=job12, tytu³=Nurse, firma=Los Angeles Tech SA
+2025-05-07 15:47:32,771 - __main__ - INFO - [MATCH-JOBS] Wysy³am zapytanie do AI
+2025-05-07 15:47:32,771 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:47:52,669 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.081s
+2025-05-07 15:47:53,381 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.126s
+2025-05-07 15:47:59,423 - __main__ - ERROR - [MATCH-JOBS] Nie znaleziono odpowiedzi JSON od AI. OdpowiedŸ: <think>
+Okay, let's tackle this problem step by step. The user wants a detailed analysis of job matches based on three criteria: specific company mentions, semantic skill/ experience match, and title equivalence even if in different languages. The final output should be a JSON array with job IDs and match percentages.
+
+First, I need to check if the candidate mentioned any specific company. If they did, those job offers from that company should have high priority. However, looking at the provided data, the candidate's input isn't given here. Wait, the user hasn't provided the candidate's details. Oh, wait, maybe the candidate's information is part of the initial query? Wait, looking back, the user provided a list of job offers and then the instructions. But there's no candidate information mentioned. Hmm, maybe the user made a mistake. Wait, no, the user's instruction says to perform the analysis based on the candidate's input, but the candidate's details aren't included in the provided data. That's a problem. Without knowing the candidate's skills, experience, or mentioned companies, how can I proceed?
+
+Wait, maybe the candidate's details are in the initial data? Let me check again. The user provided a list of job offers, each with an ID, title, company, description, required skills, and experience level. But the candidate's information isn't provided. This is confusing. How can I analyze the match without the candidate's details?
+
+Wait, perhaps the user intended for the candidate's information to be included, but it's missing. Alternatively, maybe this is a hypothetical scenario where the candidate's details are not provided, and the analysis is based on some default or example? But that doesn't make sense. The user must have intended to include the candidate's details, but they're missing here. 
+
+Wait, looking at the original query again, the user says: "Wykonaj szczegó³ow¹ analizê dopasowania, bior¹c pod uwagê: 1. Czy kandydat wspomina konkretn¹ firmê?" which translates to "Check if the candidate mentions a specific company." But since the user didn't provide the candidate's details, I can't proceed with that. 
+
+This seems like a critical missing piece. Without the candidate's information, I can't determine which companies to prioritize, the skills they have, or their experience. Therefore, the answer might be that the required data is missing. However, perhaps the user made an error in omitting the candidate's details. Alternatively, maybe the candidate's information is implied in the job offers themselves. But that's not the case. 
+
+Given that the user provided the job offers but not the candidate's details, the correct response would be to point out that the candidate's information is missing. However, since the user expects an answer, maybe they intended for the candidate's details to be in the job offers. Wait, no. The job offers are the ones to be matched against the candidate's profile. Without the candidate's profile, the analysis can't be done. 
+
+Therefore, the correct response would be to indicate that the required candidate data is missing. However, the user might have intended for this to be a hypothetical scenario where the candidate's details are not provided, and the analysis is based on other factors. But without any candidate details, I can't proceed. 
+
+Wait, maybe the candidate's details are in the initial part of the query. Let me check again. The user provided the job offers and then the instructions. The initial part includes the job offers, but the candidate's details are not there. Therefore, the answer must state that the candidate's information is missing. However, since the user is expecting a JSON output, perhaps they provided the candidate's details elsewhere, but in this case, they didn't. 
+
+In conclusion, without the candidate's information, the analysis can't be performed. Therefore, the answer should mention that the required candidate data is missing. But since the user might have intended for the candidate's details to be included, but they're not, the response must be that the data is insufficient. However, given that the user provided the job offers, perhaps they expect an example or a default analysis. But without knowing the candidate's skills, experience, or mentioned companies, it's impossible. 
+
+So, the final answer is that the required candidate data is missing, making it impossible to perform the analysis. However, since the user might have made a mistake, perhaps they intended for the candidate's details to be in the job offers, but that's not the case. Therefore, the correct response is to indicate that the candidate's information is missing.
+</think>
+
+{
+  "error": "Brak danych kandydata do analizy dopasowania. Nie mo¿na okreœliæ firm, umiejêtnoœci ani doœwiadczenia kandydata potrzebnych do porównania z ofertami pracy."
+}
+2025-05-07 15:47:59,424 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:47:59] "[35m[1mPOST /api/match-jobs HTTP/1.1[0m" 500 -
+2025-05-07 15:48:20,565 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:48:20,872 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:48:20,994 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:48:21,895 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:48:22,060 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.160s
+2025-05-07 15:48:22,061 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:48:22,061 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:48:22,063 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.163s
+2025-05-07 15:48:22,076 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:48:22,083 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:48:23,638 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:48:23,777 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.135s
+2025-05-07 15:48:23,780 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.138s
+2025-05-07 15:48:23,781 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:48:23,782 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:48:23,796 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:48:23,804 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:48:25,760 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:48:25] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:48:26,023 - __main__ - INFO - [MATCH-JOBS] Wyszukiwanie dla: keyword='Kucharz', profile_length=134
+2025-05-07 15:48:27,246 - __main__ - INFO - [MATCH-JOBS] Znaleziono 56 ofert pracy w bazie danych
+2025-05-07 15:48:27,247 - __main__ - INFO - [MATCH-JOBS] Kontekst s³owa kluczowego: U¿ytkownik szuka pracy jako 'Kucharz', co mo¿e oznaczaæ równie¿: culinary, chef, szef kuchni, kucharz, cook, head chef
+2025-05-07 15:48:27,247 - __main__ - INFO - [MATCH-JOBS] Oferta 0: ID=None, tytu³=None, firma=None
+2025-05-07 15:48:27,247 - __main__ - INFO - [MATCH-JOBS] Oferta 1: ID=job1, tytu³=Backend Developer, firma=San Francisco Solutions Pty Ltd
+2025-05-07 15:48:27,247 - __main__ - INFO - [MATCH-JOBS] Oferta 2: ID=job10, tytu³=DevOps Engineer, firma=Tokyo Corp SA
+2025-05-07 15:48:27,247 - __main__ - INFO - [MATCH-JOBS] Oferta 3: ID=job11, tytu³=Internist, firma=New York Studio S.A.
+2025-05-07 15:48:27,247 - __main__ - INFO - [MATCH-JOBS] Oferta 4: ID=job12, tytu³=Nurse, firma=Los Angeles Tech SA
+2025-05-07 15:48:27,248 - __main__ - INFO - [MATCH-JOBS] Wysy³am zapytanie do AI
+2025-05-07 15:48:27,248 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:48:58,378 - __main__ - WARNING - [MATCH-JOBS] Nie znaleziono dopasowañ dla s³owa 'Kucharz', próbujê szerszego wyszukiwania
+2025-05-07 15:48:58,379 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:49:06,581 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:49:07,236 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:49:07,347 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:49:08,238 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:49:08,312 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.069s
+2025-05-07 15:49:08,313 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.070s
+2025-05-07 15:49:08,313 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:49:08,313 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:49:08,329 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:49:08,339 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:49:09,803 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:49:09,882 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.072s
+2025-05-07 15:49:09,885 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.076s
+2025-05-07 15:49:09,886 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:49:09,886 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:49:09,901 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:49:09,909 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:49:46,495 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.080s
+2025-05-07 15:50:26,131 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:50:26,236 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:50:26,417 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:50:27,243 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:50:27,320 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.072s
+2025-05-07 15:50:27,320 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:50:27,321 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.073s
+2025-05-07 15:50:27,321 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:50:27,336 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:50:27,344 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:50:27,498 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:50:27,606 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.104s
+2025-05-07 15:50:27,608 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.105s
+2025-05-07 15:50:27,608 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:50:27,608 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:50:27,623 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:50:27,631 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:51:17,533 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:51:17,641 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:51:17,824 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:51:18,616 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:51:18,735 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.115s
+2025-05-07 15:51:18,736 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.116s
+2025-05-07 15:51:18,736 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:51:18,737 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:51:18,753 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:51:18,760 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:51:18,887 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:51:18,964 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.072s
+2025-05-07 15:51:18,982 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.090s
+2025-05-07 15:51:18,982 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:51:18,983 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:51:18,997 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:51:19,002 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:51:48,017 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:51:48,094 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.073s
+2025-05-07 15:51:48,094 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.074s
+2025-05-07 15:51:48,095 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:51:48,096 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:51:48,131 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+2025-05-07 15:51:48,131 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 15:51:48,134 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:51:49,009 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:51:49,083 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.070s
+2025-05-07 15:51:49,084 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:51:49,084 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:51:49,096 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:51:49,098 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.085s
+2025-05-07 15:51:49,102 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:51:51,440 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:51:51,593 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:51:51,608 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:51:52,607 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:51:52,706 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.094s
+2025-05-07 15:51:52,707 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.095s
+2025-05-07 15:51:52,707 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:51:52,707 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:51:52,710 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:51:52,721 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:51:52,729 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:51:52,807 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.093s
+2025-05-07 15:51:52,808 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:51:52,808 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:51:52,825 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:51:52,833 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:51:52,850 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.136s
+2025-05-07 15:52:15,353 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:52:15] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:52:15,614 - __main__ - INFO - [MATCH-JOBS:43cd82d2] Rozpoczêto nowe zapytanie
+2025-05-07 15:52:15,614 - __main__ - INFO - [MATCH-JOBS:43cd82d2] Wyszukiwanie dla: keyword='Kucharz', profile_length=134
+2025-05-07 15:52:16,152 - __main__ - INFO - [MATCH-JOBS] Znaleziono 56 ofert pracy w bazie danych
+2025-05-07 15:52:16,152 - __main__ - INFO - [MATCH-JOBS] Kontekst s³owa kluczowego: U¿ytkownik szuka pracy jako 'Kucharz', co mo¿e oznaczaæ równie¿: szef kuchni, kucharz, chef, head chef, culinary, cook
+2025-05-07 15:52:16,153 - __main__ - INFO - [MATCH-JOBS] Oferta 0: ID=None, tytu³=None, firma=None
+2025-05-07 15:52:16,153 - __main__ - INFO - [MATCH-JOBS] Oferta 1: ID=job1, tytu³=Backend Developer, firma=San Francisco Solutions Pty Ltd
+2025-05-07 15:52:16,153 - __main__ - INFO - [MATCH-JOBS] Oferta 2: ID=job10, tytu³=DevOps Engineer, firma=Tokyo Corp SA
+2025-05-07 15:52:16,153 - __main__ - INFO - [MATCH-JOBS] Oferta 3: ID=job11, tytu³=Internist, firma=New York Studio S.A.
+2025-05-07 15:52:16,153 - __main__ - INFO - [MATCH-JOBS] Oferta 4: ID=job12, tytu³=Nurse, firma=Los Angeles Tech SA
+2025-05-07 15:52:16,153 - __main__ - INFO - [MATCH-JOBS] Wysy³am zapytanie do AI
+2025-05-07 15:52:16,153 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:52:42,397 - __main__ - INFO - [MATCH-JOBS] Wyodrêbniony JSON: [{
+  "error": "Brak danych kandydata do analizy dopasowania. Aby przeprowadziæ analizê, wymagane s¹ informacje o kandydacie, takie jak nazwa firmy, s³owa kluczowe z jego profilu oraz semantyczne dopas...
+2025-05-07 15:52:42,397 - __main__ - INFO - [MATCH-JOBS] Dopasowano ofertê: None - None (0%)
+2025-05-07 15:52:42,398 - __main__ - WARNING - [MATCH-JOBS] Znaleziono tylko 1 dopasowañ dla s³owa 'Kucharz', próbujê dodatkowych metod
+2025-05-07 15:52:42,398 - __main__ - INFO - [MATCH-JOBS] Znaleziono wzmiankê o firmie 'new orleans group inc.' w profilu
+2025-05-07 15:52:42,398 - __main__ - INFO - [MATCH-JOBS] Bezpoœrednie dopasowanie tytu³u: 'kucharz' dla 'Kucharz'
+2025-05-07 15:52:42,399 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:52:42] "POST /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:54:02,056 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:54:02] "OPTIONS /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:54:03,578 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:54:13,825 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:54:13] "OPTIONS /api/interview/generate_questions HTTP/1.1" 200 -
+2025-05-07 15:54:14,337 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:54:16,252 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:54:16,395 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:54:26,032 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:54:26] "OPTIONS /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:54:26,541 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:54:28,727 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:54:31,033 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:54:31,114 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:54:31,179 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:54:32,133 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:54:32,207 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.070s
+2025-05-07 15:54:32,208 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.071s
+2025-05-07 15:54:32,208 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:54:32,209 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:54:32,223 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:54:32,229 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:54:34,124 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:54:34,197 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.069s
+2025-05-07 15:54:34,204 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.076s
+2025-05-07 15:54:34,204 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:54:34,205 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:54:34,217 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:54:34,224 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:55:02,369 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:55:02,591 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 15:55:02,729 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 15:55:03,495 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:55:03,581 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.080s
+2025-05-07 15:55:03,582 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.081s
+2025-05-07 15:55:03,582 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:55:03,582 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:55:03,601 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:55:03,609 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:55:03,744 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 15:55:03,825 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.077s
+2025-05-07 15:55:03,839 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.091s
+2025-05-07 15:55:03,839 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 15:55:03,839 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 15:55:03,854 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 15:55:03,860 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 15:55:21,554 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:55:21] "OPTIONS /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:55:21,818 - __main__ - INFO - [MATCH-JOBS:0c174ad8] Rozpoczêto nowe zapytanie
+2025-05-07 15:55:21,819 - __main__ - INFO - [MATCH-JOBS:0c174ad8] Wyszukiwanie dla: keyword='Kucharz', profile_length=134
+2025-05-07 15:55:23,624 - __main__ - INFO - [MATCH-JOBS] Znaleziono 56 ofert pracy w bazie danych
+2025-05-07 15:55:23,624 - __main__ - INFO - [MATCH-JOBS] Kontekst s³owa kluczowego: U¿ytkownik szuka pracy jako 'Kucharz', co mo¿e oznaczaæ równie¿: culinary, cook, kucharz, chef, head chef, szef kuchni
+2025-05-07 15:55:23,624 - __main__ - INFO - [MATCH-JOBS] Oferta 0: ID=None, tytu³=None, firma=None
+2025-05-07 15:55:23,625 - __main__ - INFO - [MATCH-JOBS] Oferta 1: ID=job1, tytu³=Backend Developer, firma=San Francisco Solutions Pty Ltd
+2025-05-07 15:55:23,625 - __main__ - INFO - [MATCH-JOBS] Oferta 2: ID=job10, tytu³=DevOps Engineer, firma=Tokyo Corp SA
+2025-05-07 15:55:23,625 - __main__ - INFO - [MATCH-JOBS] Oferta 3: ID=job11, tytu³=Internist, firma=New York Studio S.A.
+2025-05-07 15:55:23,625 - __main__ - INFO - [MATCH-JOBS] Oferta 4: ID=job12, tytu³=Nurse, firma=Los Angeles Tech SA
+2025-05-07 15:55:23,625 - __main__ - INFO - [MATCH-JOBS] Wysy³am zapytanie do AI
+2025-05-07 15:55:23,625 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:55:51,584 - __main__ - INFO - [MATCH-JOBS] Wyodrêbniony JSON: [{
+  "error": "Brak danych o profilu kandydata. Nie mo¿na przeprowadziæ analizy dopasowania prac bez informacji o kluczowych s³owach kandydata, firmach lub wymaganiach zawodowych."
+}]...
+2025-05-07 15:55:51,584 - __main__ - INFO - [MATCH-JOBS] Dopasowano ofertê: None - None (0%)
+2025-05-07 15:55:51,585 - __main__ - WARNING - [MATCH-JOBS] Znaleziono tylko 1 dopasowañ dla s³owa 'Kucharz', próbujê dodatkowych metod
+2025-05-07 15:55:51,585 - __main__ - INFO - [MATCH-JOBS] Znaleziono wzmiankê o firmie 'new orleans group inc.' w profilu
+2025-05-07 15:55:51,585 - __main__ - INFO - [MATCH-JOBS] Bezpoœrednie dopasowanie tytu³u: 'kucharz' dla 'Kucharz'
+2025-05-07 15:55:51,586 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:55:51] "POST /api/match-jobs HTTP/1.1" 200 -
+2025-05-07 15:56:15,979 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:56:15] "OPTIONS /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:56:16,515 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:56:39,248 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:56:42,059 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:56:42] "OPTIONS /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:56:43,653 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:56:43,747 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:56:44,775 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:56:45,744 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:56:45] "OPTIONS /api/interview/generate_questions HTTP/1.1" 200 -
+2025-05-07 15:56:46,232 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:56:48,001 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:56:48,166 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.070s
+2025-05-07 15:57:09,489 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:57:09] "POST /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:57:09,805 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:57:09] "OPTIONS /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:57:10,294 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:57:15,681 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:57:25,337 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:57:35,389 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:57:42,918 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:57:48,037 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 15:57:48,118 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.080s
+2025-05-07 15:57:48,118 - __main__ - INFO - Próba ponowna z serwerem: https://ollama4.kkhost.pl
+2025-05-07 15:57:48,119 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 2/3)
+2025-05-07 15:58:10,366 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 15:58:10,428 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.061s
+2025-05-07 15:58:10,428 - __main__ - INFO - Próba ponowna z serwerem: https://ollama4.kkhost.pl
+2025-05-07 15:58:10,429 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 2/3)
+2025-05-07 15:58:15,755 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 15:58:15,882 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.126s
+2025-05-07 15:58:15,883 - __main__ - INFO - Próba ponowna z serwerem: https://ollama4.kkhost.pl
+2025-05-07 15:58:15,883 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 2/3)
+2025-05-07 15:58:22,232 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:22] "POST /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:58:22,647 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.096s
+2025-05-07 15:58:23,362 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:23] "GET /api/model/health HTTP/1.1" 200 -
+2025-05-07 15:58:23,688 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:23] "OPTIONS /api/interview/stream-respond HTTP/1.1" 200 -
+2025-05-07 15:58:24,080 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.077s
+2025-05-07 15:58:24,371 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:24] "GET /api/model/health HTTP/1.1" 200 -
+2025-05-07 15:58:24,676 - __main__ - ERROR - B³¹d podczas odpowiadania na pytanie: Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request. Consult the documentation on testing for
+information about how to avoid this problem.
+2025-05-07 15:58:24,677 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:24] "POST /api/interview/stream-respond HTTP/1.1" 200 -
+2025-05-07 15:58:29,609 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:29] "POST /api/interview/start HTTP/1.1" 200 -
+2025-05-07 15:58:29,922 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:29] "OPTIONS /api/interview/stream-respond HTTP/1.1" 200 -
+2025-05-07 15:58:30,234 - __main__ - ERROR - B³¹d podczas odpowiadania na pytanie: Working outside of request context.
+
+This typically means that you attempted to use functionality that needed
+an active HTTP request. Consult the documentation on testing for
+information about how to avoid this problem.
+2025-05-07 15:58:30,234 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:58:30] "POST /api/interview/stream-respond HTTP/1.1" 200 -
+2025-05-07 15:58:42,970 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 15:58:43,048 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.077s
+2025-05-07 15:58:43,048 - __main__ - INFO - Próba ponowna z serwerem: https://ollama4.kkhost.pl
+2025-05-07 15:58:43,049 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 2/3)
+2025-05-07 15:58:48,167 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 15:58:48,230 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.062s
+2025-05-07 15:58:48,231 - __main__ - INFO - Próba ponowna z serwerem: https://ollama4.kkhost.pl
+2025-05-07 15:58:48,231 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 3/3)
+2025-05-07 15:59:04,028 - __main__ - ERROR - B³¹d podczas przetwarzania odpowiedzi AI: Extra data: line 1 column 42 (char 41) (próba 1/2)
+2025-05-07 15:59:04,029 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 15:59:12,824 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 15:59:12] "POST /api/interview/start HTTP/1.1" 200 -
+2025-05-07 16:16:03,702 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:16:03,777 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.071s
+2025-05-07 16:16:03,787 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.081s
+2025-05-07 16:16:03,788 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:16:03,788 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:16:03,812 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+2025-05-07 16:16:03,812 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 16:16:03,814 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:16:04,635 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:16:04,712 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.073s
+2025-05-07 16:16:04,713 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.074s
+2025-05-07 16:16:04,714 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:16:04,714 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:16:04,727 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:16:04,734 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:20:24,357 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:20:24,437 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.075s
+2025-05-07 16:20:24,438 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:20:24,438 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:20:24,460 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.099s
+2025-05-07 16:20:24,465 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.234:5000
+2025-05-07 16:20:24,466 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-07 16:20:24,467 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:20:25,668 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:20:25,746 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.073s
+2025-05-07 16:20:25,765 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.092s
+2025-05-07 16:20:25,766 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:20:25,767 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:20:25,793 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:20:25,806 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:25:24,632 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.170s
+2025-05-07 16:25:25,942 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.196s
+2025-05-07 16:26:27,503 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:26:27] "[31m[1mPOST /api/cv/find-jobs HTTP/1.1[0m" 405 -
+2025-05-07 16:26:32,378 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:26:32] "[31m[1mPOST /api/cv/find-jobs HTTP/1.1[0m" 405 -
+2025-05-07 16:29:18,384 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:29:18,516 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:29:19,997 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:29:20,156 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.155s
+2025-05-07 16:29:20,157 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.155s
+2025-05-07 16:29:20,157 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:29:20,158 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:29:20,180 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:29:20,188 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:30:02,947 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:30:03,085 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:30:04,282 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:30:04,385 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.098s
+2025-05-07 16:30:04,388 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.101s
+2025-05-07 16:30:04,389 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:30:04,389 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:30:04,408 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:30:04,417 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:30:24,694 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.062s
+2025-05-07 16:30:33,986 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 17000
+2025-05-07 16:30:33,987 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:30:48,322 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['Python', 'JavaScript', 'web development', 'data analysis', 'machine learning']
+2025-05-07 16:30:48,322 - __main__ - INFO - Poziom doœwiadczenia: mid
+2025-05-07 16:30:49,565 - __main__ - INFO - Znaleziono 56 ofert w bazie danych dla s³owa kluczowego: 
+2025-05-07 16:30:49,635 - __main__ - INFO - Znaleziono 10 dopasowanych ofert z wynikiem powy¿ej 30%
+2025-05-07 16:30:49,636 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:30:49] "POST /api/cv/find-jobs HTTP/1.1" 200 -
+2025-05-07 16:32:07,338 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 442339
+2025-05-07 16:32:07,339 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:32:35,330 - __main__ - ERROR - B³¹d podczas przetwarzania odpowiedzi AI: Extra data: line 6 column 1 (char 52) (próba 1/2)
+2025-05-07 16:32:35,331 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:33:12,385 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['analiza dokumentów', 'rozpoznawanie struktur plików', 'interpretacja danych binarnych']
+2025-05-07 16:33:12,386 - __main__ - INFO - Poziom doœwiadczenia: mid
+2025-05-07 16:33:12,824 - __main__ - INFO - Znaleziono 56 ofert w bazie danych dla s³owa kluczowego: 
+2025-05-07 16:33:12,877 - __main__ - INFO - Znaleziono 10 dopasowanych ofert z wynikiem powy¿ej 30%
+2025-05-07 16:33:12,879 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:33:12] "POST /api/cv/find-jobs HTTP/1.1" 200 -
+2025-05-07 16:34:25,622 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 290611
+2025-05-07 16:34:25,623 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:34:40,409 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['Python', 'JavaScript', 'React', 'Node.js', 'SQL', 'Agile', 'Scrum', 'Git', 'REST APIs', 'Cloud Computing']
+2025-05-07 16:34:40,409 - __main__ - INFO - Poziom doœwiadczenia: mid
+2025-05-07 16:34:42,058 - __main__ - INFO - Znaleziono 56 ofert w bazie danych dla s³owa kluczowego: 
+2025-05-07 16:34:42,153 - __main__ - INFO - Znaleziono 10 dopasowanych ofert z wynikiem powy¿ej 30%
+2025-05-07 16:34:42,153 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:34:42] "POST /api/cv/find-jobs HTTP/1.1" 200 -
+2025-05-07 16:35:04,662 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.276s
+2025-05-07 16:35:25,030 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.335s
+2025-05-07 16:37:57,568 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:37:59,704 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:38:00,588 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:38:00,894 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.300s
+2025-05-07 16:38:00,894 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:38:00,894 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:38:00,908 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:38:00,915 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:38:00,998 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.405s
+2025-05-07 16:39:14,977 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:39:15,125 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:39:16,028 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:39:16,283 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.251s
+2025-05-07 16:39:16,283 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.251s
+2025-05-07 16:39:16,284 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:39:16,284 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:39:16,298 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:39:16,306 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:40:25,552 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.520s
+2025-05-07 16:40:27,525 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:40:27,612 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:40:28,595 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:40:28,745 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.144s
+2025-05-07 16:40:28,745 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.145s
+2025-05-07 16:40:28,746 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:40:28,746 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:40:28,761 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:40:28,768 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:40:48,059 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 290611
+2025-05-07 16:40:48,059 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:41:07,030 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['Programowanie w jêzyku Python', 'Tworzenie aplikacji webowych z wykorzystaniem frameworka Django', 'Rozwi¹zywanie problemów z baz¹ danych (SQL)', 'Tworzenie skryptów automatyzuj¹cych zadania']
+2025-05-07 16:41:07,031 - __main__ - INFO - Poziom doœwiadczenia: junior
+2025-05-07 16:41:08,245 - __main__ - INFO - Znaleziono 56 ofert w bazie danych dla s³owa kluczowego: 
+2025-05-07 16:41:08,332 - __main__ - INFO - Znaleziono 10 dopasowanych ofert z wynikiem powy¿ej 30%
+2025-05-07 16:41:08,333 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:41:08] "POST /api/cv/find-jobs HTTP/1.1" 200 -
+2025-05-07 16:45:25,820 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.267s
+2025-05-07 16:45:28,832 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.086s
+2025-05-07 16:46:01,170 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 290611
+2025-05-07 16:46:01,171 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:46:15,562 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['programowanie w jêzyku Python', 'rozwi¹zanie problemów', 'analiza danych', 'tworzenie raportów', 'komunikacja w zespole', 'jêzyk angielski (B2)']
+2025-05-07 16:46:15,562 - __main__ - INFO - Poziom doœwiadczenia: junior
+2025-05-07 16:46:16,005 - __main__ - INFO - Znaleziono 56 ofert w bazie danych dla s³owa kluczowego: 
+2025-05-07 16:46:16,102 - __main__ - INFO - Znaleziono 10 dopasowanych ofert z wynikiem powy¿ej 30%
+2025-05-07 16:46:16,103 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:46:16] "POST /api/cv/find-jobs HTTP/1.1" 200 -
+2025-05-07 16:46:30,712 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:46:30] "OPTIONS /api/interview/start HTTP/1.1" 200 -
+2025-05-07 16:46:31,223 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:47:03,318 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:47:11,181 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:47:11] "POST /api/interview/start HTTP/1.1" 200 -
+2025-05-07 16:50:26,029 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.208s
+2025-05-07 16:50:28,904 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.071s
+2025-05-07 16:51:34,250 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:51:36,391 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:51:37,501 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:51:37,616 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.110s
+2025-05-07 16:51:37,616 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:51:37,616 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:51:37,618 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.113s
+2025-05-07 16:51:37,639 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:51:37,645 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:51:57,375 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:51:57,535 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:51:58,389 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:51:58,480 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.087s
+2025-05-07 16:51:58,481 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.087s
+2025-05-07 16:51:58,482 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:51:58,482 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:51:58,496 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:51:58,503 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:52:32,519 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:52:32,611 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:52:33,495 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:52:33,699 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.199s
+2025-05-07 16:52:33,701 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.201s
+2025-05-07 16:52:33,701 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:52:33,701 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:52:33,714 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:52:33,720 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:52:56,673 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:52:56,770 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:52:57,624 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:52:57,730 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.099s
+2025-05-07 16:52:57,731 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:52:57,731 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:52:57,739 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.108s
+2025-05-07 16:52:57,751 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:52:57,759 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:53:30,518 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:53:30,642 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:53:31,852 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:53:31,936 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.080s
+2025-05-07 16:53:31,937 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.081s
+2025-05-07 16:53:31,937 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:53:31,938 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:53:31,951 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:53:31,962 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:54:19,532 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:54:19,694 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:54:20,636 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:54:20,747 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.106s
+2025-05-07 16:54:20,747 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.106s
+2025-05-07 16:54:20,748 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:54:20,748 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:54:20,762 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:54:20,769 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:54:39,637 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:54:39,773 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:54:40,752 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:54:40,969 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.213s
+2025-05-07 16:54:40,970 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.213s
+2025-05-07 16:54:40,970 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:54:40,970 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:54:40,985 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:54:40,993 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:55:26,091 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.061s
+2025-05-07 16:56:44,315 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:56:44,496 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:56:45,422 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:56:45,695 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.269s
+2025-05-07 16:56:45,696 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.270s
+2025-05-07 16:56:45,696 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:56:45,697 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:56:45,710 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:56:45,718 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:57:01,493 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.079s
+2025-05-07 16:57:01,844 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:57:01] "GET /api/model/health HTTP/1.1" 200 -
+2025-05-07 16:57:23,762 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:57:23,872 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:57:24,683 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:57:24,760 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.072s
+2025-05-07 16:57:24,772 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.084s
+2025-05-07 16:57:24,773 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:57:24,773 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:57:24,794 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:57:24,807 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:57:27,153 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:57:27,264 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:57:28,260 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:57:28,336 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.071s
+2025-05-07 16:57:28,342 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.076s
+2025-05-07 16:57:28,342 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:57:28,343 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:57:28,357 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:57:28,364 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:57:32,909 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 16:57:32,996 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 16:57:33,806 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 16:57:33,900 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.088s
+2025-05-07 16:57:33,909 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.097s
+2025-05-07 16:57:33,909 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 16:57:33,909 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 16:57:33,924 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 16:57:33,930 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 16:57:37,786 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.062s
+2025-05-07 16:57:38,065 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:57:38] "GET /api/model/health HTTP/1.1" 200 -
+2025-05-07 16:58:15,857 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 290611
+2025-05-07 16:58:15,858 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 16:59:04,088 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['Python', 'Java', 'Data Analysis', 'Cloud Computing', 'Machine Learning']
+2025-05-07 16:59:04,089 - __main__ - INFO - Poziom doœwiadczenia: mid
+2025-05-07 16:59:04,683 - __main__ - INFO - Znaleziono 56 ofert w bazie danych dla s³owa kluczowego: 
+2025-05-07 16:59:04,776 - __main__ - INFO - Znaleziono 10 dopasowanych ofert z wynikiem powy¿ej 30%
+2025-05-07 16:59:04,777 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 16:59:04] "POST /api/cv/find-jobs HTTP/1.1" 200 -
+2025-05-07 17:00:11,660 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 290611
+2025-05-07 17:00:11,661 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 17:00:26,187 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.094s
+2025-05-07 17:00:35,895 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: []
+2025-05-07 17:00:35,895 - __main__ - INFO - Poziom doœwiadczenia: junior
+2025-05-07 17:00:35,896 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 17:00:35] "[31m[1mPOST /api/cv/find-jobs HTTP/1.1[0m" 400 -
+2025-05-07 17:00:50,490 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:00:52,657 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:00:53,642 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:00:53,723 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.076s
+2025-05-07 17:00:53,737 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.089s
+2025-05-07 17:00:53,737 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 17:00:53,738 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 17:00:53,757 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:00:53,765 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:01:12,409 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:01:12,499 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:01:13,340 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:01:13,423 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.078s
+2025-05-07 17:01:13,423 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.079s
+2025-05-07 17:01:13,424 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 17:01:13,424 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 17:01:13,440 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:01:13,449 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:01:17,960 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:01:18,050 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:01:18,893 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:01:19,125 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.226s
+2025-05-07 17:01:19,126 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl
+2025-05-07 17:01:19,126 - __main__ - INFO - Dostêpne modele: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 17:01:19,137 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.238s
+2025-05-07 17:01:19,140 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:01:19,147 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:01:28,625 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 290611
+2025-05-07 17:01:28,626 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 17:02:28,759 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 17:02:28,844 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.085s
+2025-05-07 17:02:28,845 - __main__ - INFO - Próba ponowna z serwerem: https://ollama4.kkhost.pl
+2025-05-07 17:02:28,845 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama4.kkhost.pl/api/chat (próba 2/3)
+2025-05-07 17:02:56,891 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: []
+2025-05-07 17:02:56,891 - __main__ - INFO - Poziom doœwiadczenia: junior
+2025-05-07 17:02:56,892 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 17:02:56] "[31m[1mPOST /api/cv/find-jobs HTTP/1.1[0m" 400 -
+2025-05-07 17:03:25,037 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.196s
+2025-05-07 17:03:25,569 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 17:03:25] "GET /api/model/health HTTP/1.1" 200 -
+2025-05-07 17:04:14,671 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:04:14,795 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:04:15,655 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:04:15,757 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.097s
+2025-05-07 17:04:15,765 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.105s
+2025-05-07 17:04:15,766 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl
+2025-05-07 17:04:15,766 - __main__ - INFO - Dostêpne modele: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 17:04:15,781 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:04:15,788 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:04:19,207 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:04:19,303 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:04:20,158 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:04:20,230 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.068s
+2025-05-07 17:04:20,252 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.089s
+2025-05-07 17:04:20,252 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl
+2025-05-07 17:04:20,252 - __main__ - INFO - Dostêpne modele: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 17:04:20,266 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:04:20,272 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:04:24,466 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.084s
+2025-05-07 17:04:24,739 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 17:04:24] "GET /api/model/health HTTP/1.1" 200 -
+2025-05-07 17:04:30,760 - __main__ - INFO - Rozpoczynam wyszukiwanie ofert na podstawie CV, d³ugoœæ tekstu: 290611
+2025-05-07 17:04:30,761 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama1.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 17:05:26,553 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.365s
+2025-05-07 17:05:30,889 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 17:05:30,973 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.083s
+2025-05-07 17:05:30,974 - __main__ - INFO - Próba ponowna z serwerem: https://ollama1.kkhost.pl
+2025-05-07 17:05:30,974 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama1.kkhost.pl/api/chat (próba 2/3)
+2025-05-07 17:06:31,095 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 17:06:31,181 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.085s
+2025-05-07 17:06:31,182 - __main__ - INFO - Próba ponowna z serwerem: https://ollama1.kkhost.pl
+2025-05-07 17:06:31,182 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama1.kkhost.pl/api/chat (próba 3/3)
+2025-05-07 17:07:31,348 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 17:07:31,349 - __main__ - WARNING - Nie znaleziono poprawnego JSON w odpowiedzi AI (próba 1/2)
+2025-05-07 17:07:31,349 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama1.kkhost.pl/api/chat (próba 1/3)
+2025-05-07 17:08:31,578 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 17:08:31,656 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.078s
+2025-05-07 17:08:31,657 - __main__ - INFO - Próba ponowna z serwerem: https://ollama1.kkhost.pl
+2025-05-07 17:08:31,657 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama1.kkhost.pl/api/chat (próba 2/3)
+2025-05-07 17:09:31,788 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 17:09:31,862 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.074s
+2025-05-07 17:09:31,862 - __main__ - INFO - Próba ponowna z serwerem: https://ollama1.kkhost.pl
+2025-05-07 17:09:31,862 - __main__ - INFO - Wysy³anie zapytania do API: https://ollama1.kkhost.pl/api/chat (próba 3/3)
+2025-05-07 17:10:26,676 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama4.kkhost.pl, ping: 0.121s
+2025-05-07 17:10:31,977 - __main__ - ERROR - Timeout podczas komunikacji z API Ollama
+2025-05-07 17:10:31,978 - __main__ - WARNING - Nie znaleziono poprawnego JSON w odpowiedzi AI (próba 2/2)
+2025-05-07 17:10:32,128 - __main__ - INFO - Wyodrêbnione umiejêtnoœci: ['Jdz', 'Tgq', 'WFZ58N', 'BQC', 'PDF', 'L3V', 'JXG', 'FmMt', 'IBZ', 'QQ5EX', 'Author', 'Qen', 'YcNe', 'Zhq9', 'XrT66n7']
+2025-05-07 17:10:32,128 - __main__ - INFO - Poziom doœwiadczenia: junior
+2025-05-07 17:10:32,706 - __main__ - INFO - Znaleziono 56 ofert w bazie danych dla s³owa kluczowego: 
+2025-05-07 17:10:32,829 - __main__ - INFO - Znaleziono 10 dopasowanych ofert z wynikiem powy¿ej 30%
+2025-05-07 17:10:32,830 - werkzeug - INFO - 127.0.0.1 - - [07/May/2025 17:10:32] "POST /api/cv/find-jobs HTTP/1.1" 200 -
+2025-05-07 17:14:26,118 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:14:28,238 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:14:29,259 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:14:29,454 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.190s
+2025-05-07 17:14:29,470 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.206s
+2025-05-07 17:14:29,471 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl
+2025-05-07 17:14:29,472 - __main__ - INFO - Dostêpne modele: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 17:14:29,492 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:14:29,500 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:14:58,389 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:14:58,541 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:14:59,514 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:14:59,592 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.073s
+2025-05-07 17:14:59,593 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.074s
+2025-05-07 17:14:59,593 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl
+2025-05-07 17:14:59,594 - __main__ - INFO - Dostêpne modele: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 17:14:59,606 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:14:59,613 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:15:10,917 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:15:11,059 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:15:12,312 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:15:12,501 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.178s
+2025-05-07 17:15:12,501 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl
+2025-05-07 17:15:12,501 - __main__ - INFO - Dostêpne modele: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 17:15:12,507 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.184s
+2025-05-07 17:15:12,521 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:15:12,531 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:15:17,284 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:15:17,437 - werkzeug - INFO -  * Restarting with stat
+2025-05-07 17:15:18,499 - __main__ - INFO - Po³¹czono z Firebase
+2025-05-07 17:15:18,572 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.068s
+2025-05-07 17:15:18,573 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl
+2025-05-07 17:15:18,573 - __main__ - INFO - Dostêpne modele: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 17:15:18,575 - __main__ - INFO - Serwer AI jest dostêpny: https://ollama1.kkhost.pl, ping: 0.071s
+2025-05-07 17:15:18,591 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 17:15:18,598 - werkzeug - INFO -  * Debugger PIN: 106-236-604
+2025-05-07 17:15:22,267 - werkzeug - INFO -  * Detected change in 'C:\\Users\\MateuszTasiemski\\backend-python\\main.py', reloading
+2025-05-07 17:15:22,433 - werkzeug - INFO -  * Restarting with stat

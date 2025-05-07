@@ -1,0 +1,53 @@
+[
+  {
+    "id": "job1",
+    "title": "Python Developer",
+    "company": "TechCorp",
+    "location": "Warsaw",
+    "description": "Looking for an experienced Python developer to join our team.",
+    "required_skills": [
+      "Python",
+      "Django",
+      "Flask",
+      "SQL",
+      "Git"
+    ],
+    "experience_level": "mid",
+    "employment_type": "Full-time",
+    "created_at": 1746631910.8536534
+  },
+  {
+    "id": "job2",
+    "title": "Frontend Developer",
+    "company": "WebSolutions",
+    "location": "Krakow",
+    "description": "Join our team to create modern web applications.",
+    "required_skills": [
+      "JavaScript",
+      "React",
+      "HTML",
+      "CSS",
+      "TypeScript"
+    ],
+    "experience_level": "junior",
+    "employment_type": "Full-time",
+    "created_at": 1746631910.8536558
+  },
+  {
+    "id": "job3",
+    "title": "DevOps Engineer",
+    "company": "CloudTech",
+    "location": "Remote",
+    "description": "Seeking a DevOps engineer to manage our cloud infrastructure.",
+    "required_skills": [
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Linux",
+      "CI/CD"
+    ],
+    "experience_level": "senior",
+    "employment_type": "Full-time",
+    "created_at": 1746631910.853657
+  }
+]

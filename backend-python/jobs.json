@@ -1,0 +1,946 @@
+[
+  {
+    "id": "job1",
+    "title": "Backend Developer",
+    "company": "San Francisco Solutions Pty Ltd",
+    "location": "San Francisco, USA",
+    "description": "Develop and maintain backend services using Node.js and Express.",
+    "required_skills": [
+      "Python",
+      "Django",
+      "Flask",
+      "SQL",
+      "REST API"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$60,000 - $90,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job2",
+    "title": "Data Analyst",
+    "company": "Berlin Corp S.A.",
+    "location": "Berlin, Germany",
+    "description": "Analyze and interpret complex data sets using Python and SQL.",
+    "required_skills": [
+      "Python",
+      "SQL",
+      "Pandas",
+      "NumPy",
+      "TensorFlow"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$45,000 - $60,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job3",
+    "title": "Software Engineer",
+    "company": "London Services S.A.",
+    "location": "London, UK",
+    "description": "Design and develop software solutions using Java.",
+    "required_skills": [
+      "Git",
+      "Linux",
+      "Agile"
+    ],
+    "experience_level": "senior",
+    "salary_range": "$40,000 - $70,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job4",
+    "title": "Software Tester",
+    "company": "Warsaw Group GmbH",
+    "location": "Warsaw, Poland",
+    "description": "Test software applications for bugs and usability issues.",
+    "required_skills": [
+      "Selenium",
+      "Cypress",
+      "Jest",
+      "Postman"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$8,000 - $12,000 per month",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job5",
+    "title": "IT System Administrator",
+    "company": "Dublin Group Pty Ltd",
+    "location": "Dublin, Ireland",
+    "description": "Manage and maintain IT systems and networks.",
+    "required_skills": [
+      "Linux",
+      "Windows Server",
+      "3+ years of experience",
+      "Troubleshooting",
+      "Network management"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $70,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job6",
+    "title": "IT System Architect",
+    "company": "Amsterdam Tech Sp. z o.o.",
+    "location": "Amsterdam, Netherlands",
+    "description": "Design and oversee the architecture of IT systems.",
+    "required_skills": [
+      "Cloud Architecture",
+      "Microservices",
+      "7+ years of experience",
+      "Strategic planning",
+      "System design"
+    ],
+    "experience_level": "senior",
+    "salary_range": "$70,000 - $100,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job7",
+    "title": "IT Security Specialist",
+    "company": "Paris Systems LLC",
+    "location": "Paris, France",
+    "description": "Implement and manage cybersecurity measures.",
+    "required_skills": [
+      "Network Security",
+      "Penetration Testing",
+      "5+ years of experience",
+      "Risk assessment",
+      "Incident management"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$55,000 - $80,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job8",
+    "title": "Graphic Designer",
+    "company": "Toronto Corp S.A.",
+    "location": "Toronto, Canada",
+    "description": "Create visual content for digital and print media.",
+    "required_skills": [
+      "Adobe Photoshop",
+      "Illustrator",
+      "Portfolio of work",
+      "Creativity",
+      "Visual storytelling"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$20 - $30 per hour",
+    "employment_type": "Part-time",
+    "remote": true
+  },
+  {
+    "id": "job9",
+    "title": "UX/UI Designer",
+    "company": "Sydney Systems LLC",
+    "location": "Sydney, Australia",
+    "description": "Design intuitive and user-friendly interfaces.",
+    "required_skills": [
+      "Figma",
+      "User Research",
+      "3+ years of experience",
+      "User empathy",
+      "Wireframing"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$60,000 - $85,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job10",
+    "title": "DevOps Engineer",
+    "company": "Tokyo Corp SA",
+    "location": "Tokyo, Japan",
+    "description": "Automate and optimize CI/CD pipelines.",
+    "required_skills": [
+      "AWS",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Terraform"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$6,000,000 - $9,000,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job11",
+    "title": "Internist",
+    "company": "New York Studio S.A.",
+    "location": "New York, USA",
+    "description": "Diagnose and treat internal medical conditions.",
+    "required_skills": [
+      "MD degree",
+      "Board Certification",
+      "5+ years of experience",
+      "Patient care",
+      "Clinical diagnostics"
+    ],
+    "experience_level": "senior",
+    "salary_range": "$150,000 - $200,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job12",
+    "title": "Nurse",
+    "company": "Los Angeles Tech SA",
+    "location": "Los Angeles, USA",
+    "description": "Provide patient care and support clinical procedures.",
+    "required_skills": [
+      "Nursing license",
+      "BLS certification",
+      "3+ years of experience",
+      "Patient care",
+      "Critical thinking"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$70,000 - $90,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job13",
+    "title": "Paramedic",
+    "company": "Chicago Labs GmbH",
+    "location": "Chicago, USA",
+    "description": "Provide emergency medical services and patient transport.",
+    "required_skills": [
+      "Paramedic certification",
+      "CPR certification",
+      "2+ years of experience",
+      "Emergency care",
+      "Teamwork"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$50,000 - $70,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job14",
+    "title": "Physiotherapist",
+    "company": "Miami Services LLC",
+    "location": "Miami, USA",
+    "description": "Assist patients in regaining mobility and strength.",
+    "required_skills": [
+      "Physical Therapy license",
+      "2+ years of experience",
+      "Rehabilitation",
+      "Communication"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$30 - $50 per hour",
+    "employment_type": "Part-time",
+    "remote": false
+  },
+  {
+    "id": "job15",
+    "title": "Psychologist",
+    "company": "San Diego Group LLC",
+    "location": "San Diego, USA",
+    "description": "Provide mental health counseling and assessments.",
+    "required_skills": [
+      "Doctoral degree",
+      "State license",
+      "3+ years of experience",
+      "Active listening",
+      "Empathy"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$80,000 - $120,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job16",
+    "title": "Dentist",
+    "company": "Boston Studio Ltd.",
+    "location": "Boston, USA",
+    "description": "Provide dental care and oral hygiene treatments.",
+    "required_skills": [
+      "DDS degree",
+      "State dental license",
+      "5+ years of experience",
+      "Oral health care",
+      "Patient communication"
+    ],
+    "experience_level": "senior",
+    "salary_range": "$120,000 - $180,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job17",
+    "title": "Pharmacist",
+    "company": "Seattle Solutions GmbH",
+    "location": "Seattle, USA",
+    "description": "Dispense medications and counsel patients.",
+    "required_skills": [
+      "Pharmacy degree",
+      "State license",
+      "3+ years of experience",
+      "Pharmaceutical knowledge",
+      "Attention to detail"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$100,000 - $140,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job18",
+    "title": "Dietitian",
+    "company": "Austin Tech Inc.",
+    "location": "Austin, USA",
+    "description": "Develop nutrition plans and advise patients on healthy eating.",
+    "required_skills": [
+      "Registered Dietitian credential",
+      "2+ years of experience",
+      "Nutritional planning",
+      "Patient education"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$25 - $40 per hour",
+    "employment_type": "Part-time",
+    "remote": false
+  },
+  {
+    "id": "job19",
+    "title": "Medical Caregiver",
+    "company": "Phoenix Systems LLC",
+    "location": "Phoenix, USA",
+    "description": "Assist patients with daily living and basic care.",
+    "required_skills": [
+      "CNA certification",
+      "1+ years of experience",
+      "Compassion",
+      "Patient assistance"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$30,000 - $40,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job20",
+    "title": "Radiology Technician",
+    "company": "Houston Services LLC",
+    "location": "Houston, USA",
+    "description": "Operate radiographic imaging equipment.",
+    "required_skills": [
+      "Radiologic Technologist license",
+      "2+ years of experience",
+      "Imaging techniques",
+      "Patient positioning"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $70,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job21",
+    "title": "Teacher (e.g., Polish, Mathematics)",
+    "company": "New York Tech Inc.",
+    "location": "New York, USA",
+    "description": "Teach academic subjects to students in a classroom setting.",
+    "required_skills": [
+      "Teaching degree",
+      "State certification",
+      "2+ years of experience",
+      "Classroom management",
+      "Communication"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$45,000 - $65,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job22",
+    "title": "Academic Lecturer",
+    "company": "Boston Services S.A.",
+    "location": "Boston, USA",
+    "description": "Conduct university-level lectures and seminars.",
+    "required_skills": [
+      "PhD or Master's degree",
+      "3+ years of teaching experience",
+      "Public speaking",
+      "Research"
+    ],
+    "experience_level": "senior",
+    "salary_range": "$40,000 - $60,000 per year",
+    "employment_type": "Part-time",
+    "remote": true
+  },
+  {
+    "id": "job23",
+    "title": "Pedagogue",
+    "company": "Chicago Partners Pty Ltd",
+    "location": "Chicago, USA",
+    "description": "Support the educational and social development of children.",
+    "required_skills": [
+      "Education degree",
+      "Experience with children",
+      "Mentoring",
+      "Counseling"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $70,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job24",
+    "title": "Speech Therapist",
+    "company": "Los Angeles Labs Inc.",
+    "location": "Los Angeles, USA",
+    "description": "Assess and treat speech and language disorders.",
+    "required_skills": [
+      "SLP certification",
+      "2+ years of experience",
+      "Therapeutic interventions",
+      "Patience"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$60,000 - $80,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job25",
+    "title": "Tutor",
+    "company": "San Francisco Labs LLC",
+    "location": "San Francisco, USA",
+    "description": "Provide individual academic support for students.",
+    "required_skills": [
+      "Subject expertise",
+      "Teaching experience",
+      "One-on-one instruction",
+      "Motivation"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$20 - $30 per hour",
+    "employment_type": "Part-time",
+    "remote": true
+  },
+  {
+    "id": "job26",
+    "title": "Personal Trainer",
+    "company": "Miami Tech Pty Ltd",
+    "location": "Miami, USA",
+    "description": "Provide personalized fitness training and coaching.",
+    "required_skills": [
+      "Personal Training certification",
+      "1+ years of experience",
+      "Fitness assessment",
+      "Motivation"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$25 - $50 per hour",
+    "employment_type": "Part-time",
+    "remote": false
+  },
+  {
+    "id": "job27",
+    "title": "Dance Instructor",
+    "company": "Las Vegas Corp Ltd.",
+    "location": "Las Vegas, USA",
+    "description": "Teach dance classes to groups or individuals.",
+    "required_skills": [
+      "Dance teaching certification",
+      "Performance experience",
+      "Choreography",
+      "Rhythm"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$20 - $40 per hour",
+    "employment_type": "Part-time",
+    "remote": false
+  },
+  {
+    "id": "job28",
+    "title": "Librarian",
+    "company": "Seattle Group LLC",
+    "location": "Seattle, USA",
+    "description": "Manage library resources and assist patrons.",
+    "required_skills": [
+      "Library Science degree",
+      "1+ years of experience",
+      "Cataloging",
+      "Customer service"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$40,000 - $55,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job29",
+    "title": "E-Learning Specialist",
+    "company": "Denver Solutions Pty Ltd",
+    "location": "Denver, USA",
+    "description": "Develop and manage online educational programs.",
+    "required_skills": [
+      "Instructional Design",
+      "E-learning platforms",
+      "Course development",
+      "Tech literacy"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$55,000 - $75,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job30",
+    "title": "Life Coach",
+    "company": "Houston Works S.A.",
+    "location": "Houston, USA",
+    "description": "Help clients achieve personal and professional goals.",
+    "required_skills": [
+      "Coaching certification",
+      "Experience in personal development",
+      "Goal setting",
+      "Motivational speaking"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$40 - $60 per hour",
+    "employment_type": "Part-time",
+    "remote": true
+  },
+  {
+    "id": "job31",
+    "title": "Project Manager",
+    "company": "New York Group Sp. z o.o.",
+    "location": "New York, USA",
+    "description": "Oversee project planning and execution to meet organizational goals.",
+    "required_skills": [
+      "PMP certification",
+      "3+ years of experience",
+      "Leadership",
+      "Time management"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$70,000 - $100,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job32",
+    "title": "Business Analyst",
+    "company": "San Francisco Corp Inc.",
+    "location": "San Francisco, USA",
+    "description": "Analyze business processes to improve efficiency and effectiveness.",
+    "required_skills": [
+      "Analytical skills",
+      "2+ years of experience",
+      "Data analysis",
+      "Problem-solving"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$60,000 - $85,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job33",
+    "title": "HR Specialist",
+    "company": "Chicago Solutions GmbH",
+    "location": "Chicago, USA",
+    "description": "Manage employee relations and administrative HR tasks.",
+    "required_skills": [
+      "HR degree",
+      "3+ years of experience",
+      "Communication",
+      "Employee engagement"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $70,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job34",
+    "title": "Recruiter",
+    "company": "Austin Solutions Ltd.",
+    "location": "Austin, USA",
+    "description": "Identify and attract talent to fill company vacancies.",
+    "required_skills": [
+      "Talent sourcing",
+      "1+ years of experience",
+      "Interviewing",
+      "Networking"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$45,000 - $65,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job35",
+    "title": "Marketing Manager",
+    "company": "Los Angeles Partners Inc.",
+    "location": "Los Angeles, USA",
+    "description": "Develop and execute marketing strategies to enhance brand visibility.",
+    "required_skills": [
+      "Marketing degree",
+      "5+ years of experience",
+      "Strategic planning",
+      "Brand management"
+    ],
+    "experience_level": "senior",
+    "salary_range": "$80,000 - $110,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job36",
+    "title": "Financial Advisor",
+    "company": "Miami Corp Ltd.",
+    "location": "Miami, USA",
+    "description": "Provide financial planning advice to clients.",
+    "required_skills": [
+      "Finance degree",
+      "CFP certification",
+      "Financial analysis",
+      "Client communication"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$60,000 - $90,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job37",
+    "title": "Accountant",
+    "company": "Boston Labs Sp. z o.o.",
+    "location": "Boston, USA",
+    "description": "Manage financial records and prepare reports.",
+    "required_skills": [
+      "Accounting degree",
+      "CPA license",
+      "Bookkeeping",
+      "Financial reporting"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $75,000 per year",
+    "employment_type": "Full-time",
+    "remote": true
+  },
+  {
+    "id": "job38",
+    "title": "Financial Controller",
+    "company": "Seattle Labs S.A.",
+    "location": "Seattle, USA",
+    "description": "Oversee accounting operations and financial analysis.",
+    "required_skills": [
+      "CPA certification",
+      "5+ years of experience",
+      "Budgeting",
+      "Compliance"
+    ],
+    "experience_level": "senior",
+    "salary_range": "$90,000 - $120,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job39",
+    "title": "Logistics Specialist",
+    "company": "Houston Systems S.A.",
+    "location": "Houston, USA",
+    "description": "Coordinate supply chain activities and inventory management.",
+    "required_skills": [
+      "Logistics degree",
+      "2+ years of experience",
+      "Supply chain management",
+      "Problem-solving"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$55,000 - $75,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job40",
+    "title": "Entrepreneur",
+    "company": "San Diego Studio Inc.",
+    "location": "San Diego, USA",
+    "description": "Launch and manage business ventures.",
+    "required_skills": [
+      "Business acumen",
+      "Risk management",
+      "Leadership",
+      "Strategic vision"
+    ],
+    "experience_level": "senior",
+    "salary_range": "Varies",
+    "employment_type": "Self-employed",
+    "remote": true
+  },
+  {
+    "id": "job41",
+    "title": "Automotive Mechanic",
+    "company": "Detroit Group Ltd.",
+    "location": "Detroit, USA",
+    "description": "Inspect, repair, and maintain vehicles.",
+    "required_skills": [
+      "Mechanic certification",
+      "2+ years of experience",
+      "Technical diagnostics",
+      "Problem-solving"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$40,000 - $60,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job42",
+    "title": "Electrician",
+    "company": "New York Services Inc.",
+    "location": "New York, USA",
+    "description": "Install and repair electrical systems and wiring.",
+    "required_skills": [
+      "Electrician license",
+      "3+ years of experience",
+      "Wiring",
+      "Safety protocols"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $70,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job43",
+    "title": "Carpenter",
+    "company": "Chicago Partners Ltd.",
+    "location": "Chicago, USA",
+    "description": "Construct and repair wooden structures.",
+    "required_skills": [
+      "Carpentry skills",
+      "2+ years of experience",
+      "Woodworking",
+      "Precision"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$45,000 - $65,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job44",
+    "title": "Welder",
+    "company": "Houston Tech GmbH",
+    "location": "Houston, USA",
+    "description": "Join and fabricate metal structures using welding techniques.",
+    "required_skills": [
+      "Welding certification",
+      "2+ years of experience",
+      "Metalworking",
+      "Safety"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $75,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job45",
+    "title": "Bricklayer",
+    "company": "Los Angeles Group LLC",
+    "location": "Los Angeles, USA",
+    "description": "Build and repair brick, stone, and block structures.",
+    "required_skills": [
+      "Masonry skills",
+      "2+ years of experience",
+      "Bricklaying",
+      "Precision"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$40,000 - $55,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job46",
+    "title": "Machine Operator",
+    "company": "Cleveland Corp LLC",
+    "location": "Cleveland, USA",
+    "description": "Operate and maintain production machinery.",
+    "required_skills": [
+      "Machinery knowledge",
+      "Safety awareness",
+      "Machine operation",
+      "Attention to detail"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$35,000 - $50,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job47",
+    "title": "Chef",
+    "company": "New Orleans Group Inc.",
+    "location": "New Orleans, USA",
+    "description": "Prepare and cook meals in a professional kitchen.",
+    "required_skills": [
+      "Culinary degree",
+      "3+ years of experience",
+      "Cooking",
+      "Creativity"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$40,000 - $60,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job48",
+    "title": "Waiter",
+    "company": "San Francisco Works Pty Ltd",
+    "location": "San Francisco, USA",
+    "description": "Serve food and beverages to customers.",
+    "required_skills": [
+      "Customer service skills",
+      "Friendly attitude",
+      "Communication",
+      "Multitasking"
+    ],
+    "experience_level": "junior",
+    "salary_range": "$15 - $20 per hour",
+    "employment_type": "Part-time",
+    "remote": false
+  },
+  {
+    "id": "job49",
+    "title": "Truck Driver",
+    "company": "Dallas Partners Inc.",
+    "location": "Dallas, USA",
+    "description": "Transport goods over long distances by truck.",
+    "required_skills": [
+      "Commercial driver's license",
+      "Safe driving record",
+      "Navigation",
+      "Time management"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$50,000 - $75,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job50",
+    "title": "Farmer",
+    "company": "Iowa Services Ltd.",
+    "location": "Iowa, USA",
+    "description": "Cultivate crops and raise livestock.",
+    "required_skills": [
+      "Agricultural knowledge",
+      "Manual labor",
+      "Crop management",
+      "Animal care"
+    ],
+    "experience_level": "mid",
+    "salary_range": "$30,000 - $50,000 per year",
+    "employment_type": "Full-time",
+    "remote": false
+  },
+  {
+    "id": "job51",
+    "title": "Marketing Specialist",
+    "company": "Kraków Group Sp. z o.o.",
+    "location": "Kraków",
+    "description": "Poszukujemy kreatywnej osoby do planowania kampanii marketingowych.",
+    "required_skills": [
+      "Content Marketing",
+      "SEO",
+      "Google Analytics"
+    ],
+    "experience_level": "mid",
+    "salary_range": "7000-10000 PLN",
+    "employment_type": "Umowa o pracę",
+    "remote": false
+  },
+  {
+    "id": "job52",
+    "title": "Specjalista ds. HR",
+    "company": "Wrocław Services SA",
+    "location": "Wrocław",
+    "description": "Odpowiedzialność za procesy rekrutacyjne i employer branding.",
+    "required_skills": [
+      "HR",
+      "Rekrutacja",
+      "LinkedIn Recruiter"
+    ],
+    "experience_level": "mid",
+    "salary_range": "6500-9000 PLN",
+    "employment_type": "Umowa o pracę",
+    "remote": false
+  },
+  {
+    "id": "job53",
+    "title": "Kucharz",
+    "company": "Gdańsk Partners SA",
+    "location": "Gdańsk",
+    "description": "Przygotowywanie dań kuchni europejskiej w restauracji hotelowej.",
+    "required_skills": [
+      "Gastronomia",
+      "HACCP",
+      "Organizacja pracy"
+    ],
+    "experience_level": "senior",
+    "salary_range": "5500-8000 PLN",
+    "employment_type": "Umowa o pracę",
+    "remote": false
+  },
+  {
+    "id": "job54",
+    "title": "Logistics Coordinator",
+    "company": "Łódź Solutions Sp. z o.o.",
+    "location": "Łódź",
+    "description": "Zarządzanie łańcuchem dostaw i kontakt z przewoźnikami.",
+    "required_skills": [
+      "SAP",
+      "Excel",
+      "Zarządzanie magazynem"
+    ],
+    "experience_level": "mid",
+    "salary_range": "6000-8500 PLN",
+    "employment_type": "Umowa o pracę",
+    "remote": false
+  },
+  {
+    "id": "job55",
+    "title": "Sales Representative",
+    "company": "Poznań Group S.A.",
+    "location": "Poznań",
+    "description": "Aktywna sprzedaż produktów FMCG i poszukiwanie nowych klientów.",
+    "required_skills": [
+      "Negocjacje",
+      "CRM",
+      "Praca w terenie"
+    ],
+    "experience_level": "junior",
+    "salary_range": "5000-7500 PLN",
+    "employment_type": "Umowa o pracę",
+    "remote": true
+  }
+]

@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobPrepAI - Asystent Rekrutacji</title>
+    <style>
+        :root {
+            --primary-color: #4263eb;
+            --secondary-color: #339af0;
+            --background-color: #f8f9fa;
+            --text-color: #343a40;
+            --border-color: #dee2e6;
+            --success-color: #40c057;
+            --error-color: #fa5252;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .tab.active {
+            color: var(--primary-color);
+        }
+        
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .multi-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .multi-input input {
+            flex-grow: 1;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .tag {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .tag span {
+            cursor: pointer;
+        }
+        
+        #response-container {
+            background-color: var(--background-color);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+            min-height: 200px;
+            max-height: 500px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        
+        .success {
+            color: var(--success-color);
+            margin-bottom: 10px;
+        }
+        
+        .error {
+            color: var(--error-color);
+            margin-bottom: 10px;
+        }
+        
+        .job-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .job-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .job-company {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        
+        .job-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .job-detail {
+            background-color: var(--background-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .job-match {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: white;
+            background-color: var(--success-color);
+        }
+        
+        .chat-container {
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: var(--background-color);
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+        }
+        
+        .message-content {
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            margin-left: auto;
+        }
+        
+        .user-message .message-content {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .ai-message {
+            align-self: flex-start;
+        }
+        
+        .ai-message .message-content {
+            background-color: white;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background-color: white;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .chat-input textarea {
+            flex-grow: 1;
+            resize: none;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        
+        .analysis-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            background: conic-gradient(var(--primary-color) 0%, var(--primary-color) 70%, #eee 70%, #eee 100%);
+            color: white;
+            position: relative;
+        }
+        
+        .score-circle::before {
+            content: '';
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: white;
+        }
+        
+        .score-text {
+            position: relative;
+            z-index: 1;
+            color: var(--primary-color);
+        }
+        
+        .analysis-section {
+            margin-bottom: 20px;
+        }
+        
+        .analysis-section h3 {
+            margin-bottom: 10px;
+            color: var(--text-color);
+            font-size: 18px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+        
+        .analysis-list {
+            list-style-type: none;
+        }
+        
+        .analysis-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .analysis-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .loader {
+            border: 5px solid var(--background-color);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+            display: none;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .server-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .server-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .status-online {
+            background-color: var(--success-color);
+        }
+        
+        .status-offline {
+            background-color: var(--error-color);
+        }
+        
+        .status-error {
+            background-color: #fcc419;
+            color: #212529;
+        }
+        
+        .server-url {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .server-response {
+            font-size: 14px;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .server-error {
+            color: var(--error-color);
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .server-models {
+            margin-top: 10px;
+            padding: 8px;
+            background-color: var(--background-color);
+            border-radius: 4px;
+        }
+        
+        .server-models h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .model-tag {
+            display: inline-block;
+            background-color: var(--background-color);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .interview-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .question-item {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .question-item h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .question-category {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .question-purpose {
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .server-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .current-server-label {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .timestamp-info {
+            text-align: right;
+            font-size: 12px;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+        
+        #servers-container {
+            margin-top: 20px;
+        }
+        
+        .system-message {
+            align-self: center;
+            max-width: 90%;
+            margin: 10px auto;
+        }
+        
+        .system-message .message-content {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-color);
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .system-info-icon {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JobMatchAI - Inteligentny Asystent Poszukiwania Pracy</h1>
+        
+        <div class="tabs">
+            <button class="tab active" data-tab="search">Wyszukiwanie ofert</button>
+            <button class="tab" data-tab="interview">Rozmowa kwalifikacyjna</button>
+            <button class="tab" data-tab="cv">Analiza CV</button>
+            <button class="tab" data-tab="health">Stan serwerów</button>
+        </div>
+
+        <div id="search" class="tab-content active">
+            <h2>Wyszukiwanie ofert pracy</h2>
+            <h1>abc</h1>
+            
+            <div class="form-group">
+                <label for="job-keyword">Słowo kluczowe</label>
+                <input type="text" id="job-keyword" placeholder="np. Nauczyciel, Opiekunka, Programista, Kierowca">
+            </div>
+            
+            <div class="form-group">
+                <label for="profile-text">Opisz swoje doświadczenie i umiejętności</label>
+                <textarea id="profile-text" rows="5" placeholder="Opisz swoje doświadczenie zawodowe, umiejętności, wykształcenie i wszystko, co może być istotne przy poszukiwaniu pracy. Na przykład: Mam 3 lata doświadczenia jako opiekunka do dzieci. Potrafię gotować, organizować zabawy edukacyjne i zapewnić bezpieczną opiekę. Mam ukończony kurs pierwszej pomocy."></textarea>
+            </div>
+            
+            <button id="search-button">Szukaj ofert</button>
+            
+            <div class="loader" id="search-loader"></div>
+            
+            <div id="extracted-skills" style="display: none; margin-top: 15px;">
+                <h3>Rozpoznane umiejętności:</h3>
+                <div class="tag-container" id="ai-skills-container"></div>
+                <p id="experience-level"></p>
+            </div>
+            
+            <div id="search-results"></div>
+        </div>
+        
+        <div id="interview" class="tab-content">
+            <h2>Symulacja rozmowy kwalifikacyjnej</h2>
+            
+            <div id="job-selection">
+                <p>Najpierw wyszukaj i wybierz ofertę pracy w zakładce "Wyszukiwanie ofert"</p>
+            </div>
+            
+            <div id="interview-container" style="display: none;">
+                <h3 id="interview-job-title"></h3>
+                <div class="interview-buttons">
+                    <button id="start-interview-btn">Rozpocznij rozmowę</button>
+                    <button id="generate-questions-btn">Generuj przykładowe pytania</button>
+                </div>
+                
+                <div id="questions-container" style="display: none; margin: 15px 0;">
+                    <h3>Przykładowe pytania rekrutacyjne</h3>
+                    <p id="questions-intro"></p>
+                    <select id="question-difficulty" style="margin: 10px 0;">
+                        <option value="easy">Łatwe (Junior)</option>
+                        <option value="medium" selected>Średnie (Mid)</option>
+                        <option value="hard">Trudne (Senior+)</option>
+                    </select>
+                    <button id="refresh-questions">Odśwież pytania</button>
+                    <div id="questions-list" class="analysis-list" style="margin-top: 15px;"></div>
+                </div>
+                
+                <div class="chat-container">
+                    <div class="chat-messages" id="chat-messages"></div>
+                    
+                    <div class="chat-input">
+                        <textarea id="user-message" placeholder="Twoja odpowiedź..." rows="2"></textarea>
+                        <button id="send-message">Wyślij</button>
+                    </div>
+                </div>
+                
+                <button id="end-interview" style="margin-top: 10px;">Zakończ rozmowę</button>
+                
+                <div class="analysis-container" id="interview-analysis" style="display: none;">
+                    <h3>Analiza rozmowy kwalifikacyjnej</h3>
+                    
+                    <div class="score-circle">
+                        <span class="score-text" id="overall-score">0</span>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h3>Mocne strony</h3>
+                        <ul class="analysis-list" id="strengths-list"></ul>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h3>Obszary do poprawy</h3>
+                        <ul class="analysis-list" id="improvements-list"></ul>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h3>Porady na rozmowę "na żywo"</h3>
+                        <ul class="analysis-list" id="tips-list"></ul>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h3>Analiza emocji</h3>
+                        <div id="emotions-chart" style="height: 200px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cv" class="tab-content">
+            <h2>Analiza CV</h2>
+            
+            <div class="form-group">
+                <label for="cv-file">Wybierz plik CV (PDF, DOC, DOCX, TXT)</label>
+                <input type="file" id="cv-file" accept=".pdf,.doc,.docx,.txt">
+            </div>
+            
+            <div class="cv-buttons">
+                <button id="analyze-cv">Analizuj CV</button>
+                <button id="find-jobs-from-cv">Znajdź pasujące oferty</button>
+            </div>
+            
+            <div class="loader" id="cv-loader"></div>
+            
+            <div id="cv-analysis" style="display: none;" class="analysis-container">
+                <h3>Analiza dopasowania CV do oferty</h3>
+                
+                <div class="score-circle">
+                    <span class="score-text" id="cv-score">0</span>
+                </div>
+                
+                <div id="extracted-skills-cv" style="margin-bottom: 20px;">
+                    <h3>Rozpoznane umiejętności:</h3>
+                    <div class="tag-container" id="cv-skills-container"></div>
+                    <p id="cv-experience-level"></p>
+                </div>
+                
+                <div class="analysis-section">
+                    <h3>Znalezione umiejętności</h3>
+                    <ul class="analysis-list" id="skills-found"></ul>
+                </div>
+                
+                <div class="analysis-section">
+                    <h3>Brakujące umiejętności</h3>
+                    <ul class="analysis-list" id="skills-missing"></ul>
+                </div>
+                
+                <div class="analysis-section">
+                    <h3>Sugestie poprawy struktury CV</h3>
+                    <ul class="analysis-list" id="structure-suggestions"></ul>
+                </div>
+                
+                <div class="analysis-section">
+                    <h3>Optymalizacja ATS</h3>
+                    <ul class="analysis-list" id="ats-suggestions"></ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="health" class="tab-content">
+            <h2>Stan serwerów AI</h2>
+            
+            <button id="check-health">Sprawdź stan serwerów</button>
+            
+            <div class="loader" id="health-loader"></div>
+            
+            <div id="servers-container" style="margin-top: 20px;"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Zmienne globalne
+        let selectedJobId = null;
+        let selectedJobTitle = null;
+        let interviewId = null;
+        let extractedProfileText = "";
+
+        // Bazowy URL API
+        const API_BASE_URL = 'http://localhost:5000/api';
+        
+        // Funkcja pomocnicza do pobierania tekstu profilu
+        function getProfileText() {
+            return document.getElementById('profile-text').value.trim();
+        }
+        
+        // Inicjalizacja
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Inicjalizacja aplikacji JobPrepAI");
+            
+            // Obsługa zakładek
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    const tabContents = document.querySelectorAll('.tab-content');
+                    tabContents.forEach(tc => tc.classList.remove('active'));
+                    
+                    const tabId = tab.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Obsługa wyszukiwania ofert
+            document.getElementById('search-button').addEventListener('click', searchJobs);
+            
+            // Obsługa sprawdzania stanu serwerów
+            document.getElementById('check-health').addEventListener('click', checkServerHealth);
+            
+            // Obsługa analizy CV
+            document.getElementById('analyze-cv').addEventListener('click', analyzeCV);
+            document.getElementById('find-jobs-from-cv').addEventListener('click', findJobsFromCV);
+            
+            // Obsługa rozmowy kwalifikacyjnej
+            document.getElementById('start-interview-btn').addEventListener('click', startInterview);
+            document.getElementById('send-message').addEventListener('click', sendMessage);
+            document.getElementById('end-interview').addEventListener('click', endInterview);
+            
+            // Obsługa generowania pytań
+            document.getElementById('generate-questions-btn').addEventListener('click', generateQuestions);
+            document.getElementById('refresh-questions').addEventListener('click', generateQuestions);
+            
+            // Enter w polu wiadomości
+            document.getElementById('user-message').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        });
+        
+        // Wyszukiwanie ofert pracy
+        async function searchJobs() {
+            const jobKeyword = document.getElementById('job-keyword').value.trim();
+            const profileText = getProfileText();
+            
+            console.log("Rozpoczynam wyszukiwanie ofert:");
+            console.log("- Słowo kluczowe:", jobKeyword);
+            console.log("- Profil użytkownika:", profileText);
+            
+            if (!jobKeyword) {
+                alert('Wprowadź słowo kluczowe dla poszukiwanej pracy');
+                return;
+            }
+            
+            if (!profileText) {
+                alert('Opisz swoje doświadczenie i umiejętności');
+                return;
+            }
+            
+            document.getElementById('search-loader').style.display = 'block';
+            document.getElementById('search-results').innerHTML = '';
+            document.getElementById('extracted-skills').style.display = 'none';
+            
+            try {
+                // Używamy nowego endpointu do dopasowania ofert za pomocą AI
+                console.log("Wysyłam zapytanie do API:", `${API_BASE_URL}/match-jobs`);
+                
+                const response = await fetch(`${API_BASE_URL}/match-jobs`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        job_keyword: jobKeyword,
+                        profile_text: profileText,
+                        limit: 20 // Maksymalna liczba zwracanych ofert
+                    })
+                });
+                
+                const data = await response.json();
+                console.log("Otrzymano odpowiedź z API:", data);
+                
+                document.getElementById('search-loader').style.display = 'none';
+                
+                if (data.error) {
+                    console.error("Błąd API:", data.error);
+                    document.getElementById('search-results').innerHTML = `<p class="error">${data.error}</p>`;
+                    return;
+                }
+                
+                // Sprawdź czy są dopasowane oferty
+                if (!data.matches || data.matches.length === 0) {
+                    console.warn("Nie znaleziono żadnych ofert pracy");
+                    document.getElementById('search-results').innerHTML = '<p>Nie znaleziono ofert pasujących do podanych kryteriów.</p>';
+                    return;
+                }
+                
+                console.log(`Znaleziono ${data.matches.length} ofert pracy:`, data.matches);
+                renderJobResults(data.matches);
+                
+            } catch (error) {
+                console.error("Wystąpił błąd podczas wyszukiwania:", error);
+                document.getElementById('search-loader').style.display = 'none';
+                document.getElementById('search-results').innerHTML = `<p class="error">Wystąpił błąd: ${error.message}</p>`;
+            }
+        }
+        
+        function renderJobResults(jobs) {
+            console.log("Renderowanie wyników wyszukiwania, liczba ofert:", jobs.length);
+            
+            const container = document.getElementById('search-results');
+            container.innerHTML = `<h3>Znaleziono ${jobs.length} ofert:</h3>`;
+            
+            jobs.forEach((job, index) => {
+                console.log(`Oferta #${index+1}:`, job);
+                
+                const jobCard = document.createElement('div');
+                jobCard.className = 'job-card';
+                jobCard.innerHTML = `
+                    <div class="job-title">${job.title}</div>
+                    <div class="job-company">${job.company}, ${job.location}</div>
+                    <div class="job-details">
+                        <span class="job-detail">${job.experience_level}</span>
+                        <span class="job-detail">${job.employment_type}</span>
+                        <span class="job-detail">${job.remote ? 'Zdalnie' : 'Stacjonarnie'}</span>
+                        <span class="job-detail">${job.salary_range}</span>
+                    </div>
+                    <div class="job-match">Dopasowanie: ${job.match_percentage}%</div>
+                `;
+                
+                jobCard.addEventListener('click', () => selectJob(job.id, job.title));
+                
+                container.appendChild(jobCard);
+            });
+        }
+        
+        function selectJob(jobId, jobTitle) {
+            selectedJobId = jobId;
+            selectedJobTitle = jobTitle;
+            
+            // Aktualizacja interfejsu rozmowy
+            document.getElementById('job-selection').style.display = 'none';
+            document.getElementById('interview-container').style.display = 'block';
+            document.getElementById('interview-job-title').textContent = `Rozmowa na stanowisko: ${jobTitle}`;
+            
+            alert(`Wybrano ofertę: ${jobTitle}. Możesz teraz przejść do zakładki rozmowy kwalifikacyjnej.`);
+        }
+        
+        // Rozmowa kwalifikacyjna
+        async function startInterview() {
+            if (!selectedJobId) {
+                alert('Najpierw wybierz ofertę pracy');
+                return;
+            }
+            
+            // Użyj zapisanego profilu z CV lub pobierz z pola tekstowego
+            let profileText = getProfileText();
+            
+            // Jeśli pole jest puste, ale mamy zapisany profil z CV, użyj go
+            if (!profileText && extractedProfileText) {
+                profileText = extractedProfileText;
+                console.log("Użyto profilu z CV dla rozmowy:", profileText);
+            }
+            
+            if (!profileText) {
+                alert('Opisz swoje doświadczenie i umiejętności w zakładce wyszukiwania ofert');
+                return;
+            }
+            
+            document.getElementById('chat-messages').innerHTML = '';
+            document.getElementById('interview-analysis').style.display = 'none';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/interview/start`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        job_id: selectedJobId,
+                        profile_text: profileText
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert(`Błąd: ${data.error}`);
+                    return false;
+                }
+                
+                interviewId = data.interview_id;
+                
+                // Wyświetl rozpoznane umiejętności
+                if (data.extracted_skills && data.extracted_skills.length > 0) {
+                    let skillsMsg = `Rozpoznane umiejętności: ${data.extracted_skills.join(', ')}. Poziom doświadczenia: ${data.experience_level}`;
+                    addMessage(skillsMsg, 'system');
+                }
+                
+                // Dodaj pierwszą wiadomość od AI
+                addMessage(data.message, 'ai');
+                
+                return true;
+                
+            } catch (error) {
+                alert(`Wystąpił błąd: ${error.message}`);
+                return false;
+            }
+        }
+        
+        async function sendMessage() {
+            const messageInput = document.getElementById('user-message');
+            const message = messageInput.value.trim();
+            
+            if (!message) return;
+            
+            // Jeśli nie ma ID rozmowy, rozpocznij nową
+            if (!interviewId) {
+                const started = await startInterview();
+                if (!started) return;
+            }
+            
+            // Dodaj wiadomość użytkownika do czatu
+            addMessage(message, 'user');
+            messageInput.value = '';
+            document.getElementById('send-message').disabled = true;
+            
+            try {
+                // Używamy endpoint do streamowania odpowiedzi
+                const response = await fetch(`${API_BASE_URL}/interview/stream-respond`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        interview_id: interviewId,
+                        response: message
+                    })
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    addMessage(`Błąd: ${errorData.error || 'Wystąpił błąd podczas komunikacji z serwerem'}`, 'system');
+                    document.getElementById('send-message').disabled = false;
+                    return;
+                }
+                
+                // Tymczasowy element dla odpowiedzi AI podczas jej generowania
+                const tempMessageElement = document.createElement('div');
+                tempMessageElement.className = 'message ai-message';
+                const tempContent = document.createElement('div');
+                tempContent.className = 'message-content';
+                tempContent.textContent = '...';
+                tempMessageElement.appendChild(tempContent);
+                document.getElementById('chat-messages').appendChild(tempMessageElement);
+                
+                // Przewiń do najnowszej wiadomości
+                const chatContainer = document.getElementById('chat-messages');
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+                
+                // Odczytujemy strumień odpowiedzi
+                const reader = response.body.getReader();
+                let accumulator = '';
+                let aiResponseAdded = false;
+                
+                while (true) {
+                    const { done, value } = await reader.read();
+                    
+                    if (done) {
+                        break;
+                    }
+                    
+                    // Dekodowanie otrzymanych danych
+                    const chunk = new TextDecoder().decode(value);
+                    const lines = chunk.split('\n');
+                    
+                    for (const line of lines) {
+                        if (!line.trim()) continue;
+                        
+                        try {
+                            const data = JSON.parse(line);
+                            
+                            if (data.status === 'analyzing') {
+                                // Analizowanie odpowiedzi - aktualizuj tymczasowy element
+                                if (tempMessageElement) {
+                                    tempContent.textContent = 'Analizuję odpowiedzi...';
+                                }
+                            } else if (data.status === 'in_progress' || data.status === 'completed') {
+                                // Otrzymaliśmy część lub całość odpowiedzi
+                                if (!aiResponseAdded) {
+                                    // Usuń tymczasowy element i dodaj właściwą odpowiedź
+                                    tempMessageElement.remove();
+                                    // Dodaj nową wiadomość AI
+                                    addMessage(data.message, 'ai');
+                                    aiResponseAdded = true;
+                                } else {
+                                    // Aktualizuj istniejącą wiadomość
+                                    const aiMessages = document.querySelectorAll('.ai-message');
+                                    if (aiMessages.length > 0) {
+                                        const lastAiMessage = aiMessages[aiMessages.length - 1];
+                                        lastAiMessage.querySelector('.message-content').textContent = data.message;
+                                    }
+                                }
+                                
+                                // Sprawdź, czy rozmowa została zakończona
+                                if (data.interview_completed && data.performance_analysis) {
+                                    renderInterviewAnalysis(data.performance_analysis);
+                                }
+                            }
+                        } catch (e) {
+                            console.error('Błąd parsowania odpowiedzi JSON:', e, line);
+                        }
+                    }
+                }
+                
+            } catch (error) {
+                // Usuń tymczasowy element
+                const thinkingMsg = document.querySelector('.message.ai-message:last-child');
+                if (thinkingMsg && thinkingMsg.querySelector('.message-content').textContent === '...') {
+                    thinkingMsg.remove();
+                }
+                
+                addMessage(`Wystąpił błąd: ${error.message}`, 'system');
+            } finally {
+                document.getElementById('send-message').disabled = false;
+            }
+        }
+        
+        function addMessage(content, sender) {
+            const messagesContainer = document.getElementById('chat-messages');
+            const messageElement = document.createElement('div');
+            messageElement.className = `message ${sender}-message`;
+            
+            const messageContent = document.createElement('div');
+            messageContent.className = 'message-content';
+            
+            // Obsługa różnych typów wiadomości
+            if (sender === 'system') {
+                // Wiadomości systemowe mają inny styl
+                messageElement.className = 'message system-message';
+                messageContent.innerHTML = `<span class="system-info-icon">ℹ️</span> ${content}`;
+            } else {
+                // Zwykłe wiadomości użytkownika lub AI
+                messageContent.textContent = content;
+            }
+            
+            messageElement.appendChild(messageContent);
+            messagesContainer.appendChild(messageElement);
+            
+            // Przewiń do najnowszej wiadomości
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        async function endInterview() {
+            if (!interviewId) {
+                alert('Rozmowa nie została jeszcze rozpoczęta');
+                return;
+            }
+            
+            try {
+                addMessage("Dziękuję za rozmowę. Oceniam teraz Twoje odpowiedzi...", 'ai');
+                
+                const response = await fetch(`${API_BASE_URL}/interview/end`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        interview_id: interviewId
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    alert(`Błąd: ${data.error}`);
+                    return;
+                }
+                
+                renderInterviewAnalysis(data.performance_analysis);
+                
+            } catch (error) {
+
+                alert(`Wystąpił błąd: ${error.message}`);
+            }
+        }
+        
+        function renderInterviewAnalysis(analysis) {
+            document.getElementById('interview-analysis').style.display = 'block';
+            
+            // Ustaw ogólny wynik
+            document.getElementById('overall-score').textContent = analysis.overall_score;
+            
+            // Ustaw gradient dla koła wyniku
+            const scoreCircle = document.querySelector('.score-circle');
+            const scorePercentage = analysis.overall_score * 10;
+            scoreCircle.style.background = `conic-gradient(var(--primary-color) 0%, var(--primary-color) ${scorePercentage}%, #eee ${scorePercentage}%, #eee 100%)`;
+            
+            // Wypełnij listy
+            const strengthsList = document.getElementById('strengths-list');
+            strengthsList.innerHTML = '';
+            analysis.strengths.forEach(strength => {
+                const li = document.createElement('li');
+                li.textContent = strength;
+                strengthsList.appendChild(li);
+            });
+            
+            const improvementsList = document.getElementById('improvements-list');
+            improvementsList.innerHTML = '';
+            analysis.areas_to_improve.forEach(area => {
+                const li = document.createElement('li');
+                li.textContent = area;
+                improvementsList.appendChild(li);
+            });
+            
+            const tipsList = document.getElementById('tips-list');
+            tipsList.innerHTML = '';
+            (analysis.irl_tips || []).forEach(tip => {
+                const li = document.createElement('li');
+                li.textContent = tip;
+                tipsList.appendChild(li);
+            });
+            
+            // Emocje - prosta wizualizacja
+            const emotionsChart = document.getElementById('emotions-chart');
+            emotionsChart.innerHTML = '';
+            
+            if (analysis.emotion_analysis && analysis.emotion_analysis.emotion_scores) {
+                const emotions = analysis.emotion_analysis.emotion_scores;
+                
+                const chartContainer = document.createElement('div');
+                chartContainer.style.display = 'flex';
+                chartContainer.style.alignItems = 'flex-end';
+                chartContainer.style.height = '100%';
+                chartContainer.style.gap = '10px';
+                
+                for (const [emotion, score] of Object.entries(emotions)) {
+                    if (score > 0) {
+                        const barWrapper = document.createElement('div');
+                        barWrapper.style.display = 'flex';
+                        barWrapper.style.flexDirection = 'column';
+                        barWrapper.style.alignItems = 'center';
+                        barWrapper.style.width = `${100 / Object.keys(emotions).length}%`;
+                        
+                        const label = document.createElement('div');
+                        label.textContent = emotion;
+                        label.style.fontSize = '12px';
+                        label.style.textAlign = 'center';
+                        label.style.marginBottom = '5px';
+                        
+                        const scoreText = document.createElement('div');
+                        scoreText.textContent = `${score}%`;
+                        scoreText.style.fontSize = '12px';
+                        scoreText.style.textAlign = 'center';
+                        scoreText.style.marginBottom = '5px';
+                        
+                        const bar = document.createElement('div');
+                        bar.style.width = '80%';
+                        bar.style.height = `${score}%`;
+                        bar.style.backgroundColor = 'var(--primary-color)';
+                        bar.style.borderRadius = '4px';
+                        bar.style.minHeight = '20px';
+                        
+                        barWrapper.appendChild(label);
+                        barWrapper.appendChild(scoreText);
+                        barWrapper.appendChild(bar);
+                        
+                        chartContainer.appendChild(barWrapper);
+                    }
+                }
+                
+                emotionsChart.appendChild(chartContainer);
+            }
+        }
+        
+        // Analiza CV
+        async function analyzeCV() {
+            if (!selectedJobId) {
+                alert('Najpierw wybierz ofertę pracy w zakładce "Wyszukiwanie ofert"');
+                return;
+            }
+            
+            const profileText = getProfileText();
+            
+            if (!profileText) {
+                alert('Opisz swoje doświadczenie i umiejętności w zakładce wyszukiwania ofert');
+                return;
+            }
+            
+            const fileInput = document.getElementById('cv-file');
+            
+            if (!fileInput.files.length) {
+                alert('Wybierz plik CV do analizy');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const allowedTypes = ['.pdf', '.doc', '.docx', '.txt'];
+            const fileExtension = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
+            
+            if (!allowedTypes.includes(fileExtension)) {
+                alert('Dozwolone formaty plików: PDF, DOC, DOCX, TXT');
+                return;
+            }
+            
+            // Pokaż loader
+            document.getElementById('cv-loader').style.display = 'block';
+            document.getElementById('cv-analysis').style.display = 'none';
+            
+            try {
+                // Przygotuj dane do wysłania
+                const formData = new FormData();
+                formData.append('cv_file', file);
+                formData.append('job_id', selectedJobId);
+                formData.append('profile_text', profileText);
+                
+                const response = await fetch(`${API_BASE_URL}/cv/analyze`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                // Ukryj loader
+                document.getElementById('cv-loader').style.display = 'none';
+                
+                if (data.error) {
+                    alert(`Błąd: ${data.error}`);
+                    return;
+                }
+                
+                renderCVAnalysis(data);
+                
+            } catch (error) {
+                document.getElementById('cv-loader').style.display = 'none';
+                alert(`Wystąpił błąd: ${error.message}`);
+            }
+        }
+        
+        function renderCVAnalysis(analysis) {
+            document.getElementById('cv-analysis').style.display = 'block';
+            
+            // Ustaw ogólny wynik
+            document.getElementById('cv-score').textContent = Math.round(analysis.overall_match_percentage || 0);
+            
+            // Ustaw gradient dla koła wyniku
+            const scoreCircle = document.getElementById('cv-analysis').querySelector('.score-circle');
+            const scorePercentage = analysis.overall_match_percentage || 0;
+            scoreCircle.style.background = `conic-gradient(var(--primary-color) 0%, var(--primary-color) ${scorePercentage}%, #eee ${scorePercentage}%, #eee 100%)`;
+            
+            // Wyświetl wyodrębnione przez AI umiejętności
+            if (analysis.extracted_skills && analysis.extracted_skills.length > 0) {
+                const skillsContainer = document.getElementById('cv-skills-container');
+                skillsContainer.innerHTML = '';
+                
+                analysis.extracted_skills.forEach(skill => {
+                    const tag = document.createElement('div');
+                    tag.className = 'tag';
+                    tag.textContent = skill;
+                    skillsContainer.appendChild(tag);
+                });
+                
+                document.getElementById('cv-experience-level').textContent = `Rozpoznany poziom doświadczenia: ${analysis.experience_level}`;
+                document.getElementById('extracted-skills-cv').style.display = 'block';
+            } else {
+                document.getElementById('extracted-skills-cv').style.display = 'none';
+            }
+            
+            // Wypełnij listę znalezionych umiejętności
+            const skillsFoundList = document.getElementById('skills-found');
+            skillsFoundList.innerHTML = '';
+            
+            if (analysis.skills_found && analysis.skills_found.length) {
+                analysis.skills_found.forEach(skill => {
+                    const li = document.createElement('li');
+                    li.textContent = skill;
+                    skillsFoundList.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.textContent = 'Nie znaleziono umiejętności pasujących do oferty';
+                skillsFoundList.appendChild(li);
+            }
+            
+            // Wypełnij listę brakujących umiejętności
+            const skillsMissingList = document.getElementById('skills-missing');
+            skillsMissingList.innerHTML = '';
+            
+            if (analysis.skills_missing && analysis.skills_missing.length) {
+                analysis.skills_missing.forEach(skill => {
+                    const li = document.createElement('li');
+                    li.textContent = skill;
+                    skillsMissingList.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.textContent = 'Brak brakujących umiejętności';
+                skillsMissingList.appendChild(li);
+            }
+            
+            // Wypełnij sugestie poprawy struktury
+            const structureSuggestionsList = document.getElementById('structure-suggestions');
+            structureSuggestionsList.innerHTML = '';
+            
+            if (analysis.structure_suggestions && analysis.structure_suggestions.length) {
+                analysis.structure_suggestions.forEach(suggestion => {
+                    const li = document.createElement('li');
+                    li.textContent = suggestion;
+                    structureSuggestionsList.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.textContent = 'Brak sugestii dotyczących struktury CV';
+                structureSuggestionsList.appendChild(li);
+            }
+            
+            // Wypełnij sugestie optymalizacji ATS
+            const atsSuggestionsList = document.getElementById('ats-suggestions');
+            atsSuggestionsList.innerHTML = '';
+            
+            if (analysis.ats_optimization_suggestions && analysis.ats_optimization_suggestions.length) {
+                analysis.ats_optimization_suggestions.forEach(suggestion => {
+                    const li = document.createElement('li');
+                    li.textContent = suggestion;
+                    atsSuggestionsList.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.textContent = 'Brak sugestii optymalizacji ATS';
+                atsSuggestionsList.appendChild(li);
+            }
+        }
+        
+        // Sprawdzenie stanu serwerów
+        async function checkServerHealth() {
+            document.getElementById('health-loader').style.display = 'block';
+            document.getElementById('servers-container').innerHTML = '';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/model/health`);
+                
+                const data = await response.json();
+                document.getElementById('health-loader').style.display = 'none';
+                
+                if (data.error) {
+                    document.getElementById('servers-container').innerHTML = `<p class="error">${data.error}</p>`;
+                    return;
+                }
+                
+                renderServerHealth(data);
+                
+            } catch (error) {
+                document.getElementById('health-loader').style.display = 'none';
+                document.getElementById('servers-container').innerHTML = `<p class="error">Wystąpił błąd: ${error.message}</p>`;
+            }
+        }
+        
+        function renderServerHealth(healthData) {
+            const container = document.getElementById('servers-container');
+            container.innerHTML = ''; // Wyczyść poprzednie wyniki
+            
+            // Dodaj podsumowanie
+            const summary = document.createElement('div');
+            summary.innerHTML = `
+                <h3>Podsumowanie</h3>
+                <p>Dostępne serwery: ${healthData.online_servers} z ${healthData.total_servers} (${healthData.availability_percentage}%)</p>
+                <p>Aktualnie używany serwer: <span class="server-url">${healthData.current_server}</span></p>
+            `;
+            container.appendChild(summary);
+            
+            // Dodaj karty serwerów
+            healthData.servers.forEach(server => {
+                const serverCard = document.createElement('div');
+                serverCard.className = 'server-card';
+                
+                // Ustaw odpowiednią klasę dla statusu
+                let statusClass = '';
+                switch (server.status) {
+                    case 'online':
+                        statusClass = 'status-online';
+                        break;
+                    case 'offline':
+                        statusClass = 'status-offline';
+                        break;
+                    default:
+                        statusClass = 'status-error';
+                }
+                
+                // Generuj HTML dla modeli
+                let modelsHtml = '';
+                if (server.available_models && server.available_models.length) {
+                    modelsHtml = `
+                        <div class="server-models">
+                            <h4>Dostępne modele:</h4>
+                            <div>${server.available_models.map(model => `<span class="model-tag">${model}</span>`).join('')}</div>
+                        </div>
+                    `;
+                }
+                
+                // Oznacz aktualnie używany serwer
+                const isCurrentServer = server.server === healthData.current_server;
+                const currentServerLabel = isCurrentServer ? '<span class="current-server-label">Aktualnie używany</span>' : '';
+                
+                // Generuj HTML karty serwera
+                serverCard.innerHTML = `
+                    <div class="server-header">
+                        <div class="server-status ${statusClass}">${server.status.toUpperCase()}</div>
+                        ${currentServerLabel}
+                    </div>
+                    <div class="server-url">${server.server}</div>
+                    ${server.response_time ? `<div class="server-response">Czas odpowiedzi: ${server.response_time}s</div>` : ''}
+                    ${server.error ? `<div class="server-error">Błąd: ${server.error}</div>` : ''}
+                    ${modelsHtml}
+                `;
+                
+                // Dodaj kartę do kontenera
+                container.appendChild(serverCard);
+            });
+            
+            // Dodaj informację o ostatnim sprawdzeniu
+            const lastChecked = new Date(healthData.timestamp * 1000).toLocaleString();
+            const timestampInfo = document.createElement('div');
+            timestampInfo.className = 'timestamp-info';
+            timestampInfo.textContent = `Ostatnie sprawdzenie: ${lastChecked}`;
+            container.appendChild(timestampInfo);
+        }
+        
+        // Generowanie przykładowych pytań
+        async function generateQuestions() {
+            if (!selectedJobId) {
+                alert('Najpierw wybierz ofertę pracy');
+                return;
+            }
+            
+            // Użyj zapisanego profilu z CV lub pobierz z pola tekstowego
+            let profileText = getProfileText();
+            
+            // Jeśli pole jest puste, ale mamy zapisany profil z CV, użyj go
+            if (!profileText && extractedProfileText) {
+                profileText = extractedProfileText;
+                console.log("Użyto profilu z CV dla generowania pytań:", profileText);
+            }
+            
+            if (!profileText) {
+                alert('Opisz swoje doświadczenie i umiejętności w zakładce wyszukiwania ofert');
+                return;
+            }
+            
+            const difficulty = document.getElementById('question-difficulty').value;
+            document.getElementById('questions-container').style.display = 'block';
+            document.getElementById('questions-list').innerHTML = '<p>Generuję pytania...</p>';
+            
+            try {
+                const response = await fetch(`${API_BASE_URL}/interview/generate_questions`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        job_id: selectedJobId,
+                        difficulty: difficulty,
+                        profile_text: profileText
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.error) {
+                    document.getElementById('questions-list').innerHTML = `<p class="error">${data.error}</p>`;
+                    return;
+                }
+                
+                // Wyświetl informację o rozpoznanych umiejętnościach
+                if (data.extracted_skills && data.extracted_skills.length > 0) {
+                    document.getElementById('questions-intro').innerHTML = `
+                        Przykładowe pytania dopasowane do Twoich umiejętności: 
+                        <b>${data.extracted_skills.join(', ')}</b> 
+                        (poziom: ${data.experience_level})
+                    `;
+                } else {
+                    document.getElementById('questions-intro').innerHTML = 
+                        'Przykładowe pytania dostosowane do wybranej oferty pracy:';
+                }
+                
+                // Wyświetl listę pytań
+                const questionsList = document.getElementById('questions-list');
+                questionsList.innerHTML = '';
+                
+                if (data.questions && data.questions.length > 0) {
+                    data.questions.forEach((questionItem, index) => {
+                        const questionElement = document.createElement('div');
+                        questionElement.className = 'question-item';
+                        questionElement.innerHTML = `
+                            <h4>${index + 1}. ${questionItem.question}</h4>
+                            <p class="question-category">Kategoria: ${questionItem.category}</p>
+                            <p class="question-purpose">Cel: ${questionItem.purpose}</p>
+                        `;
+                        questionsList.appendChild(questionElement);
+                    });
+                } else {
+                    questionsList.innerHTML = '<p>Nie udało się wygenerować pytań. Spróbuj ponownie.</p>';
+                }
+                
+            } catch (error) {
+                document.getElementById('questions-list').innerHTML = 
+                    `<p class="error">Wystąpił błąd: ${error.message}</p>`;
+            }
+        }
+        
+        // Nowa funkcja do wyszukiwania pracy na podstawie CV
+        async function findJobsFromCV() {
+            const fileInput = document.getElementById('cv-file');
+            
+            if (!fileInput.files.length) {
+                alert('Wybierz plik CV do analizy');
+                return;
+            }
+            
+            const file = fileInput.files[0];
+            const allowedTypes = ['.pdf', '.doc', '.docx', '.txt'];
+            const fileExtension = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
+            
+            if (!allowedTypes.includes(fileExtension)) {
+                alert('Dozwolone formaty plików: PDF, DOC, DOCX, TXT');
+                return;
+            }
+            
+            // Pokaż loader
+            document.getElementById('cv-loader').style.display = 'block';
+            document.getElementById('cv-analysis').style.display = 'none';
+            
+            try {
+                console.log("Przygotowuję zapytanie dla API");
+                // Przygotuj dane do wysłania
+                const formData = new FormData();
+                formData.append('cv_file', file);
+                
+                // Dodaj słowo kluczowe, jeśli istnieje
+                const jobKeyword = document.getElementById('job-keyword').value.trim();
+                if (jobKeyword) {
+                    formData.append('job_keyword', jobKeyword);
+                    console.log("Dodano słowo kluczowe:", jobKeyword);
+                }
+                
+                console.log("Wysyłam zapytanie do API...");
+                const response = await fetch(`${API_BASE_URL}/cv/find-jobs`, {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                console.log("Otrzymano odpowiedź, status:", response.status);
+                
+                // Sprawdź czy odpowiedź jest poprawna
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error("Błąd API:", response.status, errorText);
+                    throw new Error(`Błąd serwera: ${response.status}. ${errorText}`);
+                }
+                
+                const data = await response.json();
+                console.log("Otrzymano dane:", data);
+                
+                // Ukryj loader
+                document.getElementById('cv-loader').style.display = 'none';
+                
+                if (data.error) {
+                    alert(`Błąd: ${data.error}`);
+                    return;
+                }
+                
+                // Zapisz treść CV jako profil użytkownika, aby wykorzystać ją później w rozmowie
+                extractedProfileText = file.name + " - " + (data.message || "CV przesłane przez użytkownika");
+                console.log("Zapisano treść profilu z CV:", extractedProfileText);
+                
+                // Uwaga: Ustawmy także wartość w polu tekstowym, aby było widoczne dla użytkownika
+                document.getElementById('profile-text').value = extractedProfileText;
+                
+                // Przejdź do zakładki wyszukiwania
+                document.querySelectorAll('.tab')[0].click();
+                
+                // Wyświetl wyodrębnione umiejętności
+                if (data.extracted_skills && data.extracted_skills.length > 0) {
+                    const skillsContainer = document.getElementById('ai-skills-container');
+                    skillsContainer.innerHTML = '';
+                    
+                    data.extracted_skills.forEach(skill => {
+                        const tag = document.createElement('div');
+                        tag.className = 'tag';
+                        tag.textContent = skill;
+                        skillsContainer.appendChild(tag);
+                    });
+                    
+                    document.getElementById('experience-level').textContent = 
+                        `Rozpoznany poziom doświadczenia: ${data.experience_level}`;
+                    document.getElementById('extracted-skills').style.display = 'block';
+                }
+                
+                // Renderuj wyniki
+                renderJobResults(data.results);
+                
+            } catch (error) {
+                console.error("Wystąpił błąd:", error);
+                document.getElementById('cv-loader').style.display = 'none';
+                alert(`Wystąpił błąd: ${error.message}`);
+            }
+        }
+    </script>
+</body>
+</html>
