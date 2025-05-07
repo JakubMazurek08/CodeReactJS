@@ -14,8 +14,7 @@ AI_MODEL = "qwen3:4b"  # Default model
 
 # Server configuration
 OLLAMA_SERVERS = [
-   "https://ollama2.kkhost.pl",
-    "https://ollama4.kkhost.pl"
+    "https://ollama4.kkhost.pl",
 ]
 
 CURRENT_SERVER = OLLAMA_SERVERS[0]
