@@ -8,4 +8,5 @@ __pycache__/
 *.pyd
 
 # Logs
+logs/app.log
 logs/
