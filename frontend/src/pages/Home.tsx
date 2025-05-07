@@ -2,7 +2,7 @@ import { Navbar } from "../components/Navbar.tsx";
 import { Text } from "../components/Text.tsx";
 import { Input } from "../components/Input.tsx";
 import { JobCard } from "../components/JobCard.tsx";
-import { useRef, useState, useEffect } from "react";
+import {useRef, useState, useEffect, useContext} from "react";
 import { Button } from "../components/Button.tsx";
 import {Footer} from "../components/Footer.tsx";
 

@@ -1,9 +1,12 @@
 import {Text} from "./Text.tsx";
 import {Button} from "./Button.tsx"
 import {useNavigate} from "react-router-dom";
+import {useContext} from "react";
+import {jobContext} from "../context/jobContext.ts";
 
 export const JobCard = ({data}:any) => {
     const navigate = useNavigate();
+    const {setJob} = useContext(jobContext);
 
     return (
         <div className="bg-white shadow-lg rounded-[10px] w-full max-w-4xl p-6 flex flex-col md:flex-row justify-between gap-6">
@@ -22,7 +25,7 @@ export const JobCard = ({data}:any) => {
                     <img className="h-5" src="iconTime.png" alt="Time"/>
                     <Text>{data.employment_type}</Text>
                 </div>
-                <Button onClick={()=>{navigate(`/interview/${data.id}`)}} color={'green'}>Practice Interview</Button>
+                <Button onClick={()=>{setJob(data);navigate(`/interview/${data.id}`)}} color={'green'}>Practice Interview</Button>
             </div>
         </div>
     );

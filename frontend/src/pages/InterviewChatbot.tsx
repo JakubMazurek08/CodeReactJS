@@ -1,7 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import { Text } from "../components/Text.tsx";
 import { Navbar } from "../components/Navbar.tsx";
-import {Footer} from "../components/Footer.tsx";
+import {useContext} from "react";
+import {jobContext} from "../context/jobContext.ts";
 
 // Define a type for our messages
 interface Message {
@@ -12,6 +13,7 @@ interface Message {
 export const InterviewChatbot = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const {job} = useContext(jobContext);
     const [value, setValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [messages, setMessages] = useState<Message[]>([
