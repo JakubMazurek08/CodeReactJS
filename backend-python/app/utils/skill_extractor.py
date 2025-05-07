@@ -12,8 +12,9 @@ from services.ai_service import get_structured_output
 # Configure logging
 logger = logging.getLogger(__name__)
 
-# Common tech skills (case-insensitive)
-TECH_SKILLS = [
+# Common skills (case-insensitive)
+SKILLS_LIST = [
+    
     # Programming languages
     "python", "javascript", "typescript", "java", "c#", "c\\+\\+", "php", "go", "golang", "rust", "swift", 
     "kotlin", "ruby", "scala", "perl", "shell", "powershell", "bash", "r", "matlab", "objective-c", "lua",
@@ -65,7 +66,36 @@ TECH_SKILLS = [
     "security", "cybersecurity", "crypto", "blockchain", "web3", "data",
 
     # Soft skills often associated with tech
-    "problem solving", "analytical", "communication", "teamwork", "collaboration", "adaptability", "creativity"
+    "problem solving", "analytical", "communication", "teamwork", "collaboration", "adaptability", "creativity",
+
+    # General Skills
+    "cooking", "baking", "food preparation", "meal planning", "nutrition", "gardening", "landscaping", "farming", 
+    "cleaning", "housekeeping", "organizing", "decluttering", "laundry", "ironing", "sewing", "knitting", 
+    "crocheting", "tailoring", "mending", "childcare", "babysitting", "elder care", "pet care", "animal handling",
+    "driving", "vehicle maintenance", "bicycle repair", "first aid", "cpr", "emergency preparedness", 
+    "basic plumbing", "basic electrical work", "home repair", "painting", "decorating", "woodworking", "carpentry",
+    "budgeting", "personal finance", "investing", "tax preparation", "negotiation", "sales", "customer service", 
+    "public speaking", "presentation skills", "writing", "editing", "proofreading", "storytelling", "copywriting",
+    "research", "data entry", "typing", "transcription", "translation", "interpreting", "foreign languages",
+    "spanish", "french", "german", "mandarin", "japanese", "italian", "portuguese", "russian", "arabic", "hindi",
+    "photography", "videography", "photo editing", "video editing", "graphic design", "illustration", "drawing", 
+    "painting", "sculpting", "pottery", "calligraphy", "music performance", "singing", "instrument playing", 
+    "guitar", "piano", "drums", "violin", "flute", "songwriting", "music composition", "djing", "audio editing",
+    "dancing", "choreography", "acting", "theater performance", "event planning", "project management", 
+    "time management", "leadership", "mentoring", "coaching", "teaching", "tutoring", "curriculum development",
+    "physical fitness", "personal training", "yoga instruction", "swimming", "running", "cycling", "hiking", 
+    "climbing", "team sports", "basketball", "soccer", "football", "baseball", "volleyball", "tennis", "golf",
+    "martial arts", "self-defense", "meditation", "mindfulness", "critical thinking", "logic", "debate", 
+    "game strategy", "chess", "poker", "bartending", "mixology", "wine tasting", "coffee brewing", "journalism",
+    "archiving", "library science", "genealogy", "volunteering", "community organizing", "fundraising", "crafting",
+    "scrapbooking", "jewelry making", "candle making", "soap making", "origami", "model building", "call center operations",
+    "scheduling", "travel planning", "hospitality service", "cash handling", "inventory management", "logistics coordination",
+    "warehousing", "catering", "event hosting", "tour guiding", "proofreading", "fact-checking", "speed reading",
+    "memory techniques", "conflict resolution", "mediation", "counselling", "active listening", "networking",
+    "report writing", "grant writing", "public relations", "social media management", "digital marketing", "content creation",
+    "user experience design", "user interface design", "market research", "data analysis (general)", "statistics (general)",
+    "survey design", "interviewing (research)", "meeting facilitation", "brainstorming", "decision making", "risk management (general)",
+    "safety procedures", "quality control (general)"
 ]
 
 def extract_skills_from_text(text: str) -> Dict[str, Any]:
@@ -85,7 +115,7 @@ def extract_skills_from_text(text: str) -> Dict[str, Any]:
     skills = set()
     
     # Check for skills using regex patterns
-    for skill in TECH_SKILLS:
+    for skill in SKILLS_LIST:
         pattern = r'\b' + skill + r'\b'
         if re.search(pattern, text, re.IGNORECASE):
             # Add clean skill name (without regex escapes)

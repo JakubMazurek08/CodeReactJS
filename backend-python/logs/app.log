@@ -1142,3 +1142,100 @@ NameError: name 'MIN_QUESTIONS' is not defined
 2025-05-07 22:45:01,565 - app - INFO - Using local storage
 2025-05-07 22:45:01,570 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
 2025-05-07 22:45:01,572 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:00:15,041 - app - INFO - Using local storage
+2025-05-07 23:00:15,075 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:00:15,077 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:00:15,754 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.596s
+2025-05-07 23:00:15,755 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:00:15,755 - __main__ - INFO - Available models: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:00:15,757 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.599s
+2025-05-07 23:00:16,431 - app - INFO - Using local storage
+2025-05-07 23:00:16,461 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:00:16,463 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:00:16,904 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.390s
+2025-05-07 23:00:16,905 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:00:16,905 - __main__ - INFO - Available models: ['qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:00:16,925 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:00:17,272 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.758s
+2025-05-07 23:03:39,900 - app - INFO - Using local storage
+2025-05-07 23:03:39,902 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:03:39,903 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:03:40,271 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.360s
+2025-05-07 23:03:40,279 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.368s
+2025-05-07 23:03:40,280 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:03:40,280 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:03:40,294 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:04:31,063 - app - INFO - Using local storage
+2025-05-07 23:04:31,065 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:04:31,066 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:04:31,332 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.250s
+2025-05-07 23:04:31,333 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.251s
+2025-05-07 23:04:31,334 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:04:31,334 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:04:31,348 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:04:49,675 - app - INFO - Using local storage
+2025-05-07 23:04:49,678 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:04:49,678 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:04:50,019 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.334s
+2025-05-07 23:04:50,098 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.413s
+2025-05-07 23:04:50,098 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:04:50,099 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:04:50,112 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:05:15,985 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.227s
+2025-05-07 23:06:01,374 - app - INFO - Using local storage
+2025-05-07 23:06:01,376 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:06:01,377 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:06:01,716 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.333s
+2025-05-07 23:06:01,716 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.333s
+2025-05-07 23:06:01,717 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:06:01,717 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:06:01,732 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:06:04,636 - app - INFO - Using local storage
+2025-05-07 23:06:04,638 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:06:04,639 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:06:04,912 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.265s
+2025-05-07 23:06:04,913 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:06:04,913 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:06:04,918 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.271s
+2025-05-07 23:06:04,944 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:06:08,061 - app - INFO - Using local storage
+2025-05-07 23:06:08,064 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:06:08,065 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:06:08,273 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.190s
+2025-05-07 23:06:08,298 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.215s
+2025-05-07 23:06:08,299 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:06:08,299 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:06:08,313 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:06:24,460 - app - INFO - Using local storage
+2025-05-07 23:06:24,463 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:06:24,464 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:06:24,679 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.199s
+2025-05-07 23:06:24,680 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:06:24,680 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:06:24,686 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.206s
+2025-05-07 23:06:24,696 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:06:26,593 - app - INFO - Using local storage
+2025-05-07 23:06:26,595 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:06:26,596 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:06:26,799 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.193s
+2025-05-07 23:06:26,799 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:06:26,799 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:06:26,812 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.207s
+2025-05-07 23:06:26,817 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:07:06,811 - app - INFO - Using local storage
+2025-05-07 23:07:06,814 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:07:06,815 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:07:07,147 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.314s
+2025-05-07 23:07:07,148 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:07:07,148 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:07:07,153 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.320s
+2025-05-07 23:07:07,162 - werkzeug - WARNING -  * Debugger is active!
+2025-05-07 23:10:16,225 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.238s
+2025-05-07 23:10:38,638 - app - INFO - Using local storage
+2025-05-07 23:10:38,640 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:10:38,641 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:10:38,862 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.212s
+2025-05-07 23:10:38,863 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.213s
+2025-05-07 23:10:38,863 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:10:38,864 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:10:38,877 - werkzeug - WARNING -  * Debugger is active!
