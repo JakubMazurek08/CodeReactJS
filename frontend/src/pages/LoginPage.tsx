@@ -3,7 +3,10 @@ import { useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { setDoc, doc, collection } from "firebase/firestore";
 import { auth, db } from "../lib/firebase.ts";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
+import { Text } from "../components/Text";
+import { Button } from "../components/Button";
 
 type FormFields = {
     email: string;
@@ -56,81 +59,116 @@ export const LoginPage = () => {
         }
     };
 
+
     const toggleMode = () => {
         setIsRegistering(prev => !prev);
         setErrorLoggingIn(false);
     };
 
     return (
-        <div className="w-screen h-screen flex flex-col items-center justify-center p-4">
-            <h1 className="text-5xl font-bold mb-2">{isRegistering ? "Create Account" : "Log in"}</h1>
-            <button onClick={toggleMode} className="text-sm mb-4 text-primary-light hover:underline">
-                {isRegistering ? "Already have an account? Log in" : "Don't have an account? Register"}
-            </button>
+        <>
+            <Navbar />
+            <div className="w-screen h-screen flex flex-col items-center justify-center p-4 bg-background">
+                <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+                    <div className="text-center mb-8">
 
-            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full max-w-sm">
-                {errorLoggingIn && (
-                    <div className="text-red-500 font-medium">Invalid email or password.</div>
-                )}
-
-                <div className="flex flex-col">
-                    <label>Email</label>
-                    <input
-                        autoFocus
-                        {...register("email", {
-                            required: "Email is required",
-                            validate: (email) =>
-                                /\S+@\S+\.\S+/.test(email) || "Please enter a valid email",
-                        })}
-                        placeholder="you@example.com"
-                        className={`mt-1 p-2 border-2 rounded-md ${
-                            errors.email ? "border-red-500" : "border-primary-light"
-                        }`}
-                    />
-                    {errors.email && (
-                        <span className="text-red-500 text-sm">{errors.email.message}</span>
-                    )}
-                </div>
-
-                <div className="flex flex-col">
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        {...register("password", { required: "Password is required" })}
-                        placeholder="Your password"
-                        className={`mt-1 p-2 border-2 rounded-md ${
-                            errors.password ? "border-red-500" : "border-primary-light"
-                        }`}
-                    />
-                    {errors.password && (
-                        <span className="text-red-500 text-sm">{errors.password.message}</span>
-                    )}
-                </div>
-
-                {isRegistering && (
-                    <div className="flex flex-col">
-                        <label>Username</label>
-                        <input
-                            {...register("username", { required: "Username is required" })}
-                            placeholder="Your username"
-                            className={`mt-1 p-2 border-2 rounded-md ${
-                                errors.username ? "border-red-500" : "border-primary-light"
-                            }`}
-                        />
-                        {errors.username && (
-                            <span className="text-red-500 text-sm">{errors.username.message}</span>
-                        )}
+                        <Text type="h2" className="mb-2">
+                            {isRegistering ? "Create Account" : "Log In"}
+                        </Text>
+                        <button
+                            onClick={toggleMode}
+                            className="text-sm text-blue hover:underline transition-colors"
+                        >
+                            {isRegistering ? "Already have an account? Log in" : "Don't have an account? Register"}
+                        </button>
                     </div>
-                )}
 
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className="mt-4 py-2 rounded bg-gray-200"
-                >
-                    {loading ? "Please wait..." : isRegistering ? "Register" : "Log in"}
-                </button>
-            </form>
-        </div>
+                    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5">
+                        {errorLoggingIn && (
+                            <div className="bg-red-50 text-red-500 p-3 rounded-md text-center font-medium">
+                                Invalid email or password.
+                            </div>
+                        )}
+
+                        <div className="flex flex-col">
+                            <label className="mb-1 font-medium">Email</label>
+                            <input
+                                autoFocus
+                                {...register("email", {
+                                    required: "Email is required",
+                                    validate: (email) =>
+                                        /\S+@\S+\.\S+/.test(email) || "Please enter a valid email",
+                                })}
+                                placeholder="you@example.com"
+                                className={`p-3 border rounded-lg focus:outline-none transition-all ${
+                                    errors.email
+                                        ? "border-red-500 focus:ring-2 focus:ring-red-200"
+                                        : "border-gray-200 focus:ring-2 focus:ring-blue-200"
+                                }`}
+                            />
+                            {errors.email && (
+                                <span className="text-red-500 text-sm mt-1">{errors.email.message}</span>
+                            )}
+                        </div>
+
+                        <div className="flex flex-col">
+                            <label className="mb-1 font-medium">Password</label>
+                            <input
+                                type="password"
+                                {...register("password", {
+                                    required: "Password is required",
+                                    minLength: {
+                                        value: 6,
+                                        message: "Password must be at least 6 characters"
+                                    }
+                                })}
+                                placeholder="Your password"
+                                className={`p-3 border rounded-lg focus:outline-none transition-all ${
+                                    errors.password
+                                        ? "border-red-500 focus:ring-2 focus:ring-red-200"
+                                        : "border-gray-200 focus:ring-2 focus:ring-blue-200"
+                                }`}
+                            />
+                            {errors.password && (
+                                <span className="text-red-500 text-sm mt-1">{errors.password.message}</span>
+                            )}
+                        </div>
+
+                        {isRegistering && (
+                            <div className="flex flex-col">
+                                <label className="mb-1 font-medium">Username</label>
+                                <input
+                                    {...register("username", {
+                                        required: "Username is required",
+                                        minLength: {
+                                            value: 3,
+                                            message: "Username must be at least 3 characters"
+                                        }
+                                    })}
+                                    placeholder="Your username"
+                                    className={`p-3 border rounded-lg focus:outline-none transition-all ${
+                                        errors.username
+                                            ? "border-red-500 focus:ring-2 focus:ring-red-200"
+                                            : "border-gray-200 focus:ring-2 focus:ring-blue-200"
+                                    }`}
+                                />
+                                {errors.username && (
+                                    <span className="text-red-500 text-sm mt-1">{errors.username.message}</span>
+                                )}
+                            </div>
+                        )}
+
+                        <Button
+                            type="submit"
+                            disabled={loading}
+                            color={isRegistering ? "green" : "blue"}
+                            className={`mt-4 w-full ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                        >
+                            {loading ? "Please wait..." : isRegistering ? "Create Account" : "Log In"}
+                        </Button>
+                    </form>
+                </div>
+            </div>
+        </>
     );
 };
