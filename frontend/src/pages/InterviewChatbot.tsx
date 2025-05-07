@@ -3,16 +3,26 @@ import { Text } from "../components/Text.tsx";
 import { Navbar } from "../components/Navbar.tsx";
 import { useContext } from "react";
 import { jobContext } from "../context/jobContext.ts";
+import { useNavigate } from "react-router-dom";
 
 // Define types for our messages
 interface Message {
     id: string;
     message: string;
     isUser: boolean;
-    endSummary?: string; // Add endSummary field
+    endSummary?: InterviewSummary;
+}
+
+// Define the structure for our interview summary
+interface InterviewSummary {
+    passed: boolean;
+    rating: number;
+    improvements: string[];
+    summary: string;
 }
 
 export const InterviewChatbot = () => {
+    const navigate = useNavigate();
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const { job } = useContext(jobContext);
@@ -20,8 +30,7 @@ export const InterviewChatbot = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
     const [isInterviewEnded, setIsInterviewEnded] = useState(false);
-    const [showSummaryPopup, setShowSummaryPopup] = useState(false);
-    const [interviewSummary, setInterviewSummary] = useState("");
+    const [interviewSummary, setInterviewSummary] = useState<InterviewSummary | null>(null);
 
     // Fetch initial message when component loads
     useEffect(() => {
@@ -53,10 +62,9 @@ export const InterviewChatbot = () => {
             const data = await response.json();
 
             // Check if interview ends at the beginning (shouldn't happen, but just in case)
-            if (data.endSummary) {
+            if (data.endSummary && Object.keys(data.endSummary).length > 0) {
                 setIsInterviewEnded(true);
                 setInterviewSummary(data.endSummary);
-                setShowSummaryPopup(true);
             }
 
             setMessages([data]);
@@ -125,10 +133,9 @@ export const InterviewChatbot = () => {
             const aiMessage = await response.json();
 
             // Check if the interview has ended
-            if (aiMessage.endSummary) {
+            if (aiMessage.endSummary && Object.keys(aiMessage.endSummary).length > 0) {
                 setIsInterviewEnded(true);
                 setInterviewSummary(aiMessage.endSummary);
-                setShowSummaryPopup(true);
             }
 
             // Add AI response to chat
@@ -149,24 +156,106 @@ export const InterviewChatbot = () => {
         }
     };
 
-    // Handle closing the summary popup
-    const closeSummaryPopup = () => {
-        setShowSummaryPopup(false);
+    // Create a color based on the rating (red to green gradient)
+    const getRatingColor = (rating: number) => {
+        if (rating >= 80) return 'bg-green-500';
+        if (rating >= 60) return 'bg-green-400';
+        if (rating >= 40) return 'bg-yellow-500';
+        if (rating >= 20) return 'bg-orange-500';
+        return 'bg-red-500';
     };
 
-    // Scroll to bottom when messages change
-    useEffect(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }, [messages]);
+    // Renders the interview summary screen
+    const renderInterviewSummary = () => {
+        if (!interviewSummary) return null;
 
-    useEffect(() => {
-        const textarea = textareaRef.current;
-        if (textarea) {
-            textarea.style.height = "auto";
-            textarea.style.height = `${Math.min(textarea.scrollHeight, 240)}px`;
-        }
-    }, [value]);
+        const ratingColor = getRatingColor(interviewSummary.rating);
 
+        return (
+            <div className="w-full">
+                <div className="bg-white rounded-lg shadow-xl p-6 mb-8">
+                    <div className="flex justify-between items-center mb-6">
+                        <div>
+                            <Text type="h2" className="text-2xl font-bold">Interview Result</Text>
+                            <Text type="p" className="text-gray-600">{job?.title} at {job?.company}</Text>
+                        </div>
+                        <div className={`rounded-full ${interviewSummary.passed ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'} px-4 py-2 font-medium text-sm`}>
+                            {interviewSummary.passed ? 'Passed' : 'Needs Improvement'}
+                        </div>
+                    </div>
+
+                    <div className="mb-8">
+                        <Text type="h3" className="font-semibold mb-2">Overall Assessment</Text>
+                        <Text type="p" className="text-gray-700">{interviewSummary.summary}</Text>
+                    </div>
+
+                    <div className="mb-8">
+                        <div className="flex justify-between items-center mb-2">
+                            <Text type="h3" className="font-semibold">Performance Rating</Text>
+                            <Text type="p" className="font-bold">{interviewSummary.rating}/100</Text>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-4">
+                            <div
+                                className={`h-4 rounded-full ${ratingColor}`}
+                                style={{ width: `${interviewSummary.rating}%` }}
+                            ></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <Text type="h3" className="font-semibold mb-4">Areas for Improvement</Text>
+                        <ul className="space-y-2">
+                            {interviewSummary.improvements.map((improvement, index) => (
+                                <li key={index} className="flex items-start">
+                                    <span className="mr-2 mt-1 text-red-500">•</span>
+                                    <Text type="p" className="text-gray-700">{improvement}</Text>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="bg-white rounded-lg shadow-xl p-6">
+                    <Text type="h3" className="font-semibold mb-4">Interview Transcript</Text>
+
+                    <div className="space-y-4 max-h-96 overflow-y-auto">
+                        {messages.map((message) => (
+                            <div key={message.id} className={`p-3 rounded-lg ${message.isUser ? 'bg-blue-50 ml-8' : 'bg-gray-50 mr-8'}`}>
+                                <div className="text-xs font-medium mb-1 text-gray-500">
+                                    {message.isUser ? 'You' : 'PrepJobAI'}
+                                </div>
+                                <Text type="p">{message.message}</Text>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="flex justify-center mt-8">
+                    <button
+                        onClick={() => navigate('/jobs')}
+                        className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+                    >
+                        Back to Job Listings
+                    </button>
+                </div>
+            </div>
+        );
+    };
+
+    // If interview has ended, show the summary page
+    if (isInterviewEnded && interviewSummary) {
+        return (
+            <>
+                <Navbar />
+                <main className="px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] pt-30 pb-[140px] min-h-screen bg-background">
+                    <Text type="h1" className="mb-6">Interview Complete</Text>
+                    {renderInterviewSummary()}
+                </main>
+            </>
+        );
+    }
+
+    // Regular interview chat UI
     return (
         <>
             <Navbar />
@@ -202,19 +291,6 @@ export const InterviewChatbot = () => {
                         </div>
                     )}
 
-                    {/* Interview ended banner (alternative to popup) */}
-                    {isInterviewEnded && !showSummaryPopup && (
-                        <div className="w-full bg-green-50 border border-green-200 p-4 rounded-lg mt-4">
-                            <Text type="p" className="font-medium">Interview Complete</Text>
-                            <button
-                                onClick={() => setShowSummaryPopup(true)}
-                                className="mt-2 text-blue-500 hover:text-blue-700 underline"
-                            >
-                                View Summary
-                            </button>
-                        </div>
-                    )}
-
                     {/* Invisible div for scrolling to bottom */}
                     <div ref={messagesEndRef} />
                 </div>
@@ -228,7 +304,7 @@ export const InterviewChatbot = () => {
                         value={value}
                         onChange={handleInput}
                         onKeyDown={handleKeyDown}
-                        className="bg-white w-full p-4 pr-8 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
+                        className="bg-white w-full p-4 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
                         placeholder={isInterviewEnded ? "Interview Complete" : "Respond..."}
                         rows={1}
                         disabled={isLoading || isInterviewEnded}
@@ -246,39 +322,6 @@ export const InterviewChatbot = () => {
                     </button>
                 </div>
             </div>
-
-            {/* Summary Popup */}
-            {showSummaryPopup && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-                    <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[80vh] overflow-y-auto">
-                        <div className="p-6">
-                            <div className="flex justify-between items-center mb-4">
-                                <Text type="h2">Interview Summary</Text>
-                                <button
-                                    onClick={closeSummaryPopup}
-                                    className="text-gray-500 hover:text-gray-700"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className="border-t border-gray-200 pt-4">
-                                <Text>{interviewSummary}</Text>
-                            </div>
-                            <div className="mt-6 flex justify-end">
-                                <button
-                                    onClick={closeSummaryPopup}
-                                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-                                >
-                                    Close
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
         </>
     );
 };

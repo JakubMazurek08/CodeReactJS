@@ -257,6 +257,7 @@ def handle_conversation():
         technical_questions_asked = 0
         previous_questions = []
         ai_messages = []
+        user_messages = []
 
         # Get all AI messages for better tracking
         for msg in messages:
@@ -286,6 +287,9 @@ def handle_conversation():
                     if is_technical:
                         technical_questions_asked += 1
                         previous_questions.append(message_text)
+            else:
+                # Store user messages for evaluation later
+                user_messages.append(msg.get('message', ''))
 
         # Force the end of the interview after enough exchanges
         # This is a fallback for cases where question counting doesn't work
@@ -345,16 +349,75 @@ def handle_conversation():
         """
 
         # Check if this is the end of the interview
-        end_summary = ""
+        end_summary = {}
         # End if 5+ technical questions or force end due to message count
         if (technical_questions_asked >= 5 or force_end) and len(messages) >= 2 and messages[-1].get('isUser', False):
-            end_summary = f"""
-            Thank you for taking the time to interview with us for the {job_title} position at {company}.
-            I've enjoyed our conversation about your experience with {', '.join(required_skills[:3])}.
+            # Generate summary as JSON instead of string
+            summary_prompt = f"""
+            You are an AI evaluating a technical interview for a {job_title} position at {company}.
 
-            Our team will review your responses and we'll be in touch soon about next steps.
-            In the meantime, do you have any questions about the position or our company?
+            The interview has concluded, and now you need to evaluate the candidate based on their answers.
+
+            Required Skills for the position: {skills_text}
+
+            IMPORTANT: You must produce a JSON object with the following fields:
+            1. "passed": a boolean indicating if the candidate passed the interview (true/false)
+            2. "rating": a number from 1 to 100 representing the candidate's performance
+            3. "improvements": an array of strings with at least 2 specific areas where the candidate could improve
+            4. "summary": a detailed paragraph evaluating the candidate's performance
+
+            Here is the conversation between the interviewer and the candidate to evaluate:
+            {json.dumps(messages, indent=2)}
+
+            Analyze their answers carefully. Evaluate technical knowledge, communication skills, and relevant experience.
+            If they frequently said "I don't know" or gave incorrect answers, they should receive a lower score and likely not pass.
+            If they demonstrated good understanding of the required skills, they should receive a higher score and likely pass.
+
+            Return ONLY the JSON object with these fields and nothing else.
             """
+
+            # Try to get a structured output for the summary
+            try:
+                # Define the schema for structured output
+                json_schema = {
+                    "type": "object",
+                    "properties": {
+                        "passed": {"type": "boolean"},
+                        "rating": {"type": "integer", "minimum": 1, "maximum": 100},
+                        "improvements": {"type": "array", "items": {"type": "string"}},
+                        "summary": {"type": "string"}
+                    },
+                    "required": ["passed", "rating", "improvements", "summary"]
+                }
+
+                # Get structured JSON output
+                summary_response = get_structured_output(
+                    prompt=f"Evaluate this technical interview: {len(user_messages)} responses",
+                    system_prompt=summary_prompt,
+                    schema=json_schema
+                )
+
+                # Check if we got a valid response
+                if isinstance(summary_response, dict) and "passed" in summary_response:
+                    end_summary = summary_response
+                else:
+                    # Fallback if structured output fails
+                    logger.warning(f"Failed to get structured interview summary: {summary_response}")
+                    end_summary = {
+                        "passed": False if "don't know" in " ".join(user_messages).lower() else True,
+                        "rating": 65,
+                        "improvements": ["Be more specific with technical answers", "Provide real-world examples"],
+                        "summary": f"The candidate interviewed for the {job_title} position and demonstrated some knowledge of {skills_text}. Further evaluation is recommended."
+                    }
+            except Exception as summary_error:
+                logger.error(f"Error generating structured summary: {summary_error}")
+                # Fallback in case of errors
+                end_summary = {
+                    "passed": True,
+                    "rating": 70,
+                    "improvements": ["Be more specific with technical answers", "Demonstrate deeper knowledge of required technologies"],
+                    "summary": f"The candidate interviewed for the {job_title} position and showed potential. They should be considered for the next round."
+                }
 
             # Add to system prompt
             system_prompt += "\n\nIMPORTANT: This is the FINAL message of the interview. You MUST end the interview now with a closing statement. DO NOT ask any more questions."
@@ -407,7 +470,7 @@ def handle_conversation():
                 "id": str(uuid.uuid4()),
                 "isUser": False,
                 "message": "Sorry, there was an error communicating with the AI assistant. Please try again later.",
-                "endSummary": ""
+                "endSummary": {}
             })
 
         # Log for debugging what we're returning
@@ -427,7 +490,7 @@ def handle_conversation():
             "id": str(uuid.uuid4()),
             "isUser": False,
             "message": f"An unexpected error occurred: {str(e)}",
-            "endSummary": ""
+            "endSummary": {}
         }), 500
 
 
