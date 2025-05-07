@@ -228,7 +228,7 @@ export const InterviewChatbot = () => {
                         value={value}
                         onChange={handleInput}
                         onKeyDown={handleKeyDown}
-                        className="bg-white w-full p-4 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
+                        className="bg-white w-full p-4 pr-8 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
                         placeholder={isInterviewEnded ? "Interview Complete" : "Respond..."}
                         rows={1}
                         disabled={isLoading || isInterviewEnded}

@@ -256,13 +256,45 @@ def handle_conversation():
         # Count technical questions asked (not just messages)
         technical_questions_asked = 0
         previous_questions = []
-        for i, msg in enumerate(messages):
-            if not msg.get('isUser', True) and "?" in msg.get('message', ''):
-                # Check if this is likely a technical question (not just a greeting/follow-up)
-                message_text = msg.get('message', '').lower()
-                if any(tech_term in message_text for tech_term in required_skills):
-                    technical_questions_asked += 1
-                    previous_questions.append(msg.get('message', ''))
+        ai_messages = []
+
+        # Get all AI messages for better tracking
+        for msg in messages:
+            if not msg.get('isUser', True):
+                message_text = msg.get('message', '')
+                ai_messages.append(message_text)
+                # Count question marks in non-user messages
+                if "?" in message_text:
+                    # Add to technical questions if not just a greeting
+                    # More robust question detection
+                    is_technical = False
+                    for skill in required_skills:
+                        if skill.lower() in message_text.lower():
+                            is_technical = True
+                            break
+
+                    # Also count questions about programming concepts
+                    tech_keywords = ['code', 'programming', 'software', 'database', 'api',
+                                    'algorithm', 'function', 'class', 'object', 'method',
+                                    'framework', 'library', 'deploy', 'architecture']
+
+                    for keyword in tech_keywords:
+                        if keyword.lower() in message_text.lower():
+                            is_technical = True
+                            break
+
+                    if is_technical:
+                        technical_questions_asked += 1
+                        previous_questions.append(message_text)
+
+        # Force the end of the interview after enough exchanges
+        # This is a fallback for cases where question counting doesn't work
+        force_end = len(ai_messages) >= 10
+
+        # Log for debugging
+        logger.info(f"Technical questions asked: {technical_questions_asked}")
+        logger.info(f"Total AI messages: {len(ai_messages)}")
+        logger.info(f"Force end: {force_end}")
 
         # Map experience level to more descriptive text
         experience_map = {
@@ -314,7 +346,8 @@ def handle_conversation():
 
         # Check if this is the end of the interview
         end_summary = ""
-        if technical_questions_asked >= 5 and len(messages) >= 2 and messages[-1].get('isUser', False):
+        # End if 5+ technical questions or force end due to message count
+        if (technical_questions_asked >= 5 or force_end) and len(messages) >= 2 and messages[-1].get('isUser', False):
             end_summary = f"""
             Thank you for taking the time to interview with us for the {job_title} position at {company}.
             I've enjoyed our conversation about your experience with {', '.join(required_skills[:3])}.
@@ -322,6 +355,9 @@ def handle_conversation():
             Our team will review your responses and we'll be in touch soon about next steps.
             In the meantime, do you have any questions about the position or our company?
             """
+
+            # Add to system prompt
+            system_prompt += "\n\nIMPORTANT: This is the FINAL message of the interview. You MUST end the interview now with a closing statement. DO NOT ask any more questions."
 
         # Generate AI response based on conversation state
         if not messages:
@@ -373,6 +409,9 @@ def handle_conversation():
                 "message": "Sorry, there was an error communicating with the AI assistant. Please try again later.",
                 "endSummary": ""
             })
+
+        # Log for debugging what we're returning
+        logger.info(f"Returning endSummary: {bool(end_summary)}")
 
         # Return the response with endSummary if needed
         return jsonify({
