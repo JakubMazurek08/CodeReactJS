@@ -1,3 +1,11 @@
 firebase-credentials.json
 .env
-logs
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+logs/
