@@ -13,8 +13,8 @@ logger = logging.getLogger(__name__)
 AI_MODEL = "qwen3:4b"  # Default model
 
 # Server configuration
-   "https://ollama2.kkhost.pl",
-    "https://ollama4.kkhost.pl"
+OLLAMA_SERVERS = [
+    "https://ollama4.kkhost.pl",
 ]
 CURRENT_SERVER = OLLAMA_SERVERS[0]
 last_server_switch_time = time.time()
