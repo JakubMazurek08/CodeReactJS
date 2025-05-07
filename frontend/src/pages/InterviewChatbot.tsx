@@ -9,6 +9,7 @@ interface Message {
     id: string;
     message: string;
     isUser: boolean;
+    endSummary?: string; // Add endSummary field
 }
 
 export const InterviewChatbot = () => {
@@ -18,6 +19,9 @@ export const InterviewChatbot = () => {
     const [value, setValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
+    const [isInterviewEnded, setIsInterviewEnded] = useState(false);
+    const [showSummaryPopup, setShowSummaryPopup] = useState(false);
+    const [interviewSummary, setInterviewSummary] = useState("");
 
     // Fetch initial message when component loads
     useEffect(() => {
@@ -47,6 +51,14 @@ export const InterviewChatbot = () => {
             }
 
             const data = await response.json();
+
+            // Check if interview ends at the beginning (shouldn't happen, but just in case)
+            if (data.endSummary) {
+                setIsInterviewEnded(true);
+                setInterviewSummary(data.endSummary);
+                setShowSummaryPopup(true);
+            }
+
             setMessages([data]);
         } catch (error) {
             console.error('Error starting interview:', error);
@@ -79,7 +91,7 @@ export const InterviewChatbot = () => {
     };
 
     const handleSubmit = async () => {
-        if (value.trim() === '' || isLoading || !job) return;
+        if (value.trim() === '' || isLoading || !job || isInterviewEnded) return;
 
         // Create user message
         const userMessage = {
@@ -112,6 +124,13 @@ export const InterviewChatbot = () => {
 
             const aiMessage = await response.json();
 
+            // Check if the interview has ended
+            if (aiMessage.endSummary) {
+                setIsInterviewEnded(true);
+                setInterviewSummary(aiMessage.endSummary);
+                setShowSummaryPopup(true);
+            }
+
             // Add AI response to chat
             setMessages(prev => [...prev, aiMessage]);
         } catch (error) {
@@ -128,6 +147,11 @@ export const InterviewChatbot = () => {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    // Handle closing the summary popup
+    const closeSummaryPopup = () => {
+        setShowSummaryPopup(false);
     };
 
     // Scroll to bottom when messages change
@@ -178,6 +202,19 @@ export const InterviewChatbot = () => {
                         </div>
                     )}
 
+                    {/* Interview ended banner (alternative to popup) */}
+                    {isInterviewEnded && !showSummaryPopup && (
+                        <div className="w-full bg-green-50 border border-green-200 p-4 rounded-lg mt-4">
+                            <Text type="p" className="font-medium">Interview Complete</Text>
+                            <button
+                                onClick={() => setShowSummaryPopup(true)}
+                                className="mt-2 text-blue-500 hover:text-blue-700 underline"
+                            >
+                                View Summary
+                            </button>
+                        </div>
+                    )}
+
                     {/* Invisible div for scrolling to bottom */}
                     <div ref={messagesEndRef} />
                 </div>
@@ -186,21 +223,21 @@ export const InterviewChatbot = () => {
             {/* Fixed bottom input with horizontal padding */}
             <div className="fixed bottom-0 left-0 w-full bg-background px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] xl:px-[400px] pb-4 pt-2">
                 <div className="relative">
-          <textarea
-              ref={textareaRef}
-              value={value}
-              onChange={handleInput}
-              onKeyDown={handleKeyDown}
-              className="bg-white w-full p-4 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
-              placeholder="Respond..."
-              rows={1}
-              disabled={isLoading}
-          />
+                    <textarea
+                        ref={textareaRef}
+                        value={value}
+                        onChange={handleInput}
+                        onKeyDown={handleKeyDown}
+                        className="bg-white w-full p-4 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
+                        placeholder={isInterviewEnded ? "Interview Complete" : "Respond..."}
+                        rows={1}
+                        disabled={isLoading || isInterviewEnded}
+                    />
                     <button
                         onClick={handleSubmit}
-                        disabled={isLoading || value.trim() === ''}
+                        disabled={isLoading || value.trim() === '' || isInterviewEnded}
                         className={`absolute right-3 bottom-3 rounded-full p-2 bg-blue-500 text-white 
-                      ${(isLoading || value.trim() === '') ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
+                      ${(isLoading || value.trim() === '' || isInterviewEnded) ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M22 2L11 13"></path>
@@ -209,6 +246,39 @@ export const InterviewChatbot = () => {
                     </button>
                 </div>
             </div>
+
+            {/* Summary Popup */}
+            {showSummaryPopup && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+                    <div className="bg-white rounded-lg shadow-xl max-w-lg w-full max-h-[80vh] overflow-y-auto">
+                        <div className="p-6">
+                            <div className="flex justify-between items-center mb-4">
+                                <Text type="h2">Interview Summary</Text>
+                                <button
+                                    onClick={closeSummaryPopup}
+                                    className="text-gray-500 hover:text-gray-700"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className="border-t border-gray-200 pt-4">
+                                <Text>{interviewSummary}</Text>
+                            </div>
+                            <div className="mt-6 flex justify-end">
+                                <button
+                                    onClick={closeSummaryPopup}
+                                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                                >
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 };
