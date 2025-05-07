@@ -1,4 +1,5 @@
 import {Navbar} from "../components/Navbar.tsx";
+import { Footer } from "../components/Footer.tsx"
 import {Text} from "../components/Text.tsx";
 import {Input} from "../components/Input.tsx";
 
@@ -12,5 +13,6 @@ export const Home = () => {
                 {/*Tu bedziemy mapowac karty*/}
             </div>
         </main>
+        <Footer />
     </>
 }
