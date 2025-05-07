@@ -4,10 +4,15 @@ import {Home} from "./pages/Home.tsx";
 import {InterviewChatbot} from "./pages/InterviewChatbot.tsx";
 import {User} from "./pages/User.tsx";
 import {ProtectedRoute} from "./ProtectedRoute.tsx";
+import {LandingPage} from "./pages/LandingPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
+        element: <LandingPage/>
+    },
+    {
+        path: "/home",
         element: <Home/>
     },
     {
