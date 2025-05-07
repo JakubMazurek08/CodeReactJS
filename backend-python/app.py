@@ -256,7 +256,6 @@ def handle_conversation():
         # Count technical questions asked (not just messages)
         technical_questions_asked = 0
         previous_questions = []
-<<<<<<< HEAD
         ai_messages = []
         user_messages = []
 
@@ -300,15 +299,7 @@ def handle_conversation():
         logger.info(f"Technical questions asked: {technical_questions_asked}")
         logger.info(f"Total AI messages: {len(ai_messages)}")
         logger.info(f"Force end: {force_end}")
-=======
-        for i, msg in enumerate(messages):
-            if not msg.get('isUser', True) and "?" in msg.get('message', ''):
-                # Check if this is likely a technical question (not just a greeting/follow-up)
-                message_text = msg.get('message', '').lower()
-                if any(tech_term in message_text for tech_term in required_skills):
-                    technical_questions_asked += 1
-                    previous_questions.append(msg.get('message', ''))
->>>>>>> 80ed8e9634b0d88d7d9c15caa40feaaae6daac16
+
 
         # Map experience level to more descriptive text
         experience_map = {
@@ -359,20 +350,13 @@ def handle_conversation():
         """
 
         # Check if this is the end of the interview
-<<<<<<< HEAD
         end_summary = {}
         # End if 5+ technical questions or force end due to message count
         if (technical_questions_asked >= 5 or force_end) and len(messages) >= 2 and messages[-1].get('isUser', False):
             # Generate summary as JSON instead of string
             summary_prompt = f"""
             You are an AI evaluating a technical interview for a {job_title} position at {company}.
-=======
-        end_summary = ""
-        if technical_questions_asked >= 5 and len(messages) >= 2 and messages[-1].get('isUser', False):
-            end_summary = f"""
-            Thank you for taking the time to interview with us for the {job_title} position at {company}.
-            I've enjoyed our conversation about your experience with {', '.join(required_skills[:3])}.
->>>>>>> 80ed8e9634b0d88d7d9c15caa40feaaae6daac16
+
 
             The interview has concluded, and now you need to evaluate the candidate based on their answers.
 
@@ -394,7 +378,6 @@ def handle_conversation():
             Return ONLY the JSON object with these fields and nothing else.
             """
 
-<<<<<<< HEAD
             # Try to get a structured output for the summary
             try:
                 # Define the schema for structured output
@@ -441,8 +424,7 @@ def handle_conversation():
             # Add to system prompt
             system_prompt += "\n\nIMPORTANT: This is the FINAL message of the interview. You MUST end the interview now with a closing statement. DO NOT ask any more questions."
 
-=======
->>>>>>> 80ed8e9634b0d88d7d9c15caa40feaaae6daac16
+
         # Generate AI response based on conversation state
         if not messages:
             # This is the start of the conversation - use a warm, friendly introduction
