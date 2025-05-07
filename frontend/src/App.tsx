@@ -1,9 +1,10 @@
 import {Router} from "./Router.tsx";
+import {JobProvider} from "./context/JobProvider.tsx";
 
 
 function App() {
     return (
-        <Router/>
+        <JobProvider><Router/></JobProvider>
     )
 }
 export default App

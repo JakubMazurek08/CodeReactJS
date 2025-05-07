@@ -1,31 +1,65 @@
 import { useRef, useEffect, useState } from "react";
 import { Text } from "../components/Text.tsx";
 import { Navbar } from "../components/Navbar.tsx";
-import {useContext} from "react";
-import {jobContext} from "../context/jobContext.ts";
+import { useContext } from "react";
+import { jobContext } from "../context/jobContext.ts";
 
-// Define a type for our messages
+// Define types for our messages
 interface Message {
-    text: string;
+    id: string;
+    message: string;
     isUser: boolean;
 }
 
 export const InterviewChatbot = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
-    const {job} = useContext(jobContext);
+    const { job } = useContext(jobContext);
     const [value, setValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
-    const [messages, setMessages] = useState<Message[]>([
-        {
-            text: "Hi Jakub, thanks for coming in today. Let's start with a simple question — can you tell me a bit about yourself and what drew you to frontend development?",
-            isUser: false
-        },
-        {
-            text: "Hi, thanks for having me! I'm Jakub Mazurek, a frontend developer from Lublin. I got into coding when I was 12, starting with game development in Unity, but over time I became more passionate about building interactive and efficient web applications. Now I specialize in React and TypeScript, and I enjoy turning complex ideas into clean, user-friendly interfaces. I'm currently looking for a position where I can grow my skills in a real-world environment, contribute to a team, and keep learning.",
-            isUser: true
+    const [messages, setMessages] = useState<Message[]>([]);
+
+    // Fetch initial message when component loads
+    useEffect(() => {
+        if (job && messages.length === 0) {
+            startInterview();
         }
-    ]);
+    }, [job]);
+
+    const startInterview = async () => {
+        if (!job) return;
+
+        setIsLoading(true);
+        try {
+            const response = await fetch('http://localhost:5000/api/conversation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    job: job,
+                    messages: []
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            setMessages([data]);
+        } catch (error) {
+            console.error('Error starting interview:', error);
+            // Fallback initial message if API fails
+            setMessages([{
+                id: 'initial',
+                message: "Hello! I'm PrepJobAI from " + job.company + ". Thanks for joining this interview for the " + job.title + " position. Could you tell me a bit about yourself and why you're interested in this role?",
+                isUser: false
+            }]);
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const textarea = textareaRef.current;
@@ -45,27 +79,30 @@ export const InterviewChatbot = () => {
     };
 
     const handleSubmit = async () => {
-        if (value.trim() === '' || isLoading) return;
+        if (value.trim() === '' || isLoading || !job) return;
 
-        // Add user message
+        // Create user message
         const userMessage = {
-            text: value.trim(),
+            id: Date.now().toString(),
+            message: value.trim(),
             isUser: true
         };
+
+        // Add user message to chat
         setMessages(prev => [...prev, userMessage]);
         setValue('');
         setIsLoading(true);
 
         try {
-            // Send message to backend API
-            const response = await fetch('http://localhost:5000/api/chatbot', {
+            // Send conversation to backend API
+            const response = await fetch('http://localhost:5000/api/conversation', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    message: userMessage.text,
-                    history: messages
+                    job: job,
+                    messages: [...messages, userMessage]
                 })
             });
 
@@ -73,25 +110,21 @@ export const InterviewChatbot = () => {
                 throw new Error('Network response was not ok');
             }
 
-            const data = await response.json();
+            const aiMessage = await response.json();
 
-            // Add AI response
-            const aiMessage = {
-                text: data.response || "I'm sorry, I couldn't process your request. Please try again.",
-                isUser: false
-            };
-
+            // Add AI response to chat
             setMessages(prev => [...prev, aiMessage]);
         } catch (error) {
             console.error('Error sending message:', error);
 
-            // For testing, add a placeholder AI response
-            const placeholderResponse = {
-                text: "This is a test AI response. In a real environment, I would respond to your specific message. How about we discuss your technical skills next?",
+            // Fallback response if API fails
+            const fallbackResponse = {
+                id: Date.now().toString(),
+                message: "I apologize, but I'm having trouble connecting to our systems. Could you please try again in a moment?",
                 isUser: false
             };
 
-            setMessages(prev => [...prev, placeholderResponse]);
+            setMessages(prev => [...prev, fallbackResponse]);
         } finally {
             setIsLoading(false);
         }
@@ -116,19 +149,20 @@ export const InterviewChatbot = () => {
 
             {/* Page content */}
             <main className="px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] xl:px-[400px] pt-30 pb-[140px] min-h-screen bg-background">
-                <Text type="h1">Test Interview - Google</Text>
+                <Text type="h1">Interview - {job?.title || 'Loading...'}</Text>
+                <Text type="p" className="mt-2">{job?.company || ''}</Text>
 
                 <div className="w-full flex flex-col gap-10 mt-10">
-                    {messages.map((message, index) => (
+                    {messages.map((message) => (
                         message.isUser ? (
                             // User message
-                            <div key={index} className="w-8/12 self-end bg-white shadow-xl p-4 rounded-[10px]">
-                                <Text>{message.text}</Text>
+                            <div key={message.id} className="w-8/12 self-end bg-white shadow-xl p-4 rounded-[10px]">
+                                <Text>{message.message}</Text>
                             </div>
                         ) : (
                             // AI message
-                            <div key={index} className="w-10/12">
-                                <Text>{message.text}</Text>
+                            <div key={message.id} className="w-10/12">
+                                <Text>{message.message}</Text>
                             </div>
                         )
                     ))}
@@ -152,21 +186,21 @@ export const InterviewChatbot = () => {
             {/* Fixed bottom input with horizontal padding */}
             <div className="fixed bottom-0 left-0 w-full bg-background px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] xl:px-[400px] pb-4 pt-2">
                 <div className="relative">
-                    <textarea
-                        ref={textareaRef}
-                        value={value}
-                        onChange={handleInput}
-                        onKeyDown={handleKeyDown}
-                        className="bg-white w-full p-4 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
-                        placeholder="Respond..."
-                        rows={1}
-                        disabled={isLoading}
-                    />
+          <textarea
+              ref={textareaRef}
+              value={value}
+              onChange={handleInput}
+              onKeyDown={handleKeyDown}
+              className="bg-white w-full p-4 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
+              placeholder="Respond..."
+              rows={1}
+              disabled={isLoading}
+          />
                     <button
                         onClick={handleSubmit}
                         disabled={isLoading || value.trim() === ''}
                         className={`absolute right-3 bottom-3 rounded-full p-2 bg-blue-500 text-white 
-                        ${(isLoading || value.trim() === '') ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
+                      ${(isLoading || value.trim() === '') ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <path d="M22 2L11 13"></path>
