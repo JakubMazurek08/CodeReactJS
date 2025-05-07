@@ -1142,3 +1142,21 @@ NameError: name 'MIN_QUESTIONS' is not defined
 2025-05-07 22:45:01,565 - app - INFO - Using local storage
 2025-05-07 22:45:01,570 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
 2025-05-07 22:45:01,572 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:18:57,776 - app - INFO - Using local storage
+2025-05-07 23:18:57,788 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:18:57,789 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:20:52,114 - app - INFO - Using local storage
+2025-05-07 23:20:52,117 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:20:52,117 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:20:52,496 - app.services.ai_service - INFO - AI Server available: https://ollama2.kkhost.pl, ping: 0.355s
+2025-05-07 23:20:52,497 - app.services.ai_service - INFO - AI Server available: https://ollama2.kkhost.pl, ping: 0.356s
+2025-05-07 23:20:52,497 - __main__ - INFO - AI server available: https://ollama2.kkhost.pl
+2025-05-07 23:20:52,498 - __main__ - INFO - Available models: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 23:20:54,646 - app - INFO - Using local storage
+2025-05-07 23:20:54,650 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:20:54,651 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:20:54,881 - app.services.ai_service - INFO - AI Server available: https://ollama2.kkhost.pl, ping: 0.211s
+2025-05-07 23:20:54,882 - __main__ - INFO - AI server available: https://ollama2.kkhost.pl
+2025-05-07 23:20:54,882 - __main__ - INFO - Available models: ['TheAzazel/qwen3-30b-a3b-abliterated-8q:latest', 'huihui_ai/qwen3-abliterated:4b', 'huihui_ai/qwen3-abliterated:8b', 'qwen3:30b-a3b', 'gemma3:4b', 'qwen3:8b', 'qwen3:4b']
+2025-05-07 23:20:54,903 - app.services.ai_service - INFO - AI Server available: https://ollama2.kkhost.pl, ping: 0.233s
+2025-05-07 23:20:54,909 - werkzeug - WARNING -  * Debugger is active!

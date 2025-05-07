@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Text } from '../components/Text';
 
 export const LandingPage: React.FC = () => {
     const navigate = useNavigate();
+    // For staggered animation of feature cards
+    const [showFeatures, setShowFeatures] = useState([false, false, false]);
+    useEffect(() => {
+        const timers = [
+            setTimeout(() => setShowFeatures(f => [true, f[1], f[2]]), 200),
+            setTimeout(() => setShowFeatures(f => [f[0], true, f[2]]), 400),
+            setTimeout(() => setShowFeatures(f => [f[0], f[1], true]), 600),
+        ];
+        return () => timers.forEach(clearTimeout);
+    }, []);
 
     return (
         <div className="min-h-screen" style={{ backgroundColor: 'var(--color-background)' }}>
@@ -25,21 +35,15 @@ export const LandingPage: React.FC = () => {
                         <div className="space-x-6">
                             <button
                                 onClick={() => navigate('/login')}
-                                className="px-10 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
-                                style={{ 
-                                    backgroundColor: 'var(--color-blue)',
-                                    color: 'white'
-                                }}
+                                className="px-10 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 shadow-lg"
+                                style={{ backgroundColor: 'var(--color-blue)', color: 'white' }}
                             >
                                 Start Practicing Now
                             </button>
                             <button
                                 onClick={() => navigate('/')}
-                                className="px-10 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 border-2"
-                                style={{ 
-                                    borderColor: 'var(--color-green)',
-                                    color: 'var(--color-green)'
-                                }}
+                                className="px-10 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 border-2"
+                                style={{ borderColor: 'var(--color-green)', color: 'var(--color-green)' }}
                             >
                                 Learn More
                             </button>
@@ -56,11 +60,9 @@ export const LandingPage: React.FC = () => {
                     </div>
                     <div className="grid md:grid-cols-3 gap-12">
                         {/* Feature 1 */}
-                        <div className="p-6 rounded-xl transition-all hover:shadow-lg" 
-                             style={{ backgroundColor: 'var(--color-background)' }}>
+                        <div className={`p-6 rounded-xl transition-all duration-700 ${showFeatures[0] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} hover:scale-105 hover:shadow-lg`} style={{ backgroundColor: 'var(--color-background)' }}>
                             <div className="text-center mb-4">
-                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                                     style={{ backgroundColor: 'var(--color-blue)' }}>
+                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--color-blue)' }}>
                                     <span className="text-2xl text-white">🎯</span>
                                 </div>
                                 <Text type="h3">Realistic Simulations</Text>
@@ -71,11 +73,9 @@ export const LandingPage: React.FC = () => {
                         </div>
 
                         {/* Feature 2 */}
-                        <div className="p-6 rounded-xl transition-all hover:shadow-lg"
-                             style={{ backgroundColor: 'var(--color-background)' }}>
+                        <div className={`p-6 rounded-xl transition-all duration-700 ${showFeatures[1] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} hover:scale-105 hover:shadow-lg`} style={{ backgroundColor: 'var(--color-background)' }}>
                             <div className="text-center mb-4">
-                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                                     style={{ backgroundColor: 'var(--color-green)' }}>
+                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--color-green)' }}>
                                     <span className="text-2xl text-white">💡</span>
                                 </div>
                                 <Text type="h3">Instant Feedback</Text>
@@ -86,11 +86,9 @@ export const LandingPage: React.FC = () => {
                         </div>
 
                         {/* Feature 3 */}
-                        <div className="p-6 rounded-xl transition-all hover:shadow-lg"
-                             style={{ backgroundColor: 'var(--color-background)' }}>
+                        <div className={`p-6 rounded-xl transition-all duration-700 ${showFeatures[2] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} hover:scale-105 hover:shadow-lg`} style={{ backgroundColor: 'var(--color-background)' }}>
                             <div className="text-center mb-4">
-                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
-                                     style={{ backgroundColor: 'var(--color-blue)' }}>
+                                <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--color-blue)' }}>
                                     <span className="text-2xl text-white">📈</span>
                                 </div>
                                 <Text type="h3">Track Progress</Text>
@@ -119,11 +117,8 @@ export const LandingPage: React.FC = () => {
                         </div>
                         <button
                             onClick={() => navigate('/login')}
-                            className="px-12 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg"
-                            style={{ 
-                                backgroundColor: 'var(--color-green)',
-                                color: 'white'
-                            }}
+                            className="px-12 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 shadow-lg"
+                            style={{ backgroundColor: 'var(--color-green)', color: 'white' }}
                         >
                             Get Started for Free
                         </button>
