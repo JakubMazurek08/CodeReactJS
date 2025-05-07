@@ -1235,3 +1235,11 @@ NameError: name 'MIN_QUESTIONS' is not defined
 2025-05-07 23:14:53,618 - app.services.job_matching_service - INFO - Returning 3 AI-matched jobs (snake_case).
 2025-05-07 23:15:09,341 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.098s
 2025-05-07 23:15:12,666 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.254s
+2025-05-07 23:17:32,510 - app - INFO - Using local storage
+2025-05-07 23:17:32,517 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-07 23:17:32,519 - app - INFO - JobPrepAI application initialized
+2025-05-07 23:17:33,664 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.077s
+2025-05-07 23:17:33,666 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-07 23:17:33,667 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.082s
+2025-05-07 23:17:33,668 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-07 23:17:33,691 - werkzeug - WARNING -  * Debugger is active!
