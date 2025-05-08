@@ -71,33 +71,11 @@ export const Home = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({ position: "", experience: "" });
-<<<<<<< HEAD
-    const [errorMessage, setErrorMessage] = useState("");
-    const [currentPage, setCurrentPage] = useState(1);
-    const [sortOption, setSortOption] = useState("match_percentage"); // Default sort by match percentage
-    const itemsPerPage = 5;
-
-    // This would be your custom hook for managing search history
-    const { searchHistory, addSearch, clearHistory }: { searchHistory: SavedSearch[]; addSearch: (search: SavedSearch) => void; clearHistory: () => void; } = useSearchHistory();
-
-    // Restore the last search from localStorage on component mount
-    useEffect(() => {
-        const savedSearch = localStorage.getItem('lastSearch');
-        if (savedSearch) {
-            const { position, experience, jobs } = JSON.parse(savedSearch);
-            setPosition(position);
-            setExperience(experience);
-            setJobs(jobs);
-        }
-    }, []);
-
-=======
     const [show, setShow] = useState(false);
     const [showJobs, setShowJobs] = useState<number[]>([]);
     const [cvFile, setCvFile] = useState<File | null>(null);
     
     useEffect(() => { setShow(true); }, []);
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
 
     const handleTextareaInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setExperience(e.target.value);
@@ -273,15 +251,7 @@ export const Home = () => {
 
         } catch (error: any) {
             console.error("Error fetching jobs:", error);
-<<<<<<< HEAD
-            if (error instanceof Error) {
-                setErrorMessage(error.message);
-            } else {
-                setErrorMessage("An error occurred while searching for jobs. Please try again.");
-            }
-=======
             alert(`Error fetching jobs: ${error.message || "Please try again later."}`);
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
         } finally {
             setIsLoading(false);
         }
@@ -289,53 +259,6 @@ export const Home = () => {
 
     // This function is now removed since we're handling CV submission in the main submit function
 
-<<<<<<< HEAD
-    // Handle sorting of jobs
-    const handleSortChange = (e) => {
-        const option = e.target.value;
-        setSortOption(option);
-
-        const sortedJobs = [...jobs].sort((a, b) => {
-            if (option === "match_percentage") {
-                return b.match_percentage - a.match_percentage;
-            } else if (option === "title") {
-                return a.title.localeCompare(b.title);
-            } else if (option === "company") {
-                return a.company.localeCompare(b.company);
-            } else if (option === "date") {
-                return b.created_at - a.created_at;
-            }
-            return 0;
-        });
-
-        setJobs(sortedJobs);
-    };
-
-    // Load a saved search
-    interface SavedSearch {
-        id: number;
-        position: string;
-        experience: string;
-        timestamp: string;
-        resultCount: number;
-    }
-
-    const loadSearch = (savedSearch: SavedSearch) => {
-        setPosition(savedSearch.position);
-        setExperience(savedSearch.experience);
-        submit();
-    };
-
-    // Calculate pagination
-    const indexOfLastJob = currentPage * itemsPerPage;
-    const indexOfFirstJob = indexOfLastJob - itemsPerPage;
-    const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
-    const totalPages = Math.ceil(jobs.length / itemsPerPage);
-
-    // Change page
-    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-=======
     useEffect(() => {
         if (jobs.length > 0) {
             setShowJobs([]);
@@ -344,7 +267,6 @@ export const Home = () => {
             });
         }
     }, [jobs]);
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
 
     return (
         <>
@@ -455,72 +377,8 @@ export const Home = () => {
                             <div className="text-center py-8">
                                 <p className="text-gray-500">No matching jobs found. Try adjusting your search criteria.</p>
                             </div>
-<<<<<<< HEAD
-
-                            <div className="flex flex-col items-center gap-6">
-                                {currentJobs.map((job, index) => (
-                                    <JobCard key={index} data={job} />
-                                ))}
-                            </div>
-
-                            {/* Pagination */}
-                            {totalPages > 1 && (
-                                <div className="flex justify-center mt-8">
-                                    <div className="flex space-x-2">
-                                        <button
-                                            onClick={() => paginate(Math.max(1, currentPage - 1))}
-                                            disabled={currentPage === 1}
-                                            className={`px-4 py-2 rounded-md ${
-                                                currentPage === 1
-                                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                            }`}
-                                        >
-                                            Previous
-                                        </button>
-
-                                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
-                                            <button
-                                                key={number}
-                                                onClick={() => paginate(number)}
-                                                className={`px-4 py-2 rounded-md ${
-                                                    currentPage === number
-                                                        ? 'bg-blue-500 text-white'
-                                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                                }`}
-                                            >
-                                                {number}
-                                            </button>
-                                        ))}
-
-                                        <button
-                                            onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-                                            disabled={currentPage === totalPages}
-                                            className={`px-4 py-2 rounded-md ${
-                                                currentPage === totalPages
-                                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                            }`}
-                                        >
-                                            Next
-                                        </button>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    )}
-
-                    {/* No Results Message */}
-                    {!isLoading && jobs.length === 0 && position.trim() !== "" && experience.trim() !== "" && (
-                        <div className="text-center py-8 mt-6 bg-white rounded-lg shadow-md">
-                            <Text type="h3">No matching jobs found</Text>
-                            <p className="text-gray-500 mt-2">Try adjusting your search terms or adding more details to your experience.</p>
-                        </div>
-                    )}
-=======
                         ) : null}
                     </div>
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
                 </div>
 
             </main>
