@@ -6,7 +6,6 @@ import { jobContext } from "../context/jobContext.ts";
 import { useNavigate, useParams } from "react-router-dom";
 import {  doc, getDoc } from "firebase/firestore";
 import { db } from "../lib/firebase.ts";
-import {Roadmap} from "../components/RoadMap.tsx";
 import {saveSummary} from "../lib/summaryService.ts";
 import {auth} from "../lib/firebase.ts";
 import {InterviewSummary} from "../components/InterviewSummary.tsx";
