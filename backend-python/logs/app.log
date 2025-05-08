@@ -331,3 +331,180 @@
 2025-05-08 01:10:00,785 - __main__ - INFO - Total AI messages: 9
 2025-05-08 01:10:00,786 - __main__ - INFO - Force end: False
 2025-05-08 01:10:00,787 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 02:08:17,777 - app - INFO - Using local storage
+2025-05-08 02:08:17,825 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:08:17,827 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:08:18,305 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.351s
+2025-05-08 02:08:18,548 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.594s
+2025-05-08 02:08:18,549 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:08:18,549 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:08:19,258 - app - INFO - Using local storage
+2025-05-08 02:08:19,287 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:08:19,288 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:08:19,536 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.210s
+2025-05-08 02:08:19,536 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:08:19,537 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:08:19,541 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.215s
+2025-05-08 02:08:19,549 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:08:22,635 - __main__ - INFO - No text found in PDF via direct extraction, trying OCR for cv.pdf
+2025-05-08 02:08:22,758 - __main__ - ERROR - Error in PDF processing: Unable to get page count. Is poppler installed and in PATH?
+Traceback (most recent call last):
+  File "C:\Users\MateuszTasiemski\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pdf2image\pdf2image.py", line 581, in pdfinfo_from_path
+    proc = Popen(command, env=env, stdout=PIPE, stderr=PIPE)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1008.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1008.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 1551, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] Nie można odnaleźć określonego pliku
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MateuszTasiemski\CodeReactJS\backend-python\app.py", line 540, in extract_pdf
+    images = convert_from_path(filepath)
+  File "C:\Users\MateuszTasiemski\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pdf2image\pdf2image.py", line 127, in convert_from_path
+    page_count = pdfinfo_from_path(
+                 ~~~~~~~~~~~~~~~~~^
+        pdf_path, userpw, ownerpw, poppler_path=poppler_path
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )["Pages"]
+    ^
+  File "C:\Users\MateuszTasiemski\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\pdf2image\pdf2image.py", line 607, in pdfinfo_from_path
+    raise PDFInfoNotInstalledError(
+        "Unable to get page count. Is poppler installed and in PATH?"
+    )
+pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is poppler installed and in PATH?
+2025-05-08 02:13:18,568 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.262s
+2025-05-08 02:13:19,737 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.196s
+2025-05-08 02:15:59,309 - app - INFO - Using local storage
+2025-05-08 02:15:59,311 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:15:59,312 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:15:59,540 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.219s
+2025-05-08 02:15:59,552 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.230s
+2025-05-08 02:15:59,552 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:15:59,552 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:15:59,570 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:16:38,179 - app - INFO - Using local storage
+2025-05-08 02:16:38,181 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:16:38,181 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:16:38,509 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.319s
+2025-05-08 02:16:38,509 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.319s
+2025-05-08 02:16:38,510 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:16:38,510 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:16:38,523 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:17:38,093 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:18:18,824 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.256s
+2025-05-08 02:20:09,997 - app - INFO - Using local storage
+2025-05-08 02:20:10,000 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:20:10,001 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:20:10,724 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.716s
+2025-05-08 02:20:10,725 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:20:10,725 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:20:10,727 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.719s
+2025-05-08 02:20:10,739 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:20:14,289 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:20:18,513 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:20:50,195 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:23:19,189 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.364s
+2025-05-08 02:23:26,580 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:23:29,957 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:23:35,144 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:23:39,366 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:24:04,192 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:25:11,032 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.304s
+2025-05-08 02:25:51,567 - app - INFO - Using local storage
+2025-05-08 02:25:51,570 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:25:51,571 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:25:52,077 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.498s
+2025-05-08 02:25:52,078 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:25:52,078 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:25:52,091 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:25:52,351 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.772s
+2025-05-08 02:26:02,744 - app - INFO - Using local storage
+2025-05-08 02:26:02,746 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:26:02,747 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:26:03,181 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.427s
+2025-05-08 02:26:03,181 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:26:03,181 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:26:03,198 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:26:03,205 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.451s
+2025-05-08 02:26:06,331 - __main__ - INFO - Attempting text extraction with PyPDF2 for cv.pdf
+2025-05-08 02:26:06,697 - __main__ - WARNING - PyPDF2 extraction yielded no text for cv.pdf
+2025-05-08 02:26:06,697 - __main__ - WARNING - Failed to extract any text from cv.pdf
+2025-05-08 02:26:06,698 - __main__ - INFO - Cleaned up temporary file: C:\Users\MATEUS~1\AppData\Local\Temp\cv.pdf
+2025-05-08 02:28:19,613 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.423s
+2025-05-08 02:29:33,244 - app - INFO - Using local storage
+2025-05-08 02:29:33,247 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:29:33,248 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:29:33,500 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.245s
+2025-05-08 02:29:33,500 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:29:33,501 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:29:33,510 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.256s
+2025-05-08 02:29:33,514 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:30:09,936 - app - INFO - Using local storage
+2025-05-08 02:30:09,939 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:30:09,939 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:30:10,213 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.264s
+2025-05-08 02:30:10,214 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:30:10,214 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:30:10,341 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.392s
+2025-05-08 02:30:10,875 - app - INFO - Using local storage
+2025-05-08 02:30:10,877 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:30:10,878 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:30:11,118 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.232s
+2025-05-08 02:30:11,168 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.282s
+2025-05-08 02:30:11,169 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:30:11,169 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:30:11,182 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:30:15,753 - __main__ - INFO - Attempting OCR extraction for cv.pdf
+2025-05-08 02:30:15,817 - __main__ - WARNING - OCR extraction failed: Unable to get page count. Is poppler installed and in PATH?
+2025-05-08 02:30:15,817 - __main__ - WARNING - All extraction methods failed for cv.pdf
+2025-05-08 02:31:16,883 - app - INFO - Using local storage
+2025-05-08 02:31:16,888 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:31:16,889 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:31:17,403 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.498s
+2025-05-08 02:31:17,480 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.575s
+2025-05-08 02:31:17,481 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:31:17,481 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:31:17,500 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:32:10,002 - app - INFO - Using local storage
+2025-05-08 02:32:10,004 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:32:10,005 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:32:10,448 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.436s
+2025-05-08 02:32:10,456 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.444s
+2025-05-08 02:32:10,457 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:32:10,457 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:32:10,472 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:32:28,412 - app - INFO - Using local storage
+2025-05-08 02:32:28,414 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:32:28,415 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:32:28,709 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.285s
+2025-05-08 02:32:28,726 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.303s
+2025-05-08 02:32:28,727 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:32:28,727 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:32:28,743 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:32:30,800 - __main__ - WARNING - Failed to extract text from cv.pdf
+2025-05-08 02:34:03,796 - app - INFO - Using local storage
+2025-05-08 02:34:03,798 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:34:03,799 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:34:04,317 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.507s
+2025-05-08 02:34:04,361 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.550s
+2025-05-08 02:34:04,361 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:34:04,361 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:34:04,388 - werkzeug - WARNING -  * Debugger is active!
