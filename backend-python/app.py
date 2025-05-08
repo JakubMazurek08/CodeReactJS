@@ -6,6 +6,7 @@ import json
 import os
 import time
 import re
+import traceback
 import uuid
 from datetime import datetime
 import threading
@@ -437,37 +438,34 @@ def handle_conversation():
                     schema=json_schema
                 )
 
+
                 # Check if we got a valid response
                 if isinstance(summary_response, dict) and "passed" in summary_response:
-                    end_summary = summary_response
+                   end_summary = summary_response
 
-                    # Ensure learning_roadmap exists, create a default one if missing
-                    if "learning_roadmap" not in end_summary or not end_summary["learning_roadmap"]:
-                        # Create a default learning roadmap based on improvement areas
-                        default_roadmap = {
-                            "key_areas": end_summary.get("improvements", ["Technical knowledge", "Communication skills"]),
-                            "resources": [
-                                {
-                                    "title": f"Complete guide to {job_title} interviews",
-                                    "type": "course",
-                                    "description": f"A comprehensive course covering all aspects of {job_title} interviews",
-                                    "difficulty": "intermediate",
-                                    "url": "https://www.udemy.com"
-                                },
-                                {
-                                    "title": "Practice coding problems",
-                                    "type": "practice",
-                                    "description": "Regular practice with coding challenges related to the job requirements",
-                                    "difficulty": "intermediate",
-                                    "url": "https://leetcode.com"
-                                }
-                            ],
-                            "suggested_timeline": "Spend 2-3 weeks focusing on the key areas identified, with daily practice sessions and structured learning."
-                        }
-                        end_summary["learning_roadmap"] = default_roadmap
+                   # Debug the learning_roadmap structure
+                   logger.info(f"Raw summary response: {json.dumps(summary_response, indent=2)}")
 
-                    # Log the final summary for debugging
-                    logger.info(f"Generated end summary with roadmap: {json.dumps(end_summary, indent=2)}")
+                   if "learning_roadmap" not in end_summary:
+                       logger.error("learning_roadmap field is missing entirely")
+                   elif not end_summary["learning_roadmap"]:
+                       logger.error("learning_roadmap field is empty or null")
+                   elif "resources" not in end_summary["learning_roadmap"]:
+                       logger.error("resources field is missing from learning_roadmap")
+                   elif not end_summary["learning_roadmap"]["resources"]:
+                       logger.error("resources array is empty")
+                       # Force the resources array to contain expected data
+                       end_summary["learning_roadmap"]["resources"] = [
+                           {
+                               "title": f"{job_title} Technical Interview Guide",
+                               "type": "course",
+                               "description": f"A comprehensive course on {job_title} interview preparation",
+                               "difficulty": "intermediate",
+                               "url": "https://www.udemy.com"
+                           }
+                       ]
+                   else:
+                       logger.info(f"resources array contains {len(end_summary['learning_roadmap']['resources'])} items")
                 else:
                     # Fallback if structured output fails
                     logger.warning(f"Failed to get structured interview summary: {summary_response}")

@@ -16,7 +16,7 @@ export const JobCard = ({data}:any) => {
                     <Text type="p">{data.location}</Text>
                 </div>
             </div>
-            <div className="flex flex-col justify-between gap-4 items-start">
+            <div className="flex flex-col w-1/3 justify-between gap-4 items-start">
                 <div className="flex gap-2 items-center">
                     <img className="h-5" src="iconMoney.png" alt="Salary"/>
                     <Text>{data.salary_range}</Text>

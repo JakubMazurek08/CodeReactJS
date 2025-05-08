@@ -1086,3 +1086,589 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 02:37:14,868 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
 2025-05-08 02:37:17,260 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
 2025-05-08 02:37:17,260 - __main__ - INFO - Successfully analyzed CV for CV_Mateusz_Tasiemski.pdf
+2025-05-08 03:09:12,217 - app - INFO - Using local storage
+2025-05-08 03:09:12,236 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 03:09:12,237 - app - INFO - JobPrepAI application initialized
+2025-05-08 03:09:13,537 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.256s
+2025-05-08 03:09:13,537 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.256s
+2025-05-08 03:09:13,543 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 03:09:13,543 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 03:09:16,383 - app - INFO - Using local storage
+2025-05-08 03:09:16,388 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 03:09:16,390 - app - INFO - JobPrepAI application initialized
+2025-05-08 03:09:17,362 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.952s
+2025-05-08 03:09:17,375 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.965s
+2025-05-08 03:09:17,377 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 03:09:17,379 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 03:09:17,391 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 03:09:36,951 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'Frontend'
+2025-05-08 03:09:36,975 - app.utils.skill_extractor - INFO - Extracted 3 skills from text
+2025-05-08 03:09:36,976 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 03:09:36,976 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['react', 'typescript', 'frontend'], Experience: junior
+2025-05-08 03:09:36,977 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 03:09:37,831 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.852s
+2025-05-08 03:09:37,833 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 03:09:48,537 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 03:09:48,537 - app.services.job_matching_service - INFO - AI extracted 4 skills: ['react', 'next', 'jagvascript', 'typescript']
+2025-05-08 03:09:48,538 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 03:09:48,538 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 03:09:52,718 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:09:52,719 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:09:52,721 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:09:52,722 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:09:52,722 - __main__ - INFO - Force end: False
+2025-05-08 03:09:52,722 - __main__ - INFO - Force end: False
+2025-05-08 03:09:52,724 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:09:52,724 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:09:57,537 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:09:59,583 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:10:02,718 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 03:10:02,718 - __main__ - INFO - Total AI messages: 1
+2025-05-08 03:10:02,719 - __main__ - INFO - Force end: False
+2025-05-08 03:10:02,720 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:10:05,691 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:10:08,248 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 03:10:08,249 - __main__ - INFO - Total AI messages: 2
+2025-05-08 03:10:08,250 - __main__ - INFO - Force end: False
+2025-05-08 03:10:08,251 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:10:11,550 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:10:16,510 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 03:10:16,511 - __main__ - INFO - Total AI messages: 3
+2025-05-08 03:10:16,511 - __main__ - INFO - Force end: False
+2025-05-08 03:10:16,513 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:10:20,070 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:10:22,585 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:10:22,587 - __main__ - INFO - Total AI messages: 4
+2025-05-08 03:10:22,587 - __main__ - INFO - Force end: False
+2025-05-08 03:10:22,588 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:10:25,602 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:10:27,723 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 03:10:27,725 - __main__ - INFO - Total AI messages: 5
+2025-05-08 03:10:27,725 - __main__ - INFO - Force end: False
+2025-05-08 03:10:27,728 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 03:10:32,125 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 03:10:32,127 - __main__ - INFO - Raw summary response: {
+  "passed": true,
+  "rating": 85,
+  "improvements": [
+    "Improve understanding of advanced SQL optimization techniques",
+    "Enhance knowledge of REST API security best practices"
+  ],
+  "summary": "The candidate demonstrated a solid understanding of Python, Django, Flask, SQL, and REST API concepts. They were able to describe their experience with each technology, but their answers were somewhat generic and lacked specific examples. They showed good communication skills but could benefit from providing more detailed technical examples in future interviews.",
+  "learning_roadmap": {
+    "key_areas": [
+      "Advanced SQL Optimization",
+      "REST API Security",
+      "Django/Flask Best Practices"
+    ],
+    "resources": [
+      {
+        "title": "SQL Performance Tuning",
+        "type": "article",
+        "description": "A comprehensive guide to optimizing SQL queries for performance.",
+        "difficulty": "intermediate",
+        "url": "https://www.codingame.com/playgrounds/2545/sql-performance-tuning"
+      },
+      {
+        "title": "REST API Security",
+        "type": "course",
+        "description": "A course covering security best practices for RESTful APIs.",
+        "difficulty": "intermediate",
+        "url": "https://www.udemy.com/course/rest-api-security/"
+      },
+      {
+        "title": "Django Best Practices",
+        "type": "book",
+        "description": "A book detailing best practices for using Django in real-world applications.",
+        "difficulty": "intermediate",
+        "url": "https://www.packtpub.com/product/django-best-practices-2nd-edition"
+      }
+    ],
+    "suggested_timeline": "3 months: 1 month for SQL optimization, 1 month for REST API security, and 1 month for Django/Flask best practices."
+  }
+}
+2025-05-08 03:10:32,128 - __main__ - INFO - resources array contains 3 items
+2025-05-08 03:10:32,128 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:10:34,735 - __main__ - INFO - Returning endSummary: True
+2025-05-08 03:10:34,736 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 03:12:52,368 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:12:52,368 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:12:52,370 - __main__ - INFO - Force end: False
+2025-05-08 03:12:52,371 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:12:55,689 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:14:14,544 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.003s
+2025-05-08 03:14:18,215 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.847s
+2025-05-08 03:14:57,241 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 03:14:57,241 - __main__ - INFO - Total AI messages: 1
+2025-05-08 03:14:57,243 - __main__ - INFO - Force end: False
+2025-05-08 03:14:57,243 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:15:02,130 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:15:04,981 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 03:15:04,982 - __main__ - INFO - Total AI messages: 2
+2025-05-08 03:15:04,982 - __main__ - INFO - Force end: False
+2025-05-08 03:15:04,983 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:15:08,862 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:15:13,901 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 03:15:13,901 - __main__ - INFO - Total AI messages: 3
+2025-05-08 03:15:13,902 - __main__ - INFO - Force end: False
+2025-05-08 03:15:13,903 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:15:17,718 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:15:54,882 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:15:54,882 - __main__ - INFO - Total AI messages: 4
+2025-05-08 03:15:54,884 - __main__ - INFO - Force end: False
+2025-05-08 03:15:54,885 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:15:58,529 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:16:02,615 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:16:02,617 - __main__ - INFO - Total AI messages: 5
+2025-05-08 03:16:02,618 - __main__ - INFO - Force end: False
+2025-05-08 03:16:02,619 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:16:05,934 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:16:15,727 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:16:15,728 - __main__ - INFO - Total AI messages: 6
+2025-05-08 03:16:15,730 - __main__ - INFO - Force end: False
+2025-05-08 03:16:15,731 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:16:18,844 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:16:27,305 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:16:27,305 - __main__ - INFO - Total AI messages: 7
+2025-05-08 03:16:27,306 - __main__ - INFO - Force end: False
+2025-05-08 03:16:27,306 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:16:31,581 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:16:53,522 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:16:53,522 - __main__ - INFO - Total AI messages: 8
+2025-05-08 03:16:53,523 - __main__ - INFO - Force end: False
+2025-05-08 03:16:53,523 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:16:57,395 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:17:06,997 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:17:06,997 - __main__ - INFO - Total AI messages: 9
+2025-05-08 03:17:06,999 - __main__ - INFO - Force end: False
+2025-05-08 03:17:07,000 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:17:11,342 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:17:19,276 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:17:19,276 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:17:19,278 - __main__ - INFO - Force end: False
+2025-05-08 03:17:19,278 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:17:23,542 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:19:16,726 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 2.178s
+2025-05-08 03:19:19,503 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.284s
+2025-05-08 03:24:17,894 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.164s
+2025-05-08 03:24:20,413 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.906s
+2025-05-08 03:29:19,177 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.280s
+2025-05-08 03:29:21,894 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.476s
+2025-05-08 03:34:20,559 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.376s
+2025-05-08 03:34:22,779 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.882s
+2025-05-08 03:38:13,790 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:38:13,792 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:38:13,792 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:38:13,792 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:38:13,794 - __main__ - INFO - Force end: False
+2025-05-08 03:38:13,794 - __main__ - INFO - Force end: False
+2025-05-08 03:38:13,796 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:13,796 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:18,071 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:22,285 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:25,865 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 03:38:25,867 - __main__ - INFO - Total AI messages: 1
+2025-05-08 03:38:25,868 - __main__ - INFO - Force end: False
+2025-05-08 03:38:25,869 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:30,901 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:33,018 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 03:38:33,018 - __main__ - INFO - Total AI messages: 2
+2025-05-08 03:38:33,020 - __main__ - INFO - Force end: False
+2025-05-08 03:38:33,020 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:36,247 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:38,101 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 03:38:38,103 - __main__ - INFO - Total AI messages: 3
+2025-05-08 03:38:38,104 - __main__ - INFO - Force end: False
+2025-05-08 03:38:38,105 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:43,098 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:44,433 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 03:38:44,434 - __main__ - INFO - Total AI messages: 4
+2025-05-08 03:38:44,436 - __main__ - INFO - Force end: False
+2025-05-08 03:38:44,436 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:47,826 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:49,255 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 03:38:49,255 - __main__ - INFO - Total AI messages: 5
+2025-05-08 03:38:49,257 - __main__ - INFO - Force end: False
+2025-05-08 03:38:49,259 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:52,464 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:53,661 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:38:53,663 - __main__ - INFO - Total AI messages: 6
+2025-05-08 03:38:53,663 - __main__ - INFO - Force end: False
+2025-05-08 03:38:53,664 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:38:57,737 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:38:59,668 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 03:38:59,670 - __main__ - INFO - Total AI messages: 7
+2025-05-08 03:38:59,670 - __main__ - INFO - Force end: False
+2025-05-08 03:38:59,673 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 03:39:04,616 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 03:39:04,618 - __main__ - INFO - Raw summary response: {
+  "passed": true,
+  "rating": 85,
+  "improvements": [
+    "The candidate could improve their understanding of advanced REST API design patterns, such as versioning and rate limiting.",
+    "The candidate might benefit from practicing more with SQL optimization techniques and query performance tuning."
+  ],
+  "summary": "The candidate demonstrated a solid understanding of Python frameworks like Django and Flask, SQL databases, and REST API development. They were able to discuss their experience with backend services, database schema design, and API endpoint implementation. However, they could benefit from deeper knowledge of advanced API design and SQL optimization techniques.",
+  "learning_roadmap": {
+    "key_areas": [
+      "Advanced REST API Design",
+      "SQL Optimization Techniques",
+      "Asynchronous Programming in Python"
+    ],
+    "resources": [
+      {
+        "title": "REST API Design Patterns",
+        "type": "course",
+        "description": "A comprehensive course on advanced REST API design, including versioning, rate limiting, and security best practices.",
+        "difficulty": "intermediate",
+        "url": "https://www.udemy.com/course/rest-api-design/"
+      },
+      {
+        "title": "SQL Performance Tuning",
+        "type": "article",
+        "description": "An in-depth article on optimizing SQL queries and improving database performance.",
+        "difficulty": "intermediate",
+        "url": "https://www.codingame.com/playgrounds/12445/sql-performance-tuning"
+      },
+      {
+        "title": "Asynchronous Programming with Python",
+        "type": "book",
+        "description": "A book covering asynchronous programming in Python, including event loops and concurrency.",
+        "difficulty": "intermediate",
+        "url": "https://www.packtpub.com/product/python-asyncio-async-programming-cookbook-3rd-edition"
+      }
+    ],
+    "suggested_timeline": "3 months: 1 month for REST API design, 1 month for SQL optimization, and 1 month for asynchronous programming."
+  }
+}
+2025-05-08 03:39:04,621 - __main__ - INFO - resources array contains 3 items
+2025-05-08 03:39:04,623 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:39:08,579 - __main__ - INFO - Returning endSummary: True
+2025-05-08 03:39:08,580 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 03:39:21,725 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.161s
+2025-05-08 03:39:24,090 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.307s
+2025-05-08 03:44:22,695 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.964s
+2025-05-08 03:44:24,913 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.818s
+2025-05-08 03:47:28,555 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:47:28,556 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:47:28,556 - __main__ - INFO - Force end: False
+2025-05-08 03:47:28,556 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:47:29,646 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:47:29,646 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:47:29,647 - __main__ - INFO - Force end: False
+2025-05-08 03:47:29,648 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:47:33,426 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:47:36,099 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:49:24,046 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.346s
+2025-05-08 03:49:26,001 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.085s
+2025-05-08 03:49:29,827 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:49:29,827 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:49:29,827 - __main__ - INFO - Force end: False
+2025-05-08 03:49:29,829 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:49:34,058 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:49:47,465 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:49:47,467 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:49:47,468 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:49:47,468 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:49:47,468 - __main__ - INFO - Force end: False
+2025-05-08 03:49:47,470 - __main__ - INFO - Force end: False
+2025-05-08 03:49:47,470 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:49:47,471 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:49:50,854 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:49:53,306 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:53:18,931 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:53:18,932 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:53:18,934 - __main__ - INFO - Force end: False
+2025-05-08 03:53:18,934 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:53:18,935 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:53:18,939 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:53:18,939 - __main__ - INFO - Force end: False
+2025-05-08 03:53:18,941 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:53:23,506 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:53:26,408 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:53:43,538 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 03:53:43,539 - __main__ - INFO - Total AI messages: 1
+2025-05-08 03:53:43,539 - __main__ - INFO - Force end: False
+2025-05-08 03:53:43,541 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:53:49,412 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:54:00,598 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 03:54:00,598 - __main__ - INFO - Total AI messages: 2
+2025-05-08 03:54:00,600 - __main__ - INFO - Force end: False
+2025-05-08 03:54:00,601 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:54:03,625 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:54:14,803 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 03:54:14,803 - __main__ - INFO - Total AI messages: 3
+2025-05-08 03:54:14,805 - __main__ - INFO - Force end: False
+2025-05-08 03:54:14,805 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:54:24,820 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:54:25,558 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.508s
+2025-05-08 03:54:27,207 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.201s
+2025-05-08 03:54:34,116 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:54:34,117 - __main__ - INFO - Total AI messages: 4
+2025-05-08 03:54:34,117 - __main__ - INFO - Force end: False
+2025-05-08 03:54:34,118 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:54:37,299 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:54:59,382 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 03:54:59,384 - __main__ - INFO - Total AI messages: 5
+2025-05-08 03:54:59,384 - __main__ - INFO - Force end: False
+2025-05-08 03:54:59,386 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 03:56:06,664 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 03:56:06,666 - __main__ - INFO - Raw summary response: {
+  "passed": false,
+  "rating": 45,
+  "improvements": [
+    "The candidate needs to improve their understanding of containerization technologies like Docker and Kubernetes.",
+    "The candidate should focus on learning and applying infrastructure as code tools such as Terraform."
+  ],
+  "summary": "The candidate demonstrated some knowledge of AWS and CI/CD practices, particularly mentioning their emphasis on testing. However, they showed a lack of familiarity with key DevOps tools such as Docker, Kubernetes, and Terraform. Their responses were vague and did not provide specific examples of how they have used these tools in their work. This indicates a need for more in-depth learning and practical experience with these technologies.",
+  "learning_roadmap": {
+    "key_areas": [
+      "Docker and containerization",
+      "Kubernetes orchestration",
+      "Terraform for infrastructure as code"
+    ],
+    "resources": [
+      {
+        "title": "Docker for Developers",
+        "type": "course",
+        "description": "A comprehensive course on Docker, covering containerization, Dockerfile, and Docker Compose.",
+        "difficulty": "beginner",
+        "url": "https://www.udemy.com/course/docker-for-developers/"
+      },
+      {
+        "title": "Kubernetes Fundamentals",
+        "type": "course",
+        "description": "An introductory course on Kubernetes, focusing on deployment, orchestration, and management.",
+        "difficulty": "beginner",
+        "url": "https://www.udemy.com/course/kubernetes-fundamentals/"
+      },
+      {
+        "title": "Terraform Beginner's Guide",
+        "type": "course",
+        "description": "A beginner-friendly course on Terraform, covering resource management and infrastructure as code.",
+        "difficulty": "beginner",
+        "url": "https://www.udemy.com/course/terraform-beginners-course/"
+      }
+    ],
+    "suggested_timeline": "Dedicate 2-3 weeks to each of the key areas, starting with Docker, then moving to Kubernetes, and finally Terraform. Allocate 10-15 hours per week for each topic."
+  }
+}
+2025-05-08 03:56:06,666 - __main__ - INFO - resources array contains 3 items
+2025-05-08 03:56:06,667 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:56:12,443 - __main__ - INFO - Returning endSummary: True
+2025-05-08 03:56:12,446 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 03:57:36,275 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 03:57:36,276 - __main__ - INFO - Total AI messages: 0
+2025-05-08 03:57:36,277 - __main__ - INFO - Force end: False
+2025-05-08 03:57:36,278 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:57:39,277 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:58:04,690 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 03:58:04,690 - __main__ - INFO - Total AI messages: 1
+2025-05-08 03:58:04,692 - __main__ - INFO - Force end: False
+2025-05-08 03:58:04,692 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:58:08,295 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:58:24,127 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 03:58:24,128 - __main__ - INFO - Total AI messages: 2
+2025-05-08 03:58:24,128 - __main__ - INFO - Force end: False
+2025-05-08 03:58:24,129 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:58:27,555 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:58:36,425 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 03:58:36,427 - __main__ - INFO - Total AI messages: 3
+2025-05-08 03:58:36,434 - __main__ - INFO - Force end: False
+2025-05-08 03:58:36,439 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:58:46,012 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:59:08,318 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 03:59:08,318 - __main__ - INFO - Total AI messages: 4
+2025-05-08 03:59:08,319 - __main__ - INFO - Force end: False
+2025-05-08 03:59:08,320 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:59:12,182 - __main__ - INFO - Returning endSummary: False
+2025-05-08 03:59:26,827 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.263s
+2025-05-08 03:59:27,256 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.201s
+2025-05-08 03:59:27,267 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 03:59:27,268 - __main__ - INFO - Total AI messages: 5
+2025-05-08 03:59:27,269 - __main__ - INFO - Force end: False
+2025-05-08 03:59:27,270 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 03:59:28,423 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.212s
+2025-05-08 03:59:32,223 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 03:59:32,224 - __main__ - INFO - Raw summary response: {
+  "passed": false,
+  "rating": 45,
+  "improvements": [
+    "The candidate needs to improve their knowledge of Terraform, as they mentioned they never had a chance to use it in projects.",
+    "The candidate should focus on enhancing their understanding of CI/CD pipelines, as they provided a vague answer about automation."
+  ],
+  "summary": "The candidate demonstrated basic knowledge of Docker and Kubernetes but lacked experience with Terraform and provided a vague answer regarding CI/CD. They mentioned using AWS for hosting but did not elaborate on specific tools or processes. Their responses were generally clear but lacked depth in key areas relevant to the DevOps Engineer role.",
+  "learning_roadmap": {
+    "key_areas": [
+      "Terraform",
+      "CI/CD Pipeline Configuration",
+      "AWS Infrastructure Automation"
+    ],
+    "resources": [
+      {
+        "title": "Terraform Beginner's Guide",
+        "type": "course",
+        "description": "A comprehensive course covering Terraform basics, syntax, and best practices.",
+        "difficulty": "beginner",
+        "url": "https://www.udemy.com/course/terraform-beginners-course/"
+      },
+      {
+        "title": "CI/CD with Jenkins",
+        "type": "course",
+        "description": "A course on setting up and configuring CI/CD pipelines using Jenkins.",
+        "difficulty": "beginner",
+        "url": "https://www.udemy.com/course/jenkins-cicd-course/"
+      },
+      {
+        "title": "AWS Certified Solutions Architect - Associate",
+        "type": "course",
+        "description": "A course to understand AWS services and how to use them for infrastructure automation.",
+        "difficulty": "intermediate",
+        "url": "https://www.udemy.com/course/aws-certified-solutions-architect-associate/"
+      }
+    ],
+    "suggested_timeline": "Start with Terraform (2-4 weeks), then move on to CI/CD with Jenkins (2-4 weeks), and finally focus on AWS infrastructure automation (4-6 weeks)."
+  }
+}
+2025-05-08 03:59:32,226 - __main__ - INFO - resources array contains 3 items
+2025-05-08 03:59:32,226 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 03:59:34,816 - __main__ - INFO - Returning endSummary: True
+2025-05-08 03:59:34,816 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 04:04:28,276 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.444s
+2025-05-08 04:04:29,665 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.238s
+2025-05-08 04:09:29,680 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.400s
+2025-05-08 04:09:30,754 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.084s
+2025-05-08 04:13:54,448 - app - INFO - Using local storage
+2025-05-08 04:13:54,478 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 04:13:54,482 - app - INFO - JobPrepAI application initialized
+2025-05-08 04:13:54,517 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023D4BB7C8C0>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 04:13:54,517 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000023D4BB7C7A0>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 04:13:54,517 - app.services.ai_service - WARNING - Current AI server https://ollama4.kkhost.pl is offline. In cooldown, not switching yet.
+2025-05-08 04:13:54,517 - app.services.ai_service - WARNING - Current AI server https://ollama4.kkhost.pl is offline. In cooldown, not switching yet.
+2025-05-08 04:13:54,518 - __main__ - WARNING - AI servers unavailable. Application will retry in background.
+2025-05-08 04:13:56,210 - app - INFO - Using local storage
+2025-05-08 04:13:56,216 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 04:13:56,216 - app - INFO - JobPrepAI application initialized
+2025-05-08 04:13:56,247 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000232B3754E90>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 04:13:56,247 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000232B3754D10>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 04:13:56,248 - app.services.ai_service - WARNING - Current AI server https://ollama4.kkhost.pl is offline. In cooldown, not switching yet.
+2025-05-08 04:13:56,248 - app.services.ai_service - WARNING - Current AI server https://ollama4.kkhost.pl is offline. In cooldown, not switching yet.
+2025-05-08 04:13:56,248 - __main__ - WARNING - AI servers unavailable. Application will retry in background.
+2025-05-08 04:13:56,263 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 04:18:56,479 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.960s
+2025-05-08 04:18:57,094 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.844s
+2025-05-08 04:22:11,307 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 04:22:11,308 - __main__ - INFO - Total AI messages: 0
+2025-05-08 04:22:11,309 - __main__ - INFO - Force end: False
+2025-05-08 04:22:11,309 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:22:11,314 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 04:22:11,316 - __main__ - INFO - Total AI messages: 0
+2025-05-08 04:22:11,316 - __main__ - INFO - Force end: False
+2025-05-08 04:22:11,318 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:22:17,047 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:22:19,016 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:22:27,487 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 04:22:27,489 - __main__ - INFO - Total AI messages: 1
+2025-05-08 04:22:27,489 - __main__ - INFO - Force end: False
+2025-05-08 04:22:27,492 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:22:30,468 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:22:46,635 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 04:22:46,635 - __main__ - INFO - Total AI messages: 2
+2025-05-08 04:22:46,636 - __main__ - INFO - Force end: False
+2025-05-08 04:22:46,636 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:22:50,466 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:23:13,141 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 04:23:13,141 - __main__ - INFO - Total AI messages: 3
+2025-05-08 04:23:13,143 - __main__ - INFO - Force end: False
+2025-05-08 04:23:13,143 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:23:17,835 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:23:25,267 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 04:23:25,267 - __main__ - INFO - Total AI messages: 4
+2025-05-08 04:23:25,269 - __main__ - INFO - Force end: False
+2025-05-08 04:23:25,269 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:23:28,738 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:23:41,139 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 04:23:41,141 - __main__ - INFO - Total AI messages: 5
+2025-05-08 04:23:41,141 - __main__ - INFO - Force end: False
+2025-05-08 04:23:41,143 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:23:45,133 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:23:51,230 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 04:23:51,232 - __main__ - INFO - Total AI messages: 6
+2025-05-08 04:23:51,233 - __main__ - INFO - Force end: False
+2025-05-08 04:23:51,234 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 04:23:57,422 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 04:23:57,423 - __main__ - INFO - Raw summary response: {
+  "passed": true,
+  "rating": 75,
+  "improvements": [
+    "The candidate could improve their explanation of how JWT is implemented in the project, particularly regarding token expiration and refresh tokens.",
+    "The candidate could benefit from more detailed knowledge of security best practices, such as secure token storage and handling."
+  ],
+  "summary": "The candidate demonstrated a good understanding of using Flask for a REST API and implemented JWT for authentication. They mentioned using bcrypt for password hashing, which is correct. However, their explanations were somewhat brief, and they didn't provide detailed examples of how they handled specific aspects of JWT, such as token expiration or refresh tokens. They also didn't elaborate on how they securely store tokens on the client side. Overall, they showed knowledge of the required skills but could improve in explaining technical details and security best practices.",
+  "learning_roadmap": {
+    "key_areas": [
+      "JWT Implementation Details",
+      "Secure Token Storage",
+      "Security Best Practices in Web Applications"
+    ],
+    "resources": [
+      {
+        "title": "JWT.io - Understanding JSON Web Tokens",
+        "type": "article",
+        "description": "A comprehensive guide to JWT structure, signing, and verification processes.",
+        "difficulty": "intermediate",
+        "url": "https://jwt.io/"
+      },
+      {
+        "title": "Flask-JWT-Extended",
+        "type": "course",
+        "description": "A course on implementing JWT in Flask with best practices for token management.",
+        "difficulty": "intermediate",
+        "url": "https://flask-jwt-extended.readthedocs.io/en/latest/"
+      },
+      {
+        "title": "Secure Coding Practices for Web Applications",
+        "type": "book",
+        "description": "A book covering security best practices, including secure token handling and authentication.",
+        "difficulty": "intermediate",
+        "url": "https://www.owasp.org/index.php/Secure_Coding_Practices"
+      },
+      {
+        "title": "Udemy - Python Flask Security",
+        "type": "course",
+        "description": "A course focusing on securing Flask applications, including JWT and secure data handling.",
+        "difficulty": "intermediate",
+        "url": "https://www.udemy.com/course/python-flask-security/"
+      },
+      {
+        "title": "Real World Security: Building Secure Applications with Python",
+        "type": "book",
+        "description": "A book that covers practical security implementations in Python, including Flask and JWT.",
+        "difficulty": "advanced",
+        "url": "https://www.packtpub.com/product/real-world-security-building-secure-applications-python"
+      }
+    ],
+    "suggested_timeline": "Dedicate 2-3 weeks to study JWT implementation details and secure token storage, followed by 1-2 weeks on advanced security practices in web applications."
+  }
+}
+2025-05-08 04:23:57,425 - __main__ - INFO - resources array contains 5 items
+2025-05-08 04:23:57,663 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.179s
+2025-05-08 04:23:58,286 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.187s
+2025-05-08 04:23:58,621 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.196s
+2025-05-08 04:23:58,624 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:24:03,820 - __main__ - INFO - Returning endSummary: True
+2025-05-08 04:24:03,821 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 04:27:10,312 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 04:27:10,314 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 04:27:10,315 - __main__ - INFO - Total AI messages: 0
+2025-05-08 04:27:10,316 - __main__ - INFO - Total AI messages: 0
+2025-05-08 04:27:10,316 - __main__ - INFO - Force end: False
+2025-05-08 04:27:10,318 - __main__ - INFO - Force end: False
+2025-05-08 04:27:10,318 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:27:10,319 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 04:27:14,577 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:27:16,283 - __main__ - INFO - Returning endSummary: False
+2025-05-08 04:28:58,793 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.126s
+2025-05-08 04:28:59,311 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.022s
+2025-05-08 04:33:59,851 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.055s
+2025-05-08 04:34:00,612 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.297s
