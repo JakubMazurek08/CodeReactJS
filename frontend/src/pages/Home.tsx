@@ -10,20 +10,20 @@ import {Footer} from "../components/Footer.tsx";
 
 const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="256"
-      height="256"
-      viewBox="0 0 256 256"
-      fill="none"
-      {...props}
-    >
-      <g
-        transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+        xmlns="http://www.w3.org/2000/svg"
+        width="256"
+        height="256"
+        viewBox="0 0 256 256"
         fill="none"
-        fillRule="nonzero"
-      >
-        <path
-          d="
+        {...props}
+    >
+        <g
+            transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+            fill="none"
+            fillRule="nonzero"
+        >
+            <path
+                d="
             M87.803 77.194
             L68.212 57.602
             c9.5-14.422 7.912-34.054-4.766-46.732
@@ -48,12 +48,12 @@ const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
             C44.184 61.481 30.123 61.48 21.48 52.837
             z
           "
-          fill="black"
-          strokeLinecap="round"
-        />
-      </g>
+                fill="black"
+                strokeLinecap="round"
+            />
+        </g>
     </svg>
-  );
+);
 export const Home = () => {
     const positionRef = useRef<HTMLTextAreaElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -71,33 +71,11 @@ export const Home = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({ position: "", experience: "" });
-<<<<<<< HEAD
-    const [errorMessage, setErrorMessage] = useState("");
-    const [currentPage, setCurrentPage] = useState(1);
-    const [sortOption, setSortOption] = useState("match_percentage"); // Default sort by match percentage
-    const itemsPerPage = 5;
-
-    // This would be your custom hook for managing search history
-    const { searchHistory, addSearch, clearHistory }: { searchHistory: SavedSearch[]; addSearch: (search: SavedSearch) => void; clearHistory: () => void; } = useSearchHistory();
-
-    // Restore the last search from localStorage on component mount
-    useEffect(() => {
-        const savedSearch = localStorage.getItem('lastSearch');
-        if (savedSearch) {
-            const { position, experience, jobs } = JSON.parse(savedSearch);
-            setPosition(position);
-            setExperience(experience);
-            setJobs(jobs);
-        }
-    }, []);
-
-=======
     const [show, setShow] = useState(false);
     const [showJobs, setShowJobs] = useState<number[]>([]);
     const [cvFile, setCvFile] = useState<File | null>(null);
-    
+
     useEffect(() => { setShow(true); }, []);
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
 
     const handleTextareaInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setExperience(e.target.value);
@@ -114,10 +92,10 @@ export const Home = () => {
     useEffect(() => {
         const textarea = positionRef.current;
         if (textarea) {
-          textarea.style.height = "auto";
-          textarea.style.height = `${Math.min(textarea.scrollHeight, 300)}px`;
+            textarea.style.height = "auto";
+            textarea.style.height = `${Math.min(textarea.scrollHeight, 300)}px`;
         }
-      }, [position]);
+    }, [position]);
     const handlePositionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setPosition(e.target.value);
         if (errors.position) {
@@ -186,35 +164,35 @@ export const Home = () => {
 
             let formData;
             let URL;
-            
+
             if (cvFile) {
                 // Use FormData for file upload
                 formData = new FormData();
                 formData.append('pdf_file', cvFile); // Changed from 'cv_file' to 'pdf_file'
                 formData.append('job_keyword', position);
-                
+
                 // First extract the text from the PDF
                 URL = "http://localhost:5000/api/extract-pdf";
-                
+
                 const extractResponse = await fetch(URL, {
                     method: "POST",
                     body: formData
                 });
-                
+
                 if (!extractResponse.ok) {
                     throw new Error(`PDF extraction failed: ${extractResponse.status}: ${extractResponse.statusText}`);
                 }
-                
+
                 const extractData = await extractResponse.json();
-                
+
                 if (extractData.error) {
                     throw new Error(`PDF extraction error: ${extractData.error}`);
                 }
-                
+
                 // Now use the extracted text to match jobs
                 const analysis = extractData.analysis || {};
                 const profileText = analysis.user_summary || extractData.text || "";
-                
+
                 // Use the regular match-jobs API with the extracted text
                 URL = "http://localhost:5000/api/match-jobs";
                 const matchResponse = await fetch(URL, {
@@ -227,19 +205,19 @@ export const Home = () => {
                         job_keyword: position
                     })
                 });
-                
+
                 if (!matchResponse.ok) {
                     throw new Error(`Job matching failed: ${matchResponse.status}: ${matchResponse.statusText}`);
                 }
-                
+
                 const responseData = await matchResponse.json();
-                
+
                 if (responseData.error) {
                     throw new Error(responseData.error);
                 }
-                
+
                 setJobs(responseData.matches || []);
-                
+
                 // Log success message
                 console.log(`Found ${responseData.matches?.length || 0} jobs matching your CV for position: ${position}`);
             } else {
@@ -248,7 +226,7 @@ export const Home = () => {
                     profile_text: experience,
                     job_keyword: position,
                 };
-                
+
                 URL = "http://localhost:5000/api/match-jobs";
                 const response = await fetch(URL, {
                     method: "POST",
@@ -257,31 +235,23 @@ export const Home = () => {
                     },
                     body: JSON.stringify(data)
                 });
-                
+
                 if (!response.ok) {
                     throw new Error(`Server returned ${response.status}: ${response.statusText}`);
                 }
-                
+
                 const responseData = await response.json();
-                
+
                 if (responseData.error) {
                     throw new Error(responseData.error);
                 }
-                
+
                 setJobs(responseData.matches || []);
             }
 
         } catch (error: any) {
             console.error("Error fetching jobs:", error);
-<<<<<<< HEAD
-            if (error instanceof Error) {
-                setErrorMessage(error.message);
-            } else {
-                setErrorMessage("An error occurred while searching for jobs. Please try again.");
-            }
-=======
             alert(`Error fetching jobs: ${error.message || "Please try again later."}`);
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
         } finally {
             setIsLoading(false);
         }
@@ -289,53 +259,6 @@ export const Home = () => {
 
     // This function is now removed since we're handling CV submission in the main submit function
 
-<<<<<<< HEAD
-    // Handle sorting of jobs
-    const handleSortChange = (e) => {
-        const option = e.target.value;
-        setSortOption(option);
-
-        const sortedJobs = [...jobs].sort((a, b) => {
-            if (option === "match_percentage") {
-                return b.match_percentage - a.match_percentage;
-            } else if (option === "title") {
-                return a.title.localeCompare(b.title);
-            } else if (option === "company") {
-                return a.company.localeCompare(b.company);
-            } else if (option === "date") {
-                return b.created_at - a.created_at;
-            }
-            return 0;
-        });
-
-        setJobs(sortedJobs);
-    };
-
-    // Load a saved search
-    interface SavedSearch {
-        id: number;
-        position: string;
-        experience: string;
-        timestamp: string;
-        resultCount: number;
-    }
-
-    const loadSearch = (savedSearch: SavedSearch) => {
-        setPosition(savedSearch.position);
-        setExperience(savedSearch.experience);
-        submit();
-    };
-
-    // Calculate pagination
-    const indexOfLastJob = currentPage * itemsPerPage;
-    const indexOfFirstJob = indexOfLastJob - itemsPerPage;
-    const currentJobs = jobs.slice(indexOfFirstJob, indexOfLastJob);
-    const totalPages = Math.ceil(jobs.length / itemsPerPage);
-
-    // Change page
-    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-
-=======
     useEffect(() => {
         if (jobs.length > 0) {
             setShowJobs([]);
@@ -344,7 +267,6 @@ export const Home = () => {
             });
         }
     }, [jobs]);
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
 
     return (
         <>
@@ -380,31 +302,31 @@ export const Home = () => {
                                     errors.experience ? "border-red-500" : "border-gray-200"
                                 } focus:ring-2 focus:ring-blue-400`}
                                 rows={1}
-                            />  
+                            />
                             <Button
                                 type={'submit'}
-                            color={'blue'}
-                            onClick={submit}
-                            disabled={isLoading} 
-                            className={`absolute right-3 bottom-0 transform bg-transparent -translate-y-1/2 text-white { isLoading ? "search-wiggle" : ""} `}
+                                color={'blue'}
+                                onClick={submit}
+                                disabled={isLoading}
+                                className={`absolute right-3 bottom-0 transform bg-transparent -translate-y-1/2 text-white { isLoading ? "search-wiggle" : ""} `}
                             >
-                            <SearchIcon className="w-6 h-6 " />
+                                <SearchIcon className="w-6 h-6 " />
                             </Button>
-                        
+
                         </div>
                         {errors.experience && (
-                                <p className="text-red-500 text-sm mt-1">{errors.experience}</p>
-                            )}
-                            
-                        
+                            <p className="text-red-500 text-sm mt-1">{errors.experience}</p>
+                        )}
+
+
                         <div className="flex items-center justify-center gap-2 text-gray-500">
-                        <span className="text-gray-500">━━━━━━━━━━━━━━━━━━━━{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}OR{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}━━━━━━━━━━━━━━━━━━━━</span>
+                            <span className="text-gray-500">━━━━━━━━━━━━━━━━━━━━{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}OR{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}━━━━━━━━━━━━━━━━━━━━</span>
                         </div>
 
                         {/* CV Upload button */}
                         <div className="flex flex-col items-center gap-4">
                             <div className="flex items-center gap-3">
-                                <div 
+                                <div
                                     onClick={triggerFileInput}
                                     className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-6 py-3 rounded-lg cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
                                 >
@@ -413,7 +335,7 @@ export const Home = () => {
                                     </svg>
                                     <span className="font-medium">Upload CV (PDF)</span>
                                 </div>
-                            
+
                                 {cvFile && (
                                     <span className="text-green-600 flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -423,12 +345,12 @@ export const Home = () => {
                                     </span>
                                 )}
                             </div>
-                            
+
                             {/* No need for a separate search button as the main search will handle CV uploads */}
                         </div>
-                        
+
                         {/* Hidden file input */}
-                        <input 
+                        <input
                             type="file"
                             ref={fileInputRef}
                             onChange={handleFileChange}
@@ -455,72 +377,8 @@ export const Home = () => {
                             <div className="text-center py-8">
                                 <p className="text-gray-500">No matching jobs found. Try adjusting your search criteria.</p>
                             </div>
-<<<<<<< HEAD
-
-                            <div className="flex flex-col items-center gap-6">
-                                {currentJobs.map((job, index) => (
-                                    <JobCard key={index} data={job} />
-                                ))}
-                            </div>
-
-                            {/* Pagination */}
-                            {totalPages > 1 && (
-                                <div className="flex justify-center mt-8">
-                                    <div className="flex space-x-2">
-                                        <button
-                                            onClick={() => paginate(Math.max(1, currentPage - 1))}
-                                            disabled={currentPage === 1}
-                                            className={`px-4 py-2 rounded-md ${
-                                                currentPage === 1
-                                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                            }`}
-                                        >
-                                            Previous
-                                        </button>
-
-                                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((number) => (
-                                            <button
-                                                key={number}
-                                                onClick={() => paginate(number)}
-                                                className={`px-4 py-2 rounded-md ${
-                                                    currentPage === number
-                                                        ? 'bg-blue-500 text-white'
-                                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                                }`}
-                                            >
-                                                {number}
-                                            </button>
-                                        ))}
-
-                                        <button
-                                            onClick={() => paginate(Math.min(totalPages, currentPage + 1))}
-                                            disabled={currentPage === totalPages}
-                                            className={`px-4 py-2 rounded-md ${
-                                                currentPage === totalPages
-                                                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                                                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                                            }`}
-                                        >
-                                            Next
-                                        </button>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    )}
-
-                    {/* No Results Message */}
-                    {!isLoading && jobs.length === 0 && position.trim() !== "" && experience.trim() !== "" && (
-                        <div className="text-center py-8 mt-6 bg-white rounded-lg shadow-md">
-                            <Text type="h3">No matching jobs found</Text>
-                            <p className="text-gray-500 mt-2">Try adjusting your search terms or adding more details to your experience.</p>
-                        </div>
-                    )}
-=======
                         ) : null}
                     </div>
->>>>>>> a5a584d41740176b169a45d514d530255d16293e
                 </div>
 
             </main>
