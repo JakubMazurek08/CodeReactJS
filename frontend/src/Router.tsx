@@ -7,7 +7,6 @@ import {ProtectedRoute} from "./ProtectedRoute.tsx";
 import {LandingPage} from "./pages/LandingPage";
 import {InterviewPage} from "./pages/InterviewPage.tsx";
 import Progress from "./pages/Progress.tsx";
-import FlashcardsApp from "./pages/Flashcards.tsx"
 
 const router = createBrowserRouter([
     {
@@ -38,10 +37,6 @@ const router = createBrowserRouter([
         path: "/progress",
         element: <ProtectedRoute><Progress/></ProtectedRoute>
     },
-    {
-        path: "/Flashcards",
-        element: <ProtectedRoute><FlashcardsApp /></ProtectedRoute>
-    }
 
 ]);
 
