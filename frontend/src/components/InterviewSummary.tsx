@@ -56,6 +56,10 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
         return 'bg-red-500';
     };
 
+<<<<<<< HEAD
+    // Handle saving interview summary to Firebase under user's collection
+=======
+>>>>>>> 3cb162c76f8e5742a8320fe417eaf37609973119
     const handleSaveInterview = async () => {
         if (!job || !summaryData || isSaving || isSaved || saveId) return;
 

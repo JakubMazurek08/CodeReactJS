@@ -16,6 +16,7 @@ import PyPDF2
 from pdf2image import convert_from_path
 from werkzeug.utils import secure_filename
 import pytesseract
+from app.services.flashcard_service import generate_flashcards_from_text
 
 # Import services and utils
 from app.services.ai_service import check_ai_server_health, get_ai_response, get_structured_output, AI_MODEL
@@ -886,7 +887,121 @@ def extract_pdf():
     except Exception as e:
         logger.error(f"Error handling uploaded file: {str(e)}", exc_info=True)
         return jsonify({"error": f"Error processing file: {str(e)}"}), 500
-
+@app.route('/api/flashcards', methods=['POST'])
+def generate_flashcards_endpoint():
+    """
+    Endpoint to generate flashcards from a given text.
+    
+    Request parameters:
+    - text: The text content to generate flashcards from (required)
+    - category: Optional category to focus the flashcards on (e.g., "technical", "behavioral")
+    - max_cards: Optional maximum number of flashcards to generate (default 10)
+    - min_length: Optional minimum character length for answers (default 50)
+    - max_length: Optional maximum character length for answers (default 250)
+    
+    Returns:
+    - JSON object containing generated flashcards and metadata
+    """
+    data = request.json or {}
+    text = data.get('text', '')
+    category = data.get('category')
+    max_cards = min(int(data.get('max_cards', 10)), 20)  # Cap at 20 cards maximum
+    
+    # Validate input
+    if not text:
+        return jsonify({"error": "Missing text for flashcard generation"}), 400
+    
+    if len(text) < 50:
+        return jsonify({
+            "error": "Text is too short for meaningful flashcard generation",
+            "suggestions": [
+                "Provide a longer text with more substantial content",
+                "Try uploading a complete document or transcript"
+            ]
+        }), 400
+    
+    try:
+        # Import here to avoid circular imports
+        from app.services.flashcard_service import generate_flashcards_from_text
+        
+        # Generate flashcards
+        logger.info(f"Generating flashcards from text ({len(text)} chars), category: {category}")
+        flashcards = generate_flashcards_from_text(text, category)
+        
+        # Filter and format the flashcards
+        if flashcards:
+            # Filter based on length constraints if specified
+            min_length = int(data.get('min_length', 50))
+            max_length = int(data.get('max_length', 250))
+            
+            filtered_cards = []
+            for card in flashcards:
+                # Filter based on answer length
+                answer_length = len(card.get('answer', ''))
+                if answer_length >= min_length and answer_length <= max_length:
+                    filtered_cards.append(card)
+                    
+                # Stop once we have enough cards
+                if len(filtered_cards) >= max_cards:
+                    break
+            
+            # Use the filtered cards, or all cards if none passed the filter
+            final_cards = filtered_cards if filtered_cards else flashcards[:max_cards]
+            
+            # Add timestamps
+            current_time = time.time()
+            for card in final_cards:
+                card['created_at'] = current_time
+                
+            # Save to storage if enabled
+            if FIREBASE_ENABLED.lower() == 'true' and data.get('save', False):
+                try:
+                    # Optional: Save flashcards to storage
+                    current_user = auth.current_user
+                    if current_user:
+                        # Create a flashcards collection entry
+                        flashcard_set = {
+                            'userId': current_user.uid,
+                            'title': data.get('title', 'Generated Flashcards'),
+                            'description': data.get('description', f"Generated from text ({len(text)} characters)"),
+                            'category': category or 'general',
+                            'cards': final_cards,
+                            'created_at': serverTimestamp()
+                        }
+                        
+                        # Add to 'flashcards' collection
+                        doc_ref = addDoc(collection(db, 'flashcards'), flashcard_set)
+                        logger.info(f"Saved flashcard set with ID: {doc_ref.id}")
+                except Exception as save_error:
+                    logger.error(f"Error saving flashcards: {save_error}", exc_info=True)
+                    # Continue even if saving fails
+            
+            return jsonify({
+                "success": True,
+                "flashcards": final_cards,
+                "total": len(final_cards),
+                "source_length": len(text),
+                "category": category or "general",
+                "message": f"Generated {len(final_cards)} flashcards"
+            })
+        else:
+            return jsonify({
+                "success": False,
+                "error": "Failed to generate meaningful flashcards",
+                "flashcards": [],
+                "suggestions": [
+                    "Try with different text content",
+                    "Ensure the text contains factual or educational content"
+                ]
+            }), 200
+    
+    except Exception as e:
+        logger.error(f"Error generating flashcards: {str(e)}", exc_info=True)
+        return jsonify({
+            "success": False,
+            "error": f"Error generating flashcards: {str(e)}",
+            "flashcards": []
+        }), 500
 
 # Serve static files
 @app.route('/', defaults={'path': 'index.html'})
