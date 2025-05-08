@@ -2,7 +2,11 @@ import { Navbar } from "../components/Navbar.tsx";
 import { Text } from "../components/Text.tsx";
 import { Input } from "../components/Input.tsx";
 import { JobCard } from "../components/JobCard.tsx";
+<<<<<<< HEAD
 import { useRef, useState, useEffect } from "react";
+=======
+import {useRef, useState, useEffect} from "react";
+>>>>>>> 5d5b9b203e902795ca2103403c013759ea84494c
 import { Button } from "../components/Button.tsx";
 import { Footer } from "../components/Footer.tsx";
 import { useSearchHistory } from "../hooks/useSearchHistory"; // This would be a custom hook you'd create
@@ -14,6 +18,7 @@ export const Home = () => {
     const [jobs, setJobs] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({ position: "", experience: "" });
+<<<<<<< HEAD
     const [errorMessage, setErrorMessage] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [sortOption, setSortOption] = useState("match_percentage"); // Default sort by match percentage
@@ -32,6 +37,11 @@ export const Home = () => {
             setJobs(jobs);
         }
     }, []);
+=======
+    const [show, setShow] = useState(false);
+    const [showJobs, setShowJobs] = useState<number[]>([]);
+    useEffect(() => { setShow(true); }, []);
+>>>>>>> 5d5b9b203e902795ca2103403c013759ea84494c
 
     const handleTextareaInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setExperience(e.target.value);
@@ -150,6 +160,7 @@ export const Home = () => {
         }
     };
 
+<<<<<<< HEAD
     // Handle sorting of jobs
     const handleSortChange = (e) => {
         const option = e.target.value;
@@ -186,6 +197,16 @@ export const Home = () => {
 
     // Change page
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+=======
+    useEffect(() => {
+        if (jobs.length > 0) {
+            setShowJobs([]);
+            jobs.forEach((_, i) => {
+                setTimeout(() => setShowJobs(prev => [...prev, i]), 150 * i);
+            });
+        }
+    }, [jobs]);
+>>>>>>> 5d5b9b203e902795ca2103403c013759ea84494c
 
     return (
         <>
@@ -236,7 +257,7 @@ export const Home = () => {
                             color={'blue'}
                             onClick={submit}
                             disabled={isLoading}
-                            className={isLoading ? "opacity-70 cursor-not-allowed" : ""}
+                            className={`transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 ${isLoading ? "opacity-70 cursor-not-allowed" : ""}`}
                         >
                             {isLoading ? "Searching..." : "Search"}
                         </Button>
@@ -290,6 +311,7 @@ export const Home = () => {
                         </div>
                     )}
 
+<<<<<<< HEAD
                     {/* Results Section */}
                     {jobs.length > 0 && !isLoading && (
                         <div className="mt-10">
@@ -309,6 +331,18 @@ export const Home = () => {
                                         <option value="date">Date Posted</option>
                                     </select>
                                 </div>
+=======
+                    <div className="flex flex-col items-center gap-10 mt-10">
+                        {jobs.length > 0 ? (
+                            jobs.map((job, index) => (
+                                <div key={index} className={`w-full transition-all duration-700 ${showJobs.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                                    <JobCard data={job} />
+                                </div>
+                            ))
+                        ) : !isLoading && jobs.length === 0 && position.trim() !== "" && experience.trim() !== "" ? (
+                            <div className="text-center py-8">
+                                <p className="text-gray-500">No matching jobs found. Try adjusting your search criteria.</p>
+>>>>>>> 5d5b9b203e902795ca2103403c013759ea84494c
                             </div>
 
                             <div className="flex flex-col items-center gap-6">

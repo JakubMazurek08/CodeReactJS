@@ -10,6 +10,11 @@ import uuid
 from datetime import datetime
 import threading
 import random
+import tempfile
+import PyPDF2
+from pdf2image import convert_from_path
+from werkzeug.utils import secure_filename
+import pytesseract
 
 # Import services and utils
 from app.services.ai_service import check_ai_server_health, get_ai_response, get_structured_output, AI_MODEL
@@ -38,7 +43,9 @@ cv_storage = get_cv_storage()
 # Initialize Flask app
 app = Flask(__name__, static_folder='static')
 CORS(app)
-
+UPLOAD_FOLDER = tempfile.gettempdir()  # Use system temp directory
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
 # Middleware to check AI server status before each request
 @app.before_request
 def check_server_before_request():
@@ -588,6 +595,187 @@ def handle_conversation():
             "message": f"An unexpected error occurred: {str(e)}",
             "endSummary": {}
         }), 500
+
+@app.route("/api/extract-pdf", methods=["POST"])
+def extract_pdf():
+    """Endpoint to extract text from uploaded PDF file and analyze it with AI"""
+    # Check if the post request has the file part
+    if 'pdf_file' not in request.files:
+        return jsonify({"error": "No file part in the request"}), 400
+    
+    file = request.files['pdf_file']
+    
+    # If user does not select file, browser might send an empty file
+    if file.filename == '':
+        return jsonify({"error": "No file selected"}), 400
+    
+    # Check if it's a PDF file
+    if not file.filename.lower().endswith('.pdf'):
+        return jsonify({"error": "Invalid file format. Only PDF files are allowed."}), 400
+    
+    try:
+        # Save the file temporarily
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        
+        # Extract text with pdfminer.six (you'll need to install this)
+        # pip install pdfminer.six
+        try:
+            from pdfminer.high_level import extract_text
+            from pdfminer.pdfdocument import PDFDocument
+            from pdfminer.pdfparser import PDFParser
+            
+            # Extract text with more aggressive settings
+            text = ""
+            with open(filepath, 'rb') as file:
+                # Try with default settings first
+                text = extract_text(file)
+                
+                if not text.strip():
+                    # If that fails, try with more aggressive settings
+                    file.seek(0)  # Reset file pointer
+                    parser = PDFParser(file)
+                    doc = PDFDocument(parser)
+                    
+                    # Check if PDF has extraction restrictions
+                    if not doc.is_extractable:
+                        logger.warning(f"PDF {filename} has extraction restrictions")
+                    
+                    # Try again with more aggressive settings
+                    file.seek(0)  # Reset file pointer
+                    text = extract_text(file, laparams=None)  # Try without layout analysis
+                
+                if not text.strip():
+                    # Try with PyPDF2 as a fallback
+                    file.seek(0)  # Reset file pointer
+                    pdf_reader = PyPDF2.PdfReader(file)
+                    fallback_text = ""
+                    for page_num in range(len(pdf_reader.pages)):
+                        page = pdf_reader.pages[page_num]
+                        page_text = page.extract_text()
+                        if page_text:
+                            fallback_text += page_text + "\n\n"
+                    
+                    if fallback_text.strip():
+                        text = fallback_text
+            
+            # If still no text, return an error
+            if not text.strip():
+                logger.warning(f"Failed to extract text from {filename} with all methods")
+                return jsonify({
+                    "error": "Could not extract text from PDF. The file may be secured or contain only images.",
+                    "error_type": "extraction_failed",
+                    "suggestions": [
+                        "Try uploading a PDF with extractable text content",
+                        "Use a PDF that was created directly from a word processor rather than a design program",
+                        "Check if the PDF contains actual text rather than images of text"
+                    ]
+                }), 200
+            
+            # Process text with AI
+            logger.info(f"Successfully extracted {len(text)} characters from {filename}")
+            
+            # Prepare system prompt for CV analysis
+            system_prompt = """
+            You are a professional CV and resume analyzer. Your task is to extract key information 
+            from the given text which comes from a PDF resume or CV. Analyze the text carefully 
+            and extract the following information:
+            
+            1. Create a concise summary of the candidate's professional profile and experience
+            2. Identify the main professional role of the candidate based on their experience
+            3. Determine what type of job they might be seeking based on their background
+            4. Extract the most important technical and soft skills
+            5. Extract the most important technologies they've worked with
+            6. Extract programming languages they know
+            7. Extract frameworks they've used
+            8. Extract tools they're familiar with
+            9. Extract certifications they have
+            10. Extract major projects they've worked on
+            
+            Provide this information in a structured JSON format with the following keys:
+            - user_summary: A concise paragraph about the candidate's background and strengths
+            - user_role: An array of their primary and secondary professional roles
+            - job: The type of position they appear to be qualified for
+            - skills: A comma-separated string of their key skills (both technical and soft)
+            
+            Only include information that is actually present or can be confidently inferred from the text.
+            If the document is too long, summarize it and extract the most important information.
+            If the document is too short, provide a detailed analysis of the text.
+            If the document is in a different language, translate it to English and then analyze it.
+            If the document contains any personal information, remove it before analyzing.
+            If the document contains any sensitive information, remove it before analyzing.
+            If the document contains any confidential information, remove it before analyzing.
+            If the document contains any illegal information, remove it before analyzing.
+            If the document contains any offensive information, remove it before analyzing.
+            If the document contains any spam information, remove it before analyzing.
+            If the document contains any irrelevant information, remove it before analyzing.
+            If the document contains any duplicate information, remove it before analyzing.
+            If the document contains any misleading information, remove it before analyzing.
+            If the document contains any false information, remove it before analyzing.
+            If the document contains any outdated information, remove it before analyzing.
+            Provide this information in a structured format.
+            """
+            
+            # Define schema for structured output
+            json_schema = {
+                "type": "object", 
+                "properties": {
+                    "user_summary": {"type": "string"},
+                    "user_role": {"type": "array", "items": {"type": "string"}},
+                    "job": {"type": "string"},
+                    "skills": {"type": "string"}
+                },
+                "required": ["user_summary", "user_role", "job", "skills"]
+            }
+            
+            # Call AI service for CV analysis
+            structured_analysis = get_structured_output(
+                prompt=f"Analyze this resume/CV text and extract key information: {text[:3000]}...",
+                system_prompt=system_prompt,
+                schema=json_schema
+            )
+            
+            # Process and return the AI analysis
+            if isinstance(structured_analysis, dict) and "user_summary" in structured_analysis:
+                logger.info(f"Successfully analyzed CV for {filename}")
+                return jsonify({
+                    "success": True,
+                    "text": text[:5000] + ("..." if len(text) > 5000 else ""),
+                    "analysis": structured_analysis
+                })
+            else:
+                # Fallback if structured output fails
+                logger.warning(f"Problem with AI structured output: {structured_analysis}")
+                
+                # Try getting a regular AI response as fallback
+                ai_response = get_ai_response(
+                    prompt=f"Analyze this resume/CV text and extract key information: {text[:3000]}...",
+                    system_prompt=system_prompt
+                )
+                
+                return jsonify({
+                    "success": True,
+                    "text": text[:5000] + ("..." if len(text) > 5000 else ""),
+                    "raw_analysis": ai_response
+                })
+                
+        except Exception as e:
+            logger.error(f"Error in PDF processing: {str(e)}", exc_info=True)
+            return jsonify({"error": f"Error processing PDF: {str(e)}"}), 500
+        
+        finally:
+            # Remove temporary file
+            try:
+                if os.path.exists(filepath):
+                    os.unlink(filepath)
+            except Exception as cleanup_error:
+                logger.warning(f"Error removing temporary file: {str(cleanup_error)}")
+    
+    except Exception as e:
+        logger.error(f"Error handling uploaded file: {str(e)}", exc_info=True)
+        return jsonify({"error": f"Error processing file: {str(e)}"}), 500
+
 
 # Serve static files
 @app.route('/', defaults={'path': 'index.html'})

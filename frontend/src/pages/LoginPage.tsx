@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { setDoc, doc, collection } from "firebase/firestore";
@@ -19,6 +19,7 @@ export const LoginPage = () => {
     const [loading, setLoading] = useState(false);
     const [errorLoggingIn, setErrorLoggingIn] = useState(false);
     const navigate = useNavigate();
+    const [show, setShow] = useState(false);
 
     const {
         register,
@@ -26,6 +27,8 @@ export const LoginPage = () => {
         reset,
         formState: { errors },
     } = useForm<FormFields>();
+
+    useEffect(() => { setShow(true); }, []);
 
     const addUser = async (id: string, username: string) => {
         const userCollectionRef = collection(db, "users");
@@ -69,10 +72,9 @@ export const LoginPage = () => {
         <>
             <Navbar />
             <div className="w-screen h-screen flex flex-col items-center justify-center p-4 bg-background">
-                <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+                <div className={`bg-white shadow-lg rounded-lg p-8 w-full max-w-md transition-all duration-700 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                     <div className="text-center mb-8">
-
-                        <Text type="h2" className="mb-2">
+                        <Text type="h2">
                             {isRegistering ? "Create Account" : "Log In"}
                         </Text>
                         <button
@@ -162,7 +164,7 @@ export const LoginPage = () => {
                             type="submit"
                             disabled={loading}
                             color={isRegistering ? "green" : "blue"}
-                            className={`mt-4 w-full ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
+                            className={`mt-4 w-full transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
                         >
                             {loading ? "Please wait..." : isRegistering ? "Create Account" : "Log In"}
                         </Button>
