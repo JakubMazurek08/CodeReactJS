@@ -1672,7 +1672,7 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 04:28:59,311 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.022s
 2025-05-08 04:33:59,851 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.055s
 2025-05-08 04:34:00,612 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.297s
-<<<<<<< HEAD
+
 2025-05-08 05:27:19,441 - app - INFO - Using local storage
 2025-05-08 05:27:19,444 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
 2025-05-08 05:27:19,445 - app - INFO - JobPrepAI application initialized
@@ -1993,7 +1993,6 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 09:05:29,188 - app.services.job_matching_service - INFO - AI extracted 4 skills: ['python', 'html', 'css', 'javascript']
 2025-05-08 09:05:29,188 - app.services.job_matching_service - INFO - AI returned 10 job matches.
 2025-05-08 09:05:29,188 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
-=======
 2025-05-08 04:58:04,242 - app - INFO - Using local storage
 2025-05-08 04:58:04,247 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
 2025-05-08 04:58:04,251 - app - INFO - JobPrepAI application initialized
@@ -2233,4 +2232,4 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 08:59:20,945 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.896s
 2025-05-08 09:04:17,384 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.910s
 2025-05-08 09:04:22,028 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.078s
->>>>>>> 3cb162c76f8e5742a8320fe417eaf37609973119
+
