@@ -2070,3 +2070,10 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 09:20:21,313 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.959s
 2025-05-08 09:20:21,313 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
 2025-05-08 09:20:21,334 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 09:22:31,718 - app - INFO - Using local storage
+2025-05-08 09:22:31,724 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 09:22:31,727 - app - INFO - JobPrepAI application initialized
+2025-05-08 09:22:33,106 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.242s
+2025-05-08 09:22:33,107 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.243s
+2025-05-08 09:22:33,114 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 09:22:33,115 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
