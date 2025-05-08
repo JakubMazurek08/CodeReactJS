@@ -13,9 +13,8 @@ export const Navbar = () => {
         <nav className={'bg-white fixed border-b w-full h-16 border-gray-200 shadow-sm justify-between items-center px-4 md:px-[100px] flex z-50'}>
             <Link to={'/'} className="flex items-center">
                 <h1 className={'font-bold text-[28px] md:text-[32px]'}>
-                    <span className='text-green'>Job</span>
-                    <span className={'text-blue'}>Prep</span>
-                    <span className={'text-black'}>AI</span>
+                    <span className={'text-blue-800'}>Interv</span>
+                    <span className={'text-black'}>You</span>
                 </h1>
             </Link>
 
