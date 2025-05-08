@@ -267,8 +267,31 @@ def handle_conversation():
         ai_messages = []
         user_messages = []
 
-        # Get all AI messages for better tracking
-        for msg in messages:
+        # Track vague answers from the user
+        vague_answer_count = 0
+        vague_answers = []
+
+        # Define vague response patterns
+        vague_patterns = [
+            r"(?i)yes i know",
+            r"(?i)^yes$",
+            r"(?i)i know that",
+            r"(?i)i am familiar with",
+            r"(?i)i have experience",
+            r"(?i)i understand",
+            r"(?i)sounds good",
+            r"(?i)of course",
+            r"(?i)definitely",
+            r"(?i)certainly",
+            r"(?i)absolutely",
+            r"(?i)^sure$",
+            r"(?i)^okay$",
+            r"(?i)^ok$",
+            r"(?i)^i do$"
+        ]
+
+        # Get all AI messages and user messages for tracking
+        for i, msg in enumerate(messages):
             if not msg.get('isUser', True):
                 message_text = msg.get('message', '')
                 ai_messages.append(message_text)
@@ -297,7 +320,41 @@ def handle_conversation():
                         previous_questions.append(message_text)
             else:
                 # Store user messages for evaluation later
-                user_messages.append(msg.get('message', ''))
+                user_message = msg.get('message', '')
+                user_messages.append(user_message)
+
+                # Check if this user message came right after an AI message with a question
+                if i > 0 and not messages[i-1].get('isUser', True) and "?" in messages[i-1].get('message', ''):
+                    # Check if the response is vague
+                    is_vague = False
+                    for pattern in vague_patterns:
+                        if re.search(pattern, user_message):
+                            is_vague = True
+                            break
+
+                    # Check if response is too short (less than 20 characters)
+                    if len(user_message.strip()) < 20:
+                        is_vague = True
+
+                    # Check if response lacks technical details
+                    contains_technical_detail = False
+                    for skill in required_skills:
+                        if skill.lower() in user_message.lower():
+                            contains_technical_detail = True
+                            break
+
+                    for keyword in tech_keywords:
+                        if keyword.lower() in user_message.lower():
+                            contains_technical_detail = True
+                            break
+
+                    # If AI asked a technical question but response lacks technical details
+                    if is_technical and not contains_technical_detail and len(user_message.strip()) < 50:
+                        is_vague = True
+
+                    if is_vague:
+                        vague_answer_count += 1
+                        vague_answers.append(user_message)
 
         # Force the end of the interview after enough exchanges
         # This is a fallback for cases where question counting doesn't work
@@ -307,6 +364,7 @@ def handle_conversation():
         logger.info(f"Technical questions asked: {technical_questions_asked}")
         logger.info(f"Total AI messages: {len(ai_messages)}")
         logger.info(f"Force end: {force_end}")
+        logger.info(f"Vague answers: {vague_answer_count}")
 
 
         # Map experience level to more descriptive text
@@ -331,29 +389,34 @@ def handle_conversation():
         Required Skills: {skills_text}
 
         CONVERSATIONAL STYLE:
-        - Be friendly, conversational, and personable - not robotic or overly formal
-        - Acknowledge the candidate's responses before asking your next question
-        - If the candidate says they don't know something, don't repeat the question - move on to a different topic
-        - Vary your phrasing and speaking style to sound natural and human-like
-        - Use conversational language, contractions (like "you're" instead of "you are"), and casual transitions
-        - Start your responses with a brief acknowledgment or comment on what the candidate just said
-        - DO NOT start every response with the same phrase like "PrepJobAI from TechCorp"
+        - Be friendly but professional - an effective technical interviewer
+        - Always acknowledge the candidate's responses before asking your next question
+        - If the candidate gives a vague or insufficient answer, politely ask for specific examples or more details
+        - Don't be satisfied with answers like "Yes, I know that" or "I have experience with that" - push for concrete examples
+        - Vary your phrasing and speaking style to sound natural
+        - Use conversational language, contractions, and casual transitions when appropriate
 
         INTERVIEW GUIDELINES:
         1. Keep the conversation flowing naturally like a real interview
         2. Ask one question at a time about the candidate's experience with {skills_text}
         3. If the candidate gives a detailed answer, show interest before moving to your next question
         4. If the candidate says "I don't know" to a question, acknowledge it and move to a different question
-        5. Ask a mix of technical questions, scenario-based questions, and experience questions
-        6. Never repeat a question you've already asked
-        7. Always respond in English
+        5. If the candidate gives a vague answer (like "Yes, I know that"), ask for specific examples or more details
+        6. Ask a mix of technical questions, scenario-based questions, and experience questions
+        7. Never repeat a question you've already asked
+        8. Always respond in English
+        9. Keep track of vague answers and penalize them in the final evaluation
 
         Previous questions asked (DO NOT repeat these):
         {previous_questions}
 
+        Vague answers given by the candidate (push for better answers on new questions):
+        {vague_answers}
+
         INTERVIEW STRUCTURE:
         - You will ask a total of 5 technical questions throughout the interview
         - You have asked {technical_questions_asked} technical questions so far
+        - The candidate has given {vague_answer_count} vague answers so far
         - After the 5th question and the candidate's response, end the interview
         """
 
@@ -367,6 +430,16 @@ def handle_conversation():
             The interview has concluded, and now you need to evaluate the candidate based on their answers.
 
             Required Skills for the position: {skills_text}
+
+            CRITICAL EVALUATION INSTRUCTIONS:
+            1. Carefully analyze the depth and specificity of answers
+            2. Penalize vague answers significantly - if the candidate gave {vague_answer_count} vague answers, their rating should be reduced by at least {vague_answer_count * 10} points
+            3. Look for specific examples and technical details in the answers
+            4. Be strict in evaluating whether the candidate demonstrated actual knowledge
+            5. Be especially critical of answers that just say "Yes, I know that" without elaboration
+            6. If most answers are vague or lack depth, the candidate should not pass
+            7. To pass, a candidate must demonstrate actual knowledge, not just claim to have it
+            8. Rating should reflect demonstrated skill, not just claimed experience
 
             IMPORTANT: You must produce a JSON object with the following fields:
             1. "passed": a boolean indicating if the candidate passed the interview (true/false)
@@ -388,9 +461,14 @@ def handle_conversation():
             Here is the conversation between the interviewer and the candidate to evaluate:
             {json.dumps(messages, indent=2)}
 
+            Important evaluation factors:
+            - The candidate gave {vague_answer_count} vague answers during the interview
+            - Vague answers should significantly reduce their score
+            - If more than 2 answers were vague, the candidate should likely not pass
+
             Analyze their answers carefully. Evaluate technical knowledge, communication skills, and relevant experience.
-            If they frequently said "I don't know" or gave incorrect answers, they should receive a lower score and likely not pass.
-            If they demonstrated good understanding of the required skills, they should receive a higher score and likely pass.
+            If they frequently said "I don't know" or gave vague or incorrect answers, they should receive a lower score and not pass.
+            If they demonstrated good understanding of the required skills with specific examples, they should receive a higher score and likely pass.
 
             Return ONLY the JSON object with these fields and nothing else.
             """
@@ -433,7 +511,7 @@ def handle_conversation():
 
                 # Get structured JSON output
                 summary_response = get_structured_output(
-                    prompt=f"Evaluate this technical interview: {len(user_messages)} responses",
+                    prompt=f"Evaluate this technical interview with {vague_answer_count} vague responses out of {len(user_messages)} total responses",
                     system_prompt=summary_prompt,
                     schema=json_schema
                 )
@@ -442,6 +520,21 @@ def handle_conversation():
                 # Check if we got a valid response
                 if isinstance(summary_response, dict) and "passed" in summary_response:
                    end_summary = summary_response
+
+                   # Ensure the rating reflects vague answers
+                   if vague_answer_count > 0:
+                       # Decrease rating based on vague answers
+                       end_summary["rating"] = max(0, min(end_summary["rating"], 100 - (vague_answer_count * 10)))
+
+                       # If 3 or more vague answers, candidate should not pass
+                       if vague_answer_count >= 3:
+                           end_summary["passed"] = False
+
+                   # Ensure improvements mention vague answers if they were an issue
+                   if vague_answer_count > 0 and not any("specific" in imp.lower() or "detail" in imp.lower() or "vague" in imp.lower() or "elaborate" in imp.lower() for imp in end_summary.get("improvements", [])):
+                       if "improvements" not in end_summary:
+                           end_summary["improvements"] = []
+                       end_summary["improvements"].append("Provide specific examples and details rather than vague answers")
 
                    # Debug the learning_roadmap structure
                    logger.info(f"Raw summary response: {json.dumps(summary_response, indent=2)}")
@@ -471,10 +564,14 @@ def handle_conversation():
                     logger.warning(f"Failed to get structured interview summary: {summary_response}")
                     # Create a basic fallback summary with learning roadmap
                     end_summary = {
-                        "passed": False if "don't know" in " ".join(user_messages).lower() else True,
-                        "rating": 65,
-                        "improvements": ["Be more specific with technical answers", "Provide real-world examples"],
-                        "summary": f"The candidate interviewed for the {job_title} position and demonstrated some knowledge of {skills_text}. Further evaluation is recommended.",
+                        "passed": vague_answer_count < 3 and "don't know" not in " ".join(user_messages).lower().count(),
+                        "rating": max(0, 65 - (vague_answer_count * 10)),
+                        "improvements": [
+                            "Provide specific technical details rather than vague answers",
+                            "Share real-world examples from past experience",
+                            "Demonstrate deeper knowledge of the technologies mentioned"
+                        ],
+                        "summary": f"The candidate interviewed for the {job_title} position but gave {vague_answer_count} vague answers without sufficient technical detail. This suggests they may not have the depth of knowledge required for this role.",
                         "learning_roadmap": {
                             "key_areas": ["Technical fundamentals", "Interview preparation", "Practical experience"],
                             "resources": [
@@ -500,12 +597,12 @@ def handle_conversation():
                 logger.error(f"Error generating structured summary: {summary_error}")
                 # Fallback in case of errors
                 end_summary = {
-                    "passed": True,
-                    "rating": 70,
-                    "improvements": ["Be more specific with technical answers", "Demonstrate deeper knowledge of required technologies"],
-                    "summary": f"The candidate interviewed for the {job_title} position and showed potential. They should be considered for the next round.",
+                    "passed": vague_answer_count < 3,
+                    "rating": max(10, 70 - (vague_answer_count * 15)),
+                    "improvements": ["Provide specific examples rather than vague answers", "Demonstrate deeper knowledge of required technologies"],
+                    "summary": f"The candidate interviewed for the {job_title} position and gave {vague_answer_count} vague answers, suggesting they may not have the depth of knowledge required for this role.",
                     "learning_roadmap": {
-                        "key_areas": ["Core technologies", "Communication skills"],
+                        "key_areas": ["Core technologies", "Communication skills", "Technical depth"],
                         "resources": [
                             {
                                 "title": "Technical documentation",
@@ -541,10 +638,24 @@ def handle_conversation():
             else:
                 user_input = last_message.get('message', '')
 
+            # Check if the user gave a vague answer
+            is_vague_response = False
+            for pattern in vague_patterns:
+                if re.search(pattern, user_input):
+                    is_vague_response = True
+                    break
+
+            # Also check if response is too short
+            if len(user_input.strip()) < 20:
+                is_vague_response = True
+
             # Check if the user said they don't know
             if "dont know" in user_input.lower() or "don't know" in user_input.lower():
                 # Add special instruction to move on
                 system_prompt += "\n\nIMPORTANT: The candidate just indicated they don't know the answer. Acknowledge this briefly and move on to a completely different question. DO NOT repeat the same question or stay on the same topic."
+            elif is_vague_response:
+                # Add special instruction to ask for more details
+                system_prompt += f"\n\nIMPORTANT: The candidate just gave a vague answer: '{user_input}'. Politely but firmly ask for specific examples or more technical details. Tell them you need concrete examples to evaluate their knowledge. DO NOT accept this vague answer and move on. Press for specifics."
 
             # Create context from previous messages
             context = []
@@ -593,6 +704,8 @@ def handle_conversation():
             "message": f"An unexpected error occurred: {str(e)}",
             "endSummary": {}
         }), 500
+
+        
 
 @app.route("/api/extract-pdf", methods=["POST"])
 def extract_pdf():
