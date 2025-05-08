@@ -528,3 +528,118 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 02:37:14,868 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
 2025-05-08 02:37:17,260 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
 2025-05-08 02:37:17,260 - __main__ - INFO - Successfully analyzed CV for CV_Mateusz_Tasiemski.pdf
+2025-05-08 02:39:01,515 - app - INFO - Using local storage
+2025-05-08 02:39:01,518 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:39:01,519 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:39:01,937 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.374s
+2025-05-08 02:39:01,938 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:39:01,938 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:39:01,952 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:39:01,967 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.404s
+2025-05-08 02:40:13,156 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.435s
+2025-05-08 02:44:02,245 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.277s
+2025-05-08 02:44:57,817 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'Fronetend'
+2025-05-08 02:44:57,838 - app.utils.skill_extractor - INFO - Extracted 9 skills from text
+2025-05-08 02:44:57,839 - app.utils.skill_extractor - INFO - Determined experience level: senior
+2025-05-08 02:44:57,839 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['sql', 'html', 'python', 'vite', 'frontend', 'typescript', 'react', 'javascript', 'css'], Experience: senior
+2025-05-08 02:44:57,840 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 02:44:58,173 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.333s
+2025-05-08 02:44:58,174 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 02:45:10,488 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 02:45:10,488 - app.services.job_matching_service - INFO - AI extracted 8 skills: ['python', 'html', 'css', 'javascript', 'typescript', 'react', 'vite', 'sql']
+2025-05-08 02:45:10,488 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 02:45:10,489 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 02:45:13,569 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.412s
+2025-05-08 02:46:06,173 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'Frontend'
+2025-05-08 02:46:06,177 - app.utils.skill_extractor - INFO - Extracted 9 skills from text
+2025-05-08 02:46:06,177 - app.utils.skill_extractor - INFO - Determined experience level: senior
+2025-05-08 02:46:06,177 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['sql', 'html', 'python', 'vite', 'frontend', 'typescript', 'react', 'javascript', 'css'], Experience: senior
+2025-05-08 02:46:06,178 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 02:46:06,178 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 02:46:17,223 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 02:46:17,223 - app.services.job_matching_service - INFO - AI extracted 8 skills: ['python', 'html', 'css', 'javascript', 'typescript', 'react', 'vite', 'sql']
+2025-05-08 02:46:17,223 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 02:46:17,224 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 02:46:18,981 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'Frontend'
+2025-05-08 02:46:18,985 - app.utils.skill_extractor - INFO - Extracted 9 skills from text
+2025-05-08 02:46:18,985 - app.utils.skill_extractor - INFO - Determined experience level: senior
+2025-05-08 02:46:18,986 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['sql', 'html', 'python', 'vite', 'frontend', 'typescript', 'react', 'javascript', 'css'], Experience: senior
+2025-05-08 02:46:18,986 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 02:46:18,986 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 02:46:28,563 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 02:46:28,564 - app.services.job_matching_service - INFO - AI extracted 8 skills: ['python', 'html', 'css', 'javascript', 'typescript', 'react', 'vite', 'sql']
+2025-05-08 02:46:28,564 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 02:46:28,564 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 02:49:02,479 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.233s
+2025-05-08 02:50:13,956 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.385s
+2025-05-08 02:54:02,933 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.453s
+2025-05-08 02:55:14,303 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.347s
+2025-05-08 02:59:07,659 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Read timed out. (read timeout=3)
+2025-05-08 02:59:07,659 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:00:14,307 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002608D1E4550>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:00:14,307 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:04:07,661 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002323F2896D0>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:04:07,662 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:05:14,309 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002608D1E42D0>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:05:14,310 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:09:07,664 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002323F289950>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:09:07,664 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:10:14,312 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002608D1E5450>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:10:14,312 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:14:07,666 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002323F289D10>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:14:07,666 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:15:14,314 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002608D1E4050>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:15:14,315 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 03:15:42,444 - app - INFO - Using local storage
+2025-05-08 03:15:42,447 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 03:15:42,447 - app - INFO - JobPrepAI application initialized
+2025-05-08 03:15:42,502 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020BF6951A90>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:15:42,502 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020BF68F7620>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 03:15:42,502 - app.services.ai_service - WARNING - Current AI server https://ollama4.kkhost.pl is offline. In cooldown, not switching yet.
+2025-05-08 03:15:42,502 - app.services.ai_service - WARNING - Current AI server https://ollama4.kkhost.pl is offline. In cooldown, not switching yet.
+2025-05-08 03:15:42,502 - __main__ - WARNING - AI servers unavailable. Application will retry in background.
+2025-05-08 03:15:42,517 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 05:13:03,949 - app - INFO - Using local storage
+2025-05-08 05:13:03,953 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 05:13:03,954 - app - INFO - JobPrepAI application initialized
+2025-05-08 05:13:04,338 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.375s
+2025-05-08 05:13:04,339 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 05:13:04,339 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 05:13:04,343 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.380s
+2025-05-08 05:13:05,138 - app - INFO - Using local storage
+2025-05-08 05:13:05,140 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 05:13:05,141 - app - INFO - JobPrepAI application initialized
+2025-05-08 05:13:05,356 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.205s
+2025-05-08 05:13:05,367 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.216s
+2025-05-08 05:13:05,367 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 05:13:05,367 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 05:13:05,383 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 05:14:46,424 - __main__ - INFO - Successfully extracted 1276 characters from CV_Mateusz_Tasiemski.pdf
+2025-05-08 05:14:46,424 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 05:14:49,446 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 05:14:49,446 - __main__ - INFO - Successfully analyzed CV for CV_Mateusz_Tasiemski.pdf
+2025-05-08 05:14:49,777 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: ''
+2025-05-08 05:14:49,802 - app.utils.skill_extractor - INFO - Extracted 3 skills from text
+2025-05-08 05:14:49,802 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 05:14:49,802 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['firebase', 'react', 'cybersecurity'], Experience: junior
+2025-05-08 05:14:49,803 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 05:14:50,000 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.197s
+2025-05-08 05:14:50,000 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 05:15:00,931 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 05:15:00,931 - app.services.job_matching_service - INFO - AI extracted 4 skills: ['React', 'Firebase', 'Cybersecurity', 'AI']
+2025-05-08 05:15:00,932 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 05:15:00,932 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 05:15:19,779 - __main__ - INFO - Successfully extracted 1276 characters from CV_Mateusz_Tasiemski.pdf
+2025-05-08 05:15:19,780 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 05:15:22,362 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 05:15:22,362 - __main__ - INFO - Successfully analyzed CV for CV_Mateusz_Tasiemski.pdf
+2025-05-08 05:15:22,930 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: ''
+2025-05-08 05:15:22,939 - app.utils.skill_extractor - INFO - Extracted 11 skills from text
+2025-05-08 05:15:22,940 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 05:15:22,940 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['cybersecurity', 'javascript', 'react native', 'git', 'react', 'firebase', 'css', 'php', 'typescript', 'python', 'html'], Experience: junior
+2025-05-08 05:15:22,940 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 05:15:22,941 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 05:15:33,151 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 05:15:33,151 - app.services.job_matching_service - INFO - AI extracted 16 skills: ['React', 'Firebase', 'Stylize.ai', 'Firechat', 'Antywirus CyberGuard', 'RC Plane with FPV', 'Payloads and XSS experiments', 'HTML', 'CSS', 'JavaScript', 'TypeScript', 'Python', 'C', 'PHP', 'Git', 'Framer']
+2025-05-08 05:15:33,151 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 05:15:33,151 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).

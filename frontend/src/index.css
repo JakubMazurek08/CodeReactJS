@@ -13,3 +13,12 @@
     --font-weight-bold: 700;
     --font-weight-semibold: 600;
 }
+@keyframes searchWiggle {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
+  
+  .search-wiggle {
+    animation: searchWiggle 0.8s ease-in-out infinite;
+  }
