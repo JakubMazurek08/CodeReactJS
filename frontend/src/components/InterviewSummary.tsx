@@ -1,9 +1,10 @@
 // src/components/InterviewSummary.tsx
 import { useEffect, useRef, useState } from 'react';
-import { Text } from './Text.tsx';
-import { Roadmap } from './RoadMap.tsx';
-import { auth } from '../lib/firebase.ts';
-import { saveSummary } from '../lib/summaryService.ts';
+import { Text } from './Text';
+import { Roadmap } from './RoadMap';
+import { FlashcardsSection } from './FlashcardsSection';
+import { auth } from '../lib/firebase';
+import { saveSummary } from '../lib/summaryService';
 
 interface Message {
     id: string;
@@ -25,12 +26,26 @@ interface LearningRoadmapData {
     suggested_timeline: string;
 }
 
+interface FlashcardData {
+    id: number | string;
+    front: string;
+    back: string;
+}
+
+interface FlashcardSetData {
+    id: string;
+    title: string;
+    description: string;
+    cards: FlashcardData[];
+}
+
 interface InterviewSummaryData {
     passed: boolean;
     rating: number;
     improvements: string[];
     summary: string;
     learning_roadmap?: LearningRoadmapData;
+    flashcard_set?: FlashcardSetData;
 }
 
 interface InterviewSummaryProps {
@@ -39,13 +54,28 @@ interface InterviewSummaryProps {
     messages: Message[];
     showTranscript?: boolean;
     savedId?: string;
+    hideFlashcardsButton?: boolean; // New prop to hide the flashcards button
 }
 
-export const InterviewSummary = ({ summaryData, job, messages, showTranscript = true, savedId }: InterviewSummaryProps) => {
+// API endpoint
+const FLASHCARDS_API_URL = 'http://localhost:5000/api/generate-flashcards'; // REPLACE WITH YOUR ACTUAL ENDPOINT
+
+export const InterviewSummary = ({
+                                     summaryData,
+                                     job,
+                                     messages,
+                                     showTranscript = true,
+                                     savedId,
+                                     hideFlashcardsButton = false
+                                 }: InterviewSummaryProps) => {
     const [isSaving, setIsSaving] = useState(false);
     const [isSaved, setIsSaved] = useState(Boolean(savedId));
     const [saveError, setSaveError] = useState<string | null>(null);
     const [saveId, setSaveId] = useState<string | null>(savedId || null);
+    const [showFlashcards, setShowFlashcards] = useState<boolean>(false);
+    const [isLoadingFlashcards, setIsLoadingFlashcards] = useState<boolean>(false);
+    const [flashcardError, setFlashcardError] = useState<string | null>(null);
+    const [flashcardSet, setFlashcardSet] = useState<FlashcardSetData | undefined>(summaryData.flashcard_set);
     const timerRef = useRef<NodeJS.Timeout | null>(null);
 
     const getRatingColor = (rating: number) => {
@@ -91,6 +121,74 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
         }
     };
 
+    // Fetch flashcards directly from API
+    const fetchFlashcards = async () => {
+        // If we already have flashcards, just show them
+        if (flashcardSet) {
+            setShowFlashcards(true);
+            return;
+        }
+
+        setIsLoadingFlashcards(true);
+        setFlashcardError(null);
+
+        try {
+            // Prepare the API request payload
+            const payload = {
+                summary: summaryData.summary,
+                improvements: summaryData.improvements,
+                passed: summaryData.passed,
+                rating: summaryData.rating,
+                userId: auth.currentUser?.uid || 'anonymous'
+            };
+
+            console.log('Sending flashcard request with payload:', payload);
+
+            // Make the API call
+            const response = await fetch(FLASHCARDS_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(payload),
+            });
+
+            console.log('API Response status:', response.status);
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('API error response:', errorText);
+                throw new Error(`API call failed: ${response.status}`);
+            }
+
+            // Parse the JSON response
+            const flashcardData = await response.json();
+            console.log('Received flashcard data:', flashcardData);
+
+            // Set the flashcard data
+            setFlashcardSet(flashcardData);
+
+            // Show flashcards
+            setShowFlashcards(true);
+        } catch (err) {
+            console.error("Error fetching flashcards:", err);
+            setFlashcardError(`Failed to load flashcards: ${err instanceof Error ? err.message : String(err)}`);
+        } finally {
+            setIsLoadingFlashcards(false);
+        }
+    };
+
+    // Toggle between summary and flashcards view
+    const toggleFlashcardsView = () => {
+        if (!showFlashcards) {
+            // Fetch flashcards when switching to flashcards view
+            fetchFlashcards();
+        } else {
+            // Just toggle back to summary
+            setShowFlashcards(false);
+        }
+    };
+
     useEffect(() => {
         const autoSave = async () => {
             if (auth.currentUser && !isSaved && !saveId && !isSaving && job && summaryData) {
@@ -119,8 +217,16 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
         };
     }, []);
 
+    // Update flashcardSet if it changes in the props
+    useEffect(() => {
+        if (summaryData.flashcard_set) {
+            setFlashcardSet(summaryData.flashcard_set);
+        }
+    }, [summaryData.flashcard_set]);
+
     return (
         <div className="w-full space-y-8">
+            {/* Header/Title Section with action buttons */}
             <div className="bg-white rounded-lg shadow-xl p-8 mb-8">
                 <div className="flex justify-between items-center mb-6">
                     <div>
@@ -173,42 +279,94 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
                     </div>
                 </div>
 
-                <div className="mb-8">
-                    <Text type="h3" className="font-semibold mb-2">Overall Assessment</Text>
-                    <Text type="p" className="text-gray-700">{summaryData.summary}</Text>
-                </div>
-
-                <div className="mb-8">
-                    <div className="flex justify-between items-center mb-2">
-                        <Text type="h3" className="font-semibold">Performance Rating</Text>
-                        <Text type="p" className="font-bold">{summaryData.rating}/100</Text>
+                {/* Action buttons (including Flashcards toggle) */}
+                {!hideFlashcardsButton && (
+                    <div className="flex justify-between items-center mb-6">
+                        <div></div> {/* Empty div for flex spacing */}
+                        <div className="flex items-center space-x-4">
+                            {/* Toggle between summary and flashcards */}
+                            <button
+                                onClick={toggleFlashcardsView}
+                                className={`px-3 py-1 text-sm rounded-md border ${
+                                    showFlashcards
+                                        ? 'bg-blue-600 text-white border-blue-600'
+                                        : 'bg-white text-blue-600 border-blue-600'
+                                }`}
+                                disabled={isLoadingFlashcards}
+                            >
+                                {isLoadingFlashcards ? (
+                                    <span className="flex items-center">
+                                        <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        Loading...
+                                    </span>
+                                ) : (
+                                    showFlashcards ? 'View Summary' : 'Practice Flashcards'
+                                )}
+                            </button>
+                        </div>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-4">
-                        <div
-                            className={`h-4 rounded-full ${getRatingColor(summaryData.rating)}`}
-                            style={{ width: `${summaryData.rating}%` }}
-                        ></div>
-                    </div>
-                </div>
+                )}
 
-                <div>
-                    <Text type="h3" className="font-semibold mb-4">Areas for Improvement</Text>
-                    <ul className="space-y-2">
-                        {summaryData.improvements.map((improvement, index) => (
-                            <li key={index} className="flex items-start">
-                                <span className="mr-2 mt-1 text-red-500">•</span>
-                                <Text type="p" className="text-gray-700">{improvement}</Text>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                {/* Display either flashcards or summary */}
+                {showFlashcards && flashcardSet ? (
+                    <div>
+                        {/* Flashcard error message */}
+                        {flashcardError && (
+                            <div className="bg-red-50 p-4 rounded-lg border border-red-200 text-red-700 mb-6">
+                                <Text type="p">{flashcardError}</Text>
+                            </div>
+                        )}
+
+                        {/* Flashcards content - inline for better integration */}
+                        <FlashcardsSection
+                            flashcardSet={flashcardSet}
+                        />
+                    </div>
+                ) : (
+                    <>
+                        <div className="mb-8">
+                            <Text type="h3" className="font-semibold mb-2">Overall Assessment</Text>
+                            <Text type="p" className="text-gray-700">{summaryData.summary}</Text>
+                        </div>
+
+                        <div className="mb-8">
+                            <div className="flex justify-between items-center mb-2">
+                                <Text type="h3" className="font-semibold">Performance Rating</Text>
+                                <Text type="p" className="font-bold">{summaryData.rating}/100</Text>
+                            </div>
+                            <div className="w-full bg-gray-200 rounded-full h-4">
+                                <div
+                                    className={`h-4 rounded-full ${getRatingColor(summaryData.rating)}`}
+                                    style={{ width: `${summaryData.rating}%` }}
+                                ></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <Text type="h3" className="font-semibold mb-4">Areas for Improvement</Text>
+                            <ul className="space-y-2">
+                                {summaryData.improvements.map((improvement, index) => (
+                                    <li key={index} className="flex items-start">
+                                        <span className="mr-2 mt-1 text-red-500">•</span>
+                                        <Text type="p" className="text-gray-700">{improvement}</Text>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </>
+                )}
             </div>
 
-            {summaryData.learning_roadmap && (
+            {/* Only show learning roadmap when not in flashcards mode */}
+            {!showFlashcards && summaryData.learning_roadmap && (
                 <Roadmap roadmap={summaryData.learning_roadmap} />
             )}
 
-            {showTranscript && messages.length > 0 && (
+            {/* Only show transcript when not in flashcards mode */}
+            {!showFlashcards && showTranscript && messages.length > 0 && (
                 <div className="bg-white rounded-lg shadow-xl p-8">
                     <Text type="h3" className="font-semibold mb-4">Interview Transcript</Text>
                     <div className="space-y-4 max-h-96 overflow-y-auto">
