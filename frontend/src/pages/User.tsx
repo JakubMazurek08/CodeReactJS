@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { getAuth, signOut } from "firebase/auth";
 import { Navbar } from "../components/Navbar";
 import { Text } from "../components/Text";
@@ -99,11 +99,14 @@ export const User = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-gray-50 p-6 rounded-lg">
-                                    <Text type="h4">Interview Practice</Text>
+                                <div className="bg-gray-50 p-6 rounded-lg ">
+                                    <Text type="h4">Check Your Progress</Text>
                                     <div className="mt-4">
-                                        <p className="text-gray-500">You haven't completed any practice interviews.</p>
+                                        <Link to="/progress">
+                                        <Button color="green" className="mb-3">View Progress</Button>
+                                        </Link>
                                     </div>
+                                    <p className="text-gray-500">Click here to check your progress.</p>
                                 </div>
 
                                 <div className="bg-gray-50 p-6 rounded-lg">
