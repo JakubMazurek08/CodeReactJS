@@ -5,6 +5,7 @@ import {InterviewChatbot} from "./pages/InterviewChatbot.tsx";
 import {User} from "./pages/User.tsx";
 import {ProtectedRoute} from "./ProtectedRoute.tsx";
 import {LandingPage} from "./pages/LandingPage";
+import {InterviewPage} from "./pages/InterviewPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -20,12 +21,16 @@ const router = createBrowserRouter([
         element: <LoginPage />
     },
     {
-        path: "/interview",
+        path: "/interview/:id",
         element: <InterviewChatbot/>
     },
     {
         path: "/user",
         element: <ProtectedRoute><User/></ProtectedRoute>
+    },
+    {
+        path: "/interviews",
+        element: <ProtectedRoute><InterviewPage/></ProtectedRoute>
     }
 ]);
 
