@@ -1,6 +1,13 @@
 // src/firebase/summaryService.ts
 import { db, auth } from '../lib/firebase';
-import { collection, addDoc, serverTimestamp, query, where, getDocs } from 'firebase/firestore';
+import { 
+    collection, 
+    serverTimestamp, 
+    query, 
+    getDocs, 
+    doc, 
+    setDoc 
+} from 'firebase/firestore';
 
 export interface InterviewSummary {
     passed: boolean;
@@ -44,6 +51,9 @@ export const saveSummary = async (jobData: any, messages: any[], summary: Interv
             return null;
         }
 
+        // Generate a unique ID for this interview
+        const interviewId = `interview_${Date.now().toString()}`;
+        
         const interviewData: SavedInterview = {
             userId: currentUser.uid,
             jobId: jobData.id || 'unknown',
@@ -54,10 +64,14 @@ export const saveSummary = async (jobData: any, messages: any[], summary: Interv
             messages: messages
         };
 
-        // Add document to 'interviews' collection
-        const docRef = await addDoc(collection(db, 'interviews'), interviewData);
-        console.log("Interview saved with ID: ", docRef.id);
-        return docRef.id;
+        // Create path to user's interviews collection
+        const userInterviewRef = doc(db, 'users', currentUser.uid, 'interviews', interviewId);
+        
+        // Save the interview document under the user's interviews subcollection
+        await setDoc(userInterviewRef, interviewData);
+        
+        console.log("Interview saved with ID: ", interviewId);
+        return interviewId;
     } catch (error) {
         console.error("Error saving interview: ", error);
         return null;
@@ -72,9 +86,9 @@ export const getUserInterviews = async (): Promise<SavedInterview[]> => {
             return [];
         }
 
+        // Query the user's interviews subcollection
         const interviewsQuery = query(
-            collection(db, 'interviews'),
-            where('userId', '==', currentUser.uid)
+            collection(db, 'users', currentUser.uid, 'interviews')
         );
 
         const querySnapshot = await getDocs(interviewsQuery);

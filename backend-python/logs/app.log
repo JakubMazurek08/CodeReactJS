@@ -1672,3 +1672,323 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 04:28:59,311 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.022s
 2025-05-08 04:33:59,851 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.055s
 2025-05-08 04:34:00,612 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.297s
+2025-05-08 05:27:19,441 - app - INFO - Using local storage
+2025-05-08 05:27:19,444 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 05:27:19,445 - app - INFO - JobPrepAI application initialized
+2025-05-08 05:27:19,713 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.260s
+2025-05-08 05:27:19,721 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.268s
+2025-05-08 05:27:19,721 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 05:27:19,722 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 05:27:20,437 - app - INFO - Using local storage
+2025-05-08 05:27:20,440 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 05:27:20,441 - app - INFO - JobPrepAI application initialized
+2025-05-08 05:27:20,652 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.201s
+2025-05-08 05:27:20,652 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 05:27:20,652 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 05:27:20,665 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 05:27:20,670 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.220s
+2025-05-08 05:32:20,212 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.498s
+2025-05-08 05:32:21,199 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.528s
+2025-05-08 05:37:20,610 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.397s
+2025-05-08 05:37:21,488 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.288s
+2025-05-08 05:42:20,817 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.206s
+2025-05-08 05:42:21,801 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.312s
+2025-05-08 05:47:21,157 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.339s
+2025-05-08 05:47:22,028 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.226s
+2025-05-08 05:52:21,491 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.332s
+2025-05-08 05:52:22,343 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.314s
+2025-05-08 05:52:58,121 - __main__ - INFO - Successfully extracted 1276 characters from CV_Mateusz_Tasiemski.pdf
+2025-05-08 05:52:58,121 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 05:53:02,016 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 05:53:02,017 - __main__ - INFO - Successfully analyzed CV for CV_Mateusz_Tasiemski.pdf
+2025-05-08 05:53:02,352 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: ''
+2025-05-08 05:53:02,363 - app.utils.skill_extractor - INFO - Extracted 3 skills from text
+2025-05-08 05:53:02,363 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 05:53:02,363 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['firebase', 'cybersecurity', 'react'], Experience: junior
+2025-05-08 05:53:02,363 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 05:53:02,751 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.388s
+2025-05-08 05:53:02,752 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 05:53:14,035 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 05:53:14,035 - app.services.job_matching_service - INFO - AI extracted 4 skills: ['React', 'Firebase', 'Cybersecurity', 'AI']
+2025-05-08 05:53:14,035 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 05:53:14,035 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 05:53:16,518 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 05:53:16,518 - __main__ - INFO - Total AI messages: 0
+2025-05-08 05:53:16,519 - __main__ - INFO - Force end: False
+2025-05-08 05:53:16,519 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:53:16,828 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 05:53:16,828 - __main__ - INFO - Total AI messages: 0
+2025-05-08 05:53:16,828 - __main__ - INFO - Force end: False
+2025-05-08 05:53:16,828 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:53:19,628 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:53:22,713 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:53:37,704 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 05:53:37,705 - __main__ - INFO - Total AI messages: 0
+2025-05-08 05:53:37,705 - __main__ - INFO - Force end: False
+2025-05-08 05:53:37,705 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:53:41,405 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:54:06,115 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 05:54:06,115 - __main__ - INFO - Total AI messages: 0
+2025-05-08 05:54:06,115 - __main__ - INFO - Force end: False
+2025-05-08 05:54:06,115 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:54:07,980 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:54:15,738 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 05:54:15,738 - __main__ - INFO - Total AI messages: 0
+2025-05-08 05:54:15,738 - __main__ - INFO - Force end: False
+2025-05-08 05:54:15,739 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:54:33,597 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 05:54:33,597 - __main__ - INFO - Total AI messages: 0
+2025-05-08 05:54:33,597 - __main__ - INFO - Force end: False
+2025-05-08 05:54:33,598 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:54:54,112 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:54:56,275 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:55:35,001 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 05:55:35,001 - __main__ - INFO - Total AI messages: 1
+2025-05-08 05:55:35,001 - __main__ - INFO - Force end: False
+2025-05-08 05:55:35,001 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:55:39,915 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:56:07,445 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 05:56:07,445 - __main__ - INFO - Total AI messages: 0
+2025-05-08 05:56:07,445 - __main__ - INFO - Force end: False
+2025-05-08 05:56:07,446 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 05:56:12,133 - __main__ - INFO - Returning endSummary: False
+2025-05-08 05:57:21,848 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.356s
+2025-05-08 05:57:22,575 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.232s
+2025-05-08 06:02:22,383 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.534s
+2025-05-08 06:02:22,771 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.194s
+2025-05-08 06:07:22,764 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.380s
+2025-05-08 06:07:22,989 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.218s
+2025-05-08 06:12:23,111 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.346s
+2025-05-08 06:12:23,179 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.189s
+2025-05-08 06:17:23,324 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.213s
+2025-05-08 06:17:23,378 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.199s
+2025-05-08 06:22:23,625 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.299s
+2025-05-08 06:22:23,698 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.319s
+2025-05-08 06:27:25,688 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 2.062s
+2025-05-08 06:27:27,797 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Read timed out. (read timeout=3)
+2025-05-08 06:27:27,797 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 06:32:25,948 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.260s
+2025-05-08 06:32:28,232 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.434s
+2025-05-08 06:37:32,687 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 6.737s
+2025-05-08 06:37:32,795 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 4.562s
+2025-05-08 06:42:33,072 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.276s
+2025-05-08 06:42:33,073 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.385s
+2025-05-08 06:42:39,933 - __main__ - INFO - Successfully extracted 1276 characters from CV_Mateusz_Tasiemski.pdf
+2025-05-08 06:42:39,934 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 06:42:43,909 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 06:42:43,909 - __main__ - INFO - Successfully analyzed CV for CV_Mateusz_Tasiemski.pdf
+2025-05-08 06:42:44,236 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: ''
+2025-05-08 06:42:44,245 - app.utils.skill_extractor - INFO - Extracted 3 skills from text
+2025-05-08 06:42:44,246 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 06:42:44,246 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['firebase', 'cybersecurity', 'react'], Experience: junior
+2025-05-08 06:42:44,247 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 06:42:44,452 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.205s
+2025-05-08 06:42:44,453 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 06:42:55,338 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 06:42:55,339 - app.services.job_matching_service - INFO - AI extracted 4 skills: ['React', 'Firebase', 'Cybersecurity', 'AI']
+2025-05-08 06:42:55,339 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 06:42:55,340 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 06:42:57,222 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 06:42:57,222 - __main__ - INFO - Total AI messages: 0
+2025-05-08 06:42:57,224 - __main__ - INFO - Force end: False
+2025-05-08 06:42:57,225 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 06:42:57,536 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 06:42:57,536 - __main__ - INFO - Total AI messages: 0
+2025-05-08 06:42:57,536 - __main__ - INFO - Force end: False
+2025-05-08 06:42:57,537 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 06:42:59,247 - __main__ - INFO - Returning endSummary: False
+2025-05-08 06:43:02,579 - __main__ - INFO - Returning endSummary: False
+2025-05-08 06:43:12,864 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 06:43:12,864 - __main__ - INFO - Total AI messages: 1
+2025-05-08 06:43:12,865 - __main__ - INFO - Force end: False
+2025-05-08 06:43:12,865 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 06:43:18,548 - __main__ - INFO - Returning endSummary: False
+2025-05-08 06:43:57,829 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 06:43:57,829 - __main__ - INFO - Total AI messages: 2
+2025-05-08 06:43:57,829 - __main__ - INFO - Force end: False
+2025-05-08 06:43:57,830 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 06:44:01,125 - __main__ - INFO - Returning endSummary: False
+2025-05-08 06:44:41,307 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 06:44:41,308 - __main__ - INFO - Total AI messages: 3
+2025-05-08 06:44:41,308 - __main__ - INFO - Force end: False
+2025-05-08 06:44:41,308 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 06:44:45,036 - __main__ - INFO - Returning endSummary: False
+2025-05-08 06:45:11,941 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 06:45:11,941 - __main__ - INFO - Total AI messages: 4
+2025-05-08 06:45:11,942 - __main__ - INFO - Force end: False
+2025-05-08 06:45:11,942 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 06:45:16,060 - __main__ - INFO - Returning endSummary: False
+2025-05-08 06:45:43,504 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 06:45:43,504 - __main__ - INFO - Total AI messages: 5
+2025-05-08 06:45:43,504 - __main__ - INFO - Force end: False
+2025-05-08 06:45:43,505 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 06:45:48,681 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 06:45:48,682 - __main__ - INFO - Raw summary response: {
+  "passed": true,
+  "rating": 95,
+  "improvements": [
+    "Further improve understanding of advanced REST API design patterns, such as versioning and rate limiting.",
+    "Explore more complex database optimization techniques, such as query optimization and indexing strategies."
+  ],
+  "summary": "The candidate demonstrated strong technical knowledge of Python, Django, and Flask, with a clear understanding of REST API design, authentication, and database integration. They provided detailed examples of real-world projects, showing their ability to apply theoretical concepts in practical scenarios. The candidate communicated their thought process effectively, explaining how they approached problem-solving and made trade-offs in their design decisions. They also showed a good understanding of balancing ORM with raw SQL for performance optimization. However, they could benefit from deeper exploration of advanced API design patterns and more complex database optimization techniques.",
+  "learning_roadmap": {
+    "key_areas": [
+      "Advanced REST API Design Patterns",
+      "Database Optimization Techniques",
+      "Security Best Practices in Web Applications"
+    ],
+    "resources": [
+      {
+        "title": "REST API Design Patterns",
+        "type": "course",
+        "description": "A comprehensive course on advanced REST API design, including versioning, rate limiting, and API gateways.",
+        "difficulty": "intermediate",
+        "url": "https://www.udemy.com/course/rest-api-design-patterns/"
+      },
+      {
+        "title": "SQL Performance Optimization",
+        "type": "article",
+        "description": "An in-depth article on optimizing SQL queries, indexing strategies, and query execution plans.",
+        "difficulty": "intermediate",
+        "url": "https://www.codingame.com/playgrounds/2545/sql-performance-optimization"
+      },
+      {
+        "title": "Web Security Best Practices",
+        "type": "book",
+        "description": "A detailed book on securing web applications, covering topics like CSRF protection, XSS prevention, and secure authentication practices.",
+        "difficulty": "intermediate",
+        "url": "https://www.packtpub.com/product/web-security-best-practices-2nd-edition"
+      }
+    ],
+    "suggested_timeline": "Dedicate 2-3 weeks to each key area, focusing on practical implementation and real-world application of the concepts learned."
+  }
+}
+2025-05-08 06:45:48,682 - __main__ - INFO - resources array contains 3 items
+2025-05-08 06:45:48,684 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: None, attempt 1/3)
+2025-05-08 06:45:51,346 - __main__ - INFO - Returning endSummary: True
+2025-05-08 06:45:51,347 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 06:47:33,445 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.372s
+2025-05-08 06:47:33,448 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.374s
+2025-05-08 06:52:33,909 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.443s
+2025-05-08 06:52:33,911 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.465s
+2025-05-08 06:57:34,342 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.430s
+2025-05-08 06:57:34,344 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.434s
+2025-05-08 07:07:38,131 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.433s
+2025-05-08 07:07:38,139 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.443s
+2025-05-08 07:12:38,462 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.322s
+2025-05-08 07:12:38,463 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.330s
+2025-05-08 07:16:09,882 - app - INFO - Using local storage
+2025-05-08 07:16:09,886 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:16:09,888 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:16:10,270 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.367s
+2025-05-08 07:16:10,270 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:16:10,271 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.369s
+2025-05-08 07:16:10,271 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:16:10,295 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:17:39,091 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.627s
+2025-05-08 07:19:21,451 - app - INFO - Using local storage
+2025-05-08 07:19:21,456 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:19:21,458 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:19:21,903 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.429s
+2025-05-08 07:19:22,013 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.538s
+2025-05-08 07:19:22,014 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:19:22,014 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:19:22,045 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:19:46,274 - app - INFO - Using local storage
+2025-05-08 07:19:46,278 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:19:46,280 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:19:46,514 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.219s
+2025-05-08 07:19:46,520 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.224s
+2025-05-08 07:19:46,520 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:19:46,521 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:19:46,542 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:20:03,626 - app - INFO - Using local storage
+2025-05-08 07:20:03,630 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:20:03,631 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:20:04,067 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.397s
+2025-05-08 07:20:04,110 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.440s
+2025-05-08 07:20:04,111 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:20:04,111 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:20:04,136 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:21:02,715 - app - INFO - Using local storage
+2025-05-08 07:21:02,720 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:21:02,722 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:21:03,942 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.189s
+2025-05-08 07:21:03,942 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:21:03,942 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:21:03,963 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:21:03,971 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.220s
+2025-05-08 07:21:10,535 - app - INFO - Using local storage
+2025-05-08 07:21:10,538 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:21:10,539 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:21:11,051 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.498s
+2025-05-08 07:21:11,131 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.577s
+2025-05-08 07:21:11,132 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:21:11,132 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:21:11,159 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:22:39,572 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.480s
+2025-05-08 07:22:44,738 - app - INFO - Using local storage
+2025-05-08 07:22:44,742 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:22:44,744 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:22:45,515 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.752s
+2025-05-08 07:22:45,576 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.813s
+2025-05-08 07:22:45,576 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:22:45,577 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:22:45,597 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:23:57,107 - app - INFO - Using local storage
+2025-05-08 07:23:57,111 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:23:57,112 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:23:57,364 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.237s
+2025-05-08 07:23:57,365 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.238s
+2025-05-08 07:23:57,365 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:23:57,366 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:23:57,390 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:24:13,727 - app - INFO - Using local storage
+2025-05-08 07:24:13,736 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:24:13,738 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:24:14,053 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.293s
+2025-05-08 07:24:14,054 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:24:14,054 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:24:14,077 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:24:14,251 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.492s
+2025-05-08 07:24:24,240 - app - INFO - Using local storage
+2025-05-08 07:24:24,243 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:24:24,245 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:24:24,561 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.301s
+2025-05-08 07:24:24,561 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:24:24,561 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:24:24,589 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:24:24,631 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.372s
+2025-05-08 07:25:21,589 - app - INFO - Using local storage
+2025-05-08 07:25:21,595 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 07:25:21,598 - app - INFO - JobPrepAI application initialized
+2025-05-08 07:25:21,927 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.297s
+2025-05-08 07:25:21,928 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 07:25:21,928 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 07:25:21,949 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.321s
+2025-05-08 07:25:21,987 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 07:27:39,941 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.367s
+2025-05-08 07:30:22,323 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.372s
+2025-05-08 07:32:40,258 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.316s
+2025-05-08 08:43:53,768 - app.services.ai_service - WARNING - Main AI server https://ollama4.kkhost.pl unavailable: HTTPSConnectionPool(host='ollama4.kkhost.pl', port=443): Max retries exceeded with url: /api/tags (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x00000260523F3C50>: Failed to resolve 'ollama4.kkhost.pl' ([Errno 11001] getaddrinfo failed)"))
+2025-05-08 08:43:53,773 - app.services.ai_service - ERROR - All AI servers confirmed unavailable after checking alternatives.
+2025-05-08 08:45:20,872 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.412s
+2025-05-08 08:48:54,195 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.267s
+2025-05-08 08:50:20,966 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.092s
+2025-05-08 08:53:54,275 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.078s
+2025-05-08 08:55:21,088 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.121s
+2025-05-08 08:58:54,540 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.263s
+2025-05-08 09:00:21,222 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.133s
+2025-05-08 09:03:54,649 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.108s
+2025-05-08 09:05:17,458 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'Backend'
+2025-05-08 09:05:17,487 - app.utils.skill_extractor - INFO - Extracted 4 skills from text
+2025-05-08 09:05:17,487 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 09:05:17,488 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['javascript', 'css', 'html', 'python'], Experience: junior
+2025-05-08 09:05:17,489 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 09:05:17,580 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.091s
+2025-05-08 09:05:17,581 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 09:05:21,292 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.068s
+2025-05-08 09:05:29,187 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 09:05:29,188 - app.services.job_matching_service - INFO - AI extracted 4 skills: ['python', 'html', 'css', 'javascript']
+2025-05-08 09:05:29,188 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 09:05:29,188 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).

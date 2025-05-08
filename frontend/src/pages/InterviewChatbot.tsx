@@ -253,10 +253,10 @@ export const InterviewChatbot = () => {
 
 
     useEffect(() => {
-        if (isInterviewEnded && interviewSummary && !isSaved && !isSaving && auth.currentUser) {
-            handleSaveInterview();
-        }
-    }, [isInterviewEnded, interviewSummary]);
+    if (isInterviewEnded && interviewSummary && !isSaved && !isSaving && auth.currentUser) {
+        handleSaveInterview();
+    }
+}, [isInterviewEnded, interviewSummary, isSaved, isSaving, auth.currentUser]);
 
     // If job is loading, show loading state
     if (isJobLoading) {
