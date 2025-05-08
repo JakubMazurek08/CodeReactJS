@@ -180,14 +180,14 @@ def match_jobs_with_ai(profile_text: str, job_keyword: str = "", jobs: List[Dict
         },
         "required": ["job_matches", "extracted_user_skills"]
     }
-    
+    #cwel
     # Prepare prompt for AI
     prompt = f"""Analyze profile and keyword to find matches.
 Profile: {clean_profile_text}
 Keyword: {clean_job_keyword if clean_job_keyword else "Not specified"}
 Job List ({len(job_data_for_ai)}):
 {json.dumps(job_data_for_ai, indent=2)}
-Instructions: Assess suitability. Determine match_percentage, reasoning, matching_skills, missing_skills. Extract extracted_user_skills. Return up to 10 matches, ordered. Use snake_case keys in JSON output.
+Instructions: Your primary task is to match jobs based on the provided Keyword. If a Keyword is specified (and not "Not specified"), you MUST focus your matching on jobs that align with this Keyword. These keyword-matched jobs should be ranked highest. If no jobs align well with the Keyword, or after listing keyword-matched jobs, you may then consider jobs that match the Profile. Assess suitability for each job. Determine match_percentage, reasoning, matching_skills, and missing_skills. Extract extracted_user_skills from the profile. Return up to 10 matches, ordered by relevance (keyword matches first). Use snake_case keys in JSON output.
     """
     
     # System prompt for AI
