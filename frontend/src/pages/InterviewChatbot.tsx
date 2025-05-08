@@ -3,7 +3,10 @@ import { Text } from "../components/Text.tsx";
 import { Navbar } from "../components/Navbar.tsx";
 import { useContext } from "react";
 import { jobContext } from "../context/jobContext.ts";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import {  doc, getDoc } from "firebase/firestore";
+import { db } from "../lib/firebase.ts";
+import {Roadmap} from "../components/RoadMap.tsx";
 
 // Define types for our messages
 interface Message {
@@ -15,24 +18,79 @@ interface Message {
 
 // Define the structure for our interview summary
 interface InterviewSummary {
+    learning_roadmap: any;
     passed: boolean;
     rating: number;
     improvements: string[];
     summary: string;
 }
 
+// Job interface
+interface Job {
+    id: string;
+    title: string;
+    company: string;
+    description: string;
+    required_skills: string[];
+    experience_level: string;
+    employment_type: string;
+    location: string;
+    [key: string]: any; // For additional properties
+}
+
 export const InterviewChatbot = () => {
     const navigate = useNavigate();
+    const { id } = useParams<{ id: string }>();
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
-    const { job } = useContext(jobContext);
+    const { job, setJob } = useContext(jobContext);
     const [value, setValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isJobLoading, setIsJobLoading] = useState(false);
+    const [jobLoadError, setJobLoadError] = useState<string | null>(null);
     const [messages, setMessages] = useState<Message[]>([]);
     const [isInterviewEnded, setIsInterviewEnded] = useState(false);
     const [interviewSummary, setInterviewSummary] = useState<InterviewSummary | null>(null);
 
-    // Fetch initial message when component loads
+    // Fetch job from Firebase if not in context
+    useEffect(() => {
+        const fetchJobFromFirebase = async () => {
+            if (!job && id) {
+                setIsJobLoading(true);
+                setJobLoadError(null);
+
+                try {
+                    // Get job document from Firestore
+                    const jobRef = doc(db, "jobs", id);
+                    const jobDoc = await getDoc(jobRef);
+
+                    if (jobDoc.exists()) {
+                        // Create job object with both document data and id
+                        const jobData = {
+                            id: jobDoc.id,
+                            ...jobDoc.data()
+                        } as Job;
+
+                        // Update context with job data
+                        setJob(jobData);
+                        console.log("Job loaded from Firebase:", jobData);
+                    } else {
+                        setJobLoadError("Job not found");
+                        console.error("No job found with ID:", id);
+                    }
+                } catch (error) {
+                    setJobLoadError(`Error loading job: ${error instanceof Error ? error.message : String(error)}`);
+                    console.error("Error fetching job:", error);
+                } finally {
+                    setIsJobLoading(false);
+                }
+            }
+        };
+
+        fetchJobFromFirebase();
+    }, [id, job, setJob]);
+
+    // Fetch initial message when component loads or job is loaded
     useEffect(() => {
         if (job && messages.length === 0) {
             startInterview();
@@ -215,6 +273,10 @@ export const InterviewChatbot = () => {
                     </div>
                 </div>
 
+                {interviewSummary.learning_roadmap && (
+                    <Roadmap roadmap={interviewSummary.learning_roadmap} />
+                )}
+
                 <div className="bg-white rounded-lg shadow-xl p-6">
                     <Text type="h3" className="font-semibold mb-4">Interview Transcript</Text>
 
@@ -241,6 +303,45 @@ export const InterviewChatbot = () => {
             </div>
         );
     };
+
+    // If job is loading, show loading state
+    if (isJobLoading) {
+        return (
+            <>
+                <Navbar />
+                <main className="px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] pt-30 pb-[140px] min-h-screen bg-background flex justify-center items-center">
+                    <div className="text-center">
+                        <div className="flex justify-center mb-4">
+                            <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                        <Text type="h2">Loading job details...</Text>
+                    </div>
+                </main>
+            </>
+        );
+    }
+
+    // If job loading failed, show error
+    if (jobLoadError) {
+        return (
+            <>
+                <Navbar />
+                <main className="px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] pt-30 pb-[140px] min-h-screen bg-background flex justify-center items-center">
+                    <div className="text-center">
+                        <div className="text-red-500 text-5xl mb-4">⚠️</div>
+                        <Text type="h2" className="mb-4">Unable to load job</Text>
+                        <Text type="p" className="mb-6">{jobLoadError}</Text>
+                        <button
+                            onClick={() => navigate('/jobs')}
+                            className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+                        >
+                            Back to Job Listings
+                        </button>
+                    </div>
+                </main>
+            </>
+        );
+    }
 
     // If interview has ended, show the summary page
     if (isInterviewEnded && interviewSummary) {
@@ -304,7 +405,7 @@ export const InterviewChatbot = () => {
                         value={value}
                         onChange={handleInput}
                         onKeyDown={handleKeyDown}
-                        className="bg-white w-full p-4 pr-6 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
+                        className="bg-white w-full p-4 pr-10 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
                         placeholder={isInterviewEnded ? "Interview Complete" : "Respond..."}
                         rows={1}
                         disabled={isLoading || isInterviewEnded}

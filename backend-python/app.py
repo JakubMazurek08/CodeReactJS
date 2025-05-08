@@ -349,14 +349,12 @@ def handle_conversation():
         - After the 5th question and the candidate's response, end the interview
         """
 
-        # Check if this is the end of the interview
         end_summary = {}
         # End if 5+ technical questions or force end due to message count
         if (technical_questions_asked >= 5 or force_end) and len(messages) >= 2 and messages[-1].get('isUser', False):
             # Generate summary as JSON instead of string
             summary_prompt = f"""
             You are an AI evaluating a technical interview for a {job_title} position at {company}.
-
 
             The interview has concluded, and now you need to evaluate the candidate based on their answers.
 
@@ -367,6 +365,17 @@ def handle_conversation():
             2. "rating": a number from 1 to 100 representing the candidate's performance
             3. "improvements": an array of strings with at least 2 specific areas where the candidate could improve
             4. "summary": a detailed paragraph evaluating the candidate's performance
+            5. "learning_roadmap": an object with the following structure:
+               a. "key_areas": an array of 3-5 strings representing specific skills or topics the candidate should focus on
+               b. "resources": an array of objects, each representing a learning resource with:
+                  - "title": string - name of the resource
+                  - "type": string - one of "article", "course", "book", "video", or "practice"
+                  - "description": string - brief description of the resource
+                  - "difficulty": string - one of "beginner", "intermediate", or "advanced"
+                  - "url": string (optional) - a URL to a general learning platform like Coursera, Udemy, etc.
+               c. "suggested_timeline": string - a brief timeline for learning these skills
+
+            Based on the candidate's performance in the interview, create a personalized learning roadmap to help them improve in areas where they struggled.
 
             Here is the conversation between the interviewer and the candidate to evaluate:
             {json.dumps(messages, indent=2)}
@@ -387,9 +396,31 @@ def handle_conversation():
                         "passed": {"type": "boolean"},
                         "rating": {"type": "integer", "minimum": 1, "maximum": 100},
                         "improvements": {"type": "array", "items": {"type": "string"}},
-                        "summary": {"type": "string"}
+                        "summary": {"type": "string"},
+                        "learning_roadmap": {
+                            "type": "object",
+                            "properties": {
+                                "key_areas": {"type": "array", "items": {"type": "string"}},
+                                "resources": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "title": {"type": "string"},
+                                            "type": {"type": "string", "enum": ["article", "course", "book", "video", "practice"]},
+                                            "description": {"type": "string"},
+                                            "difficulty": {"type": "string", "enum": ["beginner", "intermediate", "advanced"]},
+                                            "url": {"type": "string"}
+                                        },
+                                        "required": ["title", "type", "description", "difficulty"]
+                                    }
+                                },
+                                "suggested_timeline": {"type": "string"}
+                            },
+                            "required": ["key_areas", "resources", "suggested_timeline"]
+                        }
                     },
-                    "required": ["passed", "rating", "improvements", "summary"]
+                    "required": ["passed", "rating", "improvements", "summary", "learning_roadmap"]
                 }
 
                 # Get structured JSON output
@@ -402,14 +433,63 @@ def handle_conversation():
                 # Check if we got a valid response
                 if isinstance(summary_response, dict) and "passed" in summary_response:
                     end_summary = summary_response
+
+                    # Ensure learning_roadmap exists, create a default one if missing
+                    if "learning_roadmap" not in end_summary or not end_summary["learning_roadmap"]:
+                        # Create a default learning roadmap based on improvement areas
+                        default_roadmap = {
+                            "key_areas": end_summary.get("improvements", ["Technical knowledge", "Communication skills"]),
+                            "resources": [
+                                {
+                                    "title": f"Complete guide to {job_title} interviews",
+                                    "type": "course",
+                                    "description": f"A comprehensive course covering all aspects of {job_title} interviews",
+                                    "difficulty": "intermediate",
+                                    "url": "https://www.udemy.com"
+                                },
+                                {
+                                    "title": "Practice coding problems",
+                                    "type": "practice",
+                                    "description": "Regular practice with coding challenges related to the job requirements",
+                                    "difficulty": "intermediate",
+                                    "url": "https://leetcode.com"
+                                }
+                            ],
+                            "suggested_timeline": "Spend 2-3 weeks focusing on the key areas identified, with daily practice sessions and structured learning."
+                        }
+                        end_summary["learning_roadmap"] = default_roadmap
+
+                    # Log the final summary for debugging
+                    logger.info(f"Generated end summary with roadmap: {json.dumps(end_summary, indent=2)}")
                 else:
                     # Fallback if structured output fails
                     logger.warning(f"Failed to get structured interview summary: {summary_response}")
+                    # Create a basic fallback summary with learning roadmap
                     end_summary = {
                         "passed": False if "don't know" in " ".join(user_messages).lower() else True,
                         "rating": 65,
                         "improvements": ["Be more specific with technical answers", "Provide real-world examples"],
-                        "summary": f"The candidate interviewed for the {job_title} position and demonstrated some knowledge of {skills_text}. Further evaluation is recommended."
+                        "summary": f"The candidate interviewed for the {job_title} position and demonstrated some knowledge of {skills_text}. Further evaluation is recommended.",
+                        "learning_roadmap": {
+                            "key_areas": ["Technical fundamentals", "Interview preparation", "Practical experience"],
+                            "resources": [
+                                {
+                                    "title": f"{job_title} fundamentals",
+                                    "type": "course",
+                                    "description": "A course covering the core concepts needed for this role",
+                                    "difficulty": "beginner",
+                                    "url": "https://www.coursera.org"
+                                },
+                                {
+                                    "title": "Technical interview preparation",
+                                    "type": "book",
+                                    "description": "Guide to answering common technical questions",
+                                    "difficulty": "intermediate",
+                                    "url": "https://www.amazon.com"
+                                }
+                            ],
+                            "suggested_timeline": "2-4 weeks of focused study and practice"
+                        }
                     }
             except Exception as summary_error:
                 logger.error(f"Error generating structured summary: {summary_error}")
@@ -418,12 +498,23 @@ def handle_conversation():
                     "passed": True,
                     "rating": 70,
                     "improvements": ["Be more specific with technical answers", "Demonstrate deeper knowledge of required technologies"],
-                    "summary": f"The candidate interviewed for the {job_title} position and showed potential. They should be considered for the next round."
+                    "summary": f"The candidate interviewed for the {job_title} position and showed potential. They should be considered for the next round.",
+                    "learning_roadmap": {
+                        "key_areas": ["Core technologies", "Communication skills"],
+                        "resources": [
+                            {
+                                "title": "Technical documentation",
+                                "type": "article",
+                                "description": "Read official documentation for required technologies",
+                                "difficulty": "intermediate"
+                            }
+                        ],
+                        "suggested_timeline": "1-2 weeks of study"
+                    }
                 }
 
             # Add to system prompt
             system_prompt += "\n\nIMPORTANT: This is the FINAL message of the interview. You MUST end the interview now with a closing statement. DO NOT ask any more questions."
-
 
         # Generate AI response based on conversation state
         if not messages:
@@ -476,6 +567,11 @@ def handle_conversation():
                 "endSummary": {}
             })
 
+        # Log for debugging what we're returning
+        logger.info(f"Returning endSummary: {bool(end_summary)}")
+        if end_summary:
+            logger.info(f"EndSummary contains learning_roadmap: {'learning_roadmap' in end_summary}")
+
         # Return the response with endSummary if needed
         return jsonify({
             "id": str(uuid.uuid4()),
@@ -492,7 +588,6 @@ def handle_conversation():
             "message": f"An unexpected error occurred: {str(e)}",
             "endSummary": {}
         }), 500
-
 
 # Serve static files
 @app.route('/', defaults={'path': 'index.html'})

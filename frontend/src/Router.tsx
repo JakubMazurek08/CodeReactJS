@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         element: <LoginPage />
     },
     {
-        path: "/interview",
+        path: "/interview/:id",
         element: <InterviewChatbot/>
     },
     {
