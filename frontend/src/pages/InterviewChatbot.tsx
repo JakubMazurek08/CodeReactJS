@@ -3,7 +3,13 @@ import { Text } from "../components/Text.tsx";
 import { Navbar } from "../components/Navbar.tsx";
 import { useContext } from "react";
 import { jobContext } from "../context/jobContext.ts";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import {  doc, getDoc } from "firebase/firestore";
+import { db } from "../lib/firebase.ts";
+import {Roadmap} from "../components/RoadMap.tsx";
+import {saveSummary} from "../lib/summaryService.ts";
+import {auth} from "../lib/firebase.ts";
+import {InterviewSummary} from "../components/InterviewSummary.tsx";
 
 // Define types for our messages
 interface Message {
@@ -15,24 +21,82 @@ interface Message {
 
 // Define the structure for our interview summary
 interface InterviewSummary {
+    learning_roadmap: any;
     passed: boolean;
     rating: number;
     improvements: string[];
     summary: string;
 }
 
+// Job interface
+interface Job {
+    id: string;
+    title: string;
+    company: string;
+    description: string;
+    required_skills: string[];
+    experience_level: string;
+    employment_type: string;
+    location: string;
+    [key: string]: any; // For additional properties
+}
+
 export const InterviewChatbot = () => {
     const navigate = useNavigate();
+    const { id } = useParams<{ id: string }>();
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
-    const { job } = useContext(jobContext);
+    const { job, setJob } = useContext(jobContext);
     const [value, setValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [isJobLoading, setIsJobLoading] = useState(false);
+    const [jobLoadError, setJobLoadError] = useState<string | null>(null);
     const [messages, setMessages] = useState<Message[]>([]);
     const [isInterviewEnded, setIsInterviewEnded] = useState(false);
     const [interviewSummary, setInterviewSummary] = useState<InterviewSummary | null>(null);
+    const [isSaving, setIsSaving] = useState(false);
+    const [isSaved, setIsSaved] = useState(false);
+    const [saveError, setSaveError] = useState<string | null>(null);
 
-    // Fetch initial message when component loads
+    // Fetch job from Firebase if not in context
+    useEffect(() => {
+        const fetchJobFromFirebase = async () => {
+            if (!job && id) {
+                setIsJobLoading(true);
+                setJobLoadError(null);
+
+                try {
+                    // Get job document from Firestore
+                    const jobRef = doc(db, "jobs", id);
+                    const jobDoc = await getDoc(jobRef);
+
+                    if (jobDoc.exists()) {
+                        // Create job object with both document data and id
+                        const jobData = {
+                            id: jobDoc.id,
+                            ...jobDoc.data()
+                        } as Job;
+
+                        // Update context with job data
+                        setJob(jobData);
+                        console.log("Job loaded from Firebase:", jobData);
+                    } else {
+                        setJobLoadError("Job not found");
+                        console.error("No job found with ID:", id);
+                    }
+                } catch (error) {
+                    setJobLoadError(`Error loading job: ${error instanceof Error ? error.message : String(error)}`);
+                    console.error("Error fetching job:", error);
+                } finally {
+                    setIsJobLoading(false);
+                }
+            }
+        };
+
+        fetchJobFromFirebase();
+    }, [id, job, setJob]);
+
+    // Fetch initial message when component loads or job is loaded
     useEffect(() => {
         if (job && messages.length === 0) {
             startInterview();
@@ -157,90 +221,81 @@ export const InterviewChatbot = () => {
     };
 
     // Create a color based on the rating (red to green gradient)
-    const getRatingColor = (rating: number) => {
-        if (rating >= 80) return 'bg-green-500';
-        if (rating >= 60) return 'bg-green-400';
-        if (rating >= 40) return 'bg-yellow-500';
-        if (rating >= 20) return 'bg-orange-500';
-        return 'bg-red-500';
+
+
+    const handleSaveInterview = async () => {
+        if (!job || !interviewSummary || isSaving || isSaved) return;
+
+        // Check if user is logged in
+        if (!auth.currentUser) {
+            setSaveError("Please log in to save your interview summary");
+            return;
+        }
+
+        setIsSaving(true);
+        setSaveError(null);
+
+        try {
+            const savedId = await saveSummary(job, messages, interviewSummary);
+            if (savedId) {
+                setIsSaved(true);
+                console.log("Interview saved successfully with ID:", savedId);
+            } else {
+                setSaveError("Failed to save interview summary");
+            }
+        } catch (error) {
+            console.error("Error saving interview:", error);
+            setSaveError(`Error saving: ${error instanceof Error ? error.message : String(error)}`);
+        } finally {
+            setIsSaving(false);
+        }
     };
 
-    // Renders the interview summary screen
-    const renderInterviewSummary = () => {
-        if (!interviewSummary) return null;
 
-        const ratingColor = getRatingColor(interviewSummary.rating);
+    useEffect(() => {
+        if (isInterviewEnded && interviewSummary && !isSaved && !isSaving && auth.currentUser) {
+            handleSaveInterview();
+        }
+    }, [isInterviewEnded, interviewSummary]);
 
+    // If job is loading, show loading state
+    if (isJobLoading) {
         return (
-            <div className="w-full">
-                <div className="bg-white rounded-lg shadow-xl p-6 mb-8">
-                    <div className="flex justify-between items-center mb-6">
-                        <div>
-                            <Text type="h2" className="text-2xl font-bold">Interview Result</Text>
-                            <Text type="p" className="text-gray-600">{job?.title} at {job?.company}</Text>
+            <>
+                <Navbar />
+                <main className="px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] pt-30 pb-[140px] min-h-screen bg-background flex justify-center items-center">
+                    <div className="text-center">
+                        <div className="flex justify-center mb-4">
+                            <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                         </div>
-                        <div className={`rounded-full ${interviewSummary.passed ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'} px-4 py-2 font-medium text-sm`}>
-                            {interviewSummary.passed ? 'Passed' : 'Needs Improvement'}
-                        </div>
+                        <Text type="h2">Loading job details...</Text>
                     </div>
-
-                    <div className="mb-8">
-                        <Text type="h3" className="font-semibold mb-2">Overall Assessment</Text>
-                        <Text type="p" className="text-gray-700">{interviewSummary.summary}</Text>
-                    </div>
-
-                    <div className="mb-8">
-                        <div className="flex justify-between items-center mb-2">
-                            <Text type="h3" className="font-semibold">Performance Rating</Text>
-                            <Text type="p" className="font-bold">{interviewSummary.rating}/100</Text>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-4">
-                            <div
-                                className={`h-4 rounded-full ${ratingColor}`}
-                                style={{ width: `${interviewSummary.rating}%` }}
-                            ></div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <Text type="h3" className="font-semibold mb-4">Areas for Improvement</Text>
-                        <ul className="space-y-2">
-                            {interviewSummary.improvements.map((improvement, index) => (
-                                <li key={index} className="flex items-start">
-                                    <span className="mr-2 mt-1 text-red-500">•</span>
-                                    <Text type="p" className="text-gray-700">{improvement}</Text>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-
-                <div className="bg-white rounded-lg shadow-xl p-6">
-                    <Text type="h3" className="font-semibold mb-4">Interview Transcript</Text>
-
-                    <div className="space-y-4 max-h-96 overflow-y-auto">
-                        {messages.map((message) => (
-                            <div key={message.id} className={`p-3 rounded-lg ${message.isUser ? 'bg-blue-50 ml-8' : 'bg-gray-50 mr-8'}`}>
-                                <div className="text-xs font-medium mb-1 text-gray-500">
-                                    {message.isUser ? 'You' : 'PrepJobAI'}
-                                </div>
-                                <Text type="p">{message.message}</Text>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="flex justify-center mt-8">
-                    <button
-                        onClick={() => navigate('/jobs')}
-                        className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
-                    >
-                        Back to Job Listings
-                    </button>
-                </div>
-            </div>
+                </main>
+            </>
         );
-    };
+    }
+
+    // If job loading failed, show error
+    if (jobLoadError) {
+        return (
+            <>
+                <Navbar />
+                <main className="px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] pt-30 pb-[140px] min-h-screen bg-background flex justify-center items-center">
+                    <div className="text-center">
+                        <div className="text-red-500 text-5xl mb-4">⚠️</div>
+                        <Text type="h2" className="mb-4">Unable to load job</Text>
+                        <Text type="p" className="mb-6">{jobLoadError}</Text>
+                        <button
+                            onClick={() => navigate('/jobs')}
+                            className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+                        >
+                            Back to Job Listings
+                        </button>
+                    </div>
+                </main>
+            </>
+        );
+    }
 
     // If interview has ended, show the summary page
     if (isInterviewEnded && interviewSummary) {
@@ -249,7 +304,12 @@ export const InterviewChatbot = () => {
                 <Navbar />
                 <main className="px-[50px] sm:px-[100px] md:px-[200px] lg:px-[300px] pt-30 pb-[140px] min-h-screen bg-background">
                     <Text type="h1" className="mb-6">Interview Complete</Text>
-                    {renderInterviewSummary()}
+                    <InterviewSummary
+                        summaryData={interviewSummary}
+                        job={job}
+                        messages={messages}
+                        showTranscript={true}
+                    />
                 </main>
             </>
         );
@@ -304,7 +364,7 @@ export const InterviewChatbot = () => {
                         value={value}
                         onChange={handleInput}
                         onKeyDown={handleKeyDown}
-                        className="bg-white w-full p-4 pr-6 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
+                        className="bg-white w-full p-4 pr-10 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
                         placeholder={isInterviewEnded ? "Interview Complete" : "Respond..."}
                         rows={1}
                         disabled={isLoading || isInterviewEnded}
