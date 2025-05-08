@@ -11,7 +11,15 @@ export const Home = () => {
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const [experience, setExperience] = useState("");
     const [position, setPosition] = useState("");
-    const [jobs, setJobs] = useState([]);
+    interface Job {
+        match_percentage: number;
+        title: string;
+        company: string;
+        created_at: number;
+        // Add other properties as needed
+    }
+
+    const [jobs, setJobs] = useState<Job[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({ position: "", experience: "" });
     const [errorMessage, setErrorMessage] = useState("");
@@ -20,7 +28,7 @@ export const Home = () => {
     const itemsPerPage = 5;
 
     // This would be your custom hook for managing search history
-    const { searchHistory, addSearch, clearHistory } = useSearchHistory();
+    const { searchHistory, addSearch, clearHistory }: { searchHistory: SavedSearch[]; addSearch: (search: SavedSearch) => void; clearHistory: () => void; } = useSearchHistory();
 
     // Restore the last search from localStorage on component mount
     useEffect(() => {
@@ -145,7 +153,11 @@ export const Home = () => {
 
         } catch (error) {
             console.error("Error fetching jobs:", error);
-            setErrorMessage(error.message || "An error occurred while searching for jobs. Please try again.");
+            if (error instanceof Error) {
+                setErrorMessage(error.message);
+            } else {
+                setErrorMessage("An error occurred while searching for jobs. Please try again.");
+            }
         } finally {
             setIsLoading(false);
         }
@@ -174,7 +186,15 @@ export const Home = () => {
     };
 
     // Load a saved search
-    const loadSearch = (savedSearch) => {
+    interface SavedSearch {
+        id: number;
+        position: string;
+        experience: string;
+        timestamp: string;
+        resultCount: number;
+    }
+
+    const loadSearch = (savedSearch: SavedSearch) => {
         setPosition(savedSearch.position);
         setExperience(savedSearch.experience);
         submit();
@@ -187,7 +207,7 @@ export const Home = () => {
     const totalPages = Math.ceil(jobs.length / itemsPerPage);
 
     // Change page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
 
     return (
@@ -371,7 +391,7 @@ export const Home = () => {
                     {/* No Results Message */}
                     {!isLoading && jobs.length === 0 && position.trim() !== "" && experience.trim() !== "" && (
                         <div className="text-center py-8 mt-6 bg-white rounded-lg shadow-md">
-                            <Text type="h3" className="text-gray-700">No matching jobs found</Text>
+                            <Text type="h3">No matching jobs found</Text>
                             <p className="text-gray-500 mt-2">Try adjusting your search terms or adding more details to your experience.</p>
                         </div>
                     )}
