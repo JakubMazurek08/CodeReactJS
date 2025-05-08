@@ -192,7 +192,7 @@ export const LandingPage: React.FC = () => {
             <div className="space-x-6">
               <Link to={"/home"}>
                 <button
-                  className="px-10 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 shadow-lg"
+                  className="px-10 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 hover:cursor-pointer shadow-lg"
                   style={{
                     backgroundColor: "var(--color-blue)",
                     color: "white",
@@ -202,7 +202,7 @@ export const LandingPage: React.FC = () => {
                 </button>
               </Link>
               <button
-                className="px-10 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 border-2"
+                className="px-10 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:cursor-pointer active:scale-95 border-2"
                 style={{
                   borderColor: "var(--color-green)",
                   color: "var(--color-green)",
@@ -277,7 +277,7 @@ export const LandingPage: React.FC = () => {
             </div>
             <Link to={"/home"}>
               <button
-                className="px-12 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 shadow-lg"
+                className="px-12 py-4 rounded-lg font-semibold transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:cursor-pointer active:scale-95 shadow-lg"
                 style={{
                   backgroundColor: "var(--color-green)",
                   color: "white",
