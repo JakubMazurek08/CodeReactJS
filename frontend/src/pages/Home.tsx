@@ -275,6 +275,7 @@ export const Home = () => {
                                 value={position}
                                 ref={positionRef}
                                 onChange={handlePositionChange}
+                                rows={1}
                                 className={`bg-white w-full p-4 shadow-md resize-none rounded-lg overflow-y-auto leading-relaxed focus:outline-none transition-all duration-150 ease-in-out max-h-[300px] min-h-[4rem] border ${
                                     errors.position ? "border-red-500" : "border-gray-200"
                                 } focus:ring-2 focus:ring-blue-400`}
