@@ -297,6 +297,7 @@ export const Home = () => {
                                 rows={1}
                             />  
                             <Button
+                                type={'submit'}
                             color={'blue'}
                             onClick={submit}
                             disabled={isLoading} 

@@ -2233,3 +2233,263 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 09:04:17,384 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.910s
 2025-05-08 09:04:22,028 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.078s
 
+2025-05-08 09:37:12,415 - app - INFO - Using local storage
+2025-05-08 09:37:12,421 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 09:37:12,424 - app - INFO - JobPrepAI application initialized
+2025-05-08 09:38:40,558 - app - INFO - Using local storage
+2025-05-08 09:38:40,564 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 09:38:40,566 - app - INFO - JobPrepAI application initialized
+2025-05-08 09:38:41,835 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.242s
+2025-05-08 09:38:41,836 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.244s
+2025-05-08 09:38:41,839 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 09:38:41,842 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 09:38:45,278 - app - INFO - Using local storage
+2025-05-08 09:38:45,286 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 09:38:45,290 - app - INFO - JobPrepAI application initialized
+2025-05-08 09:38:46,393 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.076s
+2025-05-08 09:38:46,393 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.077s
+2025-05-08 09:38:46,399 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 09:38:46,399 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 09:38:46,419 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 09:38:50,638 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: dict, attempt 1/3)
+2025-05-08 09:38:59,956 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 09:43:43,092 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.249s
+2025-05-08 09:43:47,345 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.947s
+2025-05-08 09:48:16,880 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'backend'
+2025-05-08 09:48:16,906 - app.utils.skill_extractor - INFO - Extracted 1 skills from text
+2025-05-08 09:48:16,907 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 09:48:16,909 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['python'], Experience: junior
+2025-05-08 09:48:16,910 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 09:48:17,950 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.038s
+2025-05-08 09:48:17,954 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: dict, attempt 1/3)
+2025-05-08 09:48:33,809 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 09:48:33,811 - app.services.job_matching_service - INFO - AI extracted 1 skills: ['python']
+2025-05-08 09:48:33,812 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 09:48:33,814 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 09:48:44,054 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.958s
+2025-05-08 09:48:48,320 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.971s
+2025-05-08 09:48:50,143 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'Backend'
+2025-05-08 09:48:50,146 - app.utils.skill_extractor - INFO - Extracted 1 skills from text
+2025-05-08 09:48:50,147 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 09:48:50,148 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['python'], Experience: junior
+2025-05-08 09:48:50,150 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 09:48:50,151 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: dict, attempt 1/3)
+2025-05-08 09:49:04,530 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 09:49:04,531 - app.services.job_matching_service - INFO - AI extracted 1 skills: ['python']
+2025-05-08 09:49:04,532 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 09:49:04,533 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 09:49:13,854 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 09:49:13,856 - __main__ - INFO - Total AI messages: 0
+2025-05-08 09:49:13,858 - __main__ - INFO - Force end: False
+2025-05-08 09:49:13,860 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 09:49:13,862 - __main__ - INFO - Vague answers: 0
+2025-05-08 09:49:13,863 - __main__ - INFO - Total AI messages: 0
+2025-05-08 09:49:13,863 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:49:13,865 - __main__ - INFO - Force end: False
+2025-05-08 09:49:13,868 - __main__ - INFO - Vague answers: 0
+2025-05-08 09:49:13,870 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:49:18,816 - __main__ - INFO - Returning endSummary: False
+2025-05-08 09:49:22,761 - __main__ - INFO - Returning endSummary: False
+2025-05-08 09:49:46,202 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 09:49:46,203 - __main__ - INFO - Total AI messages: 1
+2025-05-08 09:49:46,204 - __main__ - INFO - Force end: False
+2025-05-08 09:49:46,204 - __main__ - INFO - Vague answers: 0
+2025-05-08 09:49:46,206 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:49:49,279 - __main__ - INFO - Returning endSummary: False
+2025-05-08 09:50:18,308 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 09:50:18,309 - __main__ - INFO - Total AI messages: 2
+2025-05-08 09:50:18,310 - __main__ - INFO - Force end: False
+2025-05-08 09:50:18,311 - __main__ - INFO - Vague answers: 0
+2025-05-08 09:50:18,364 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:50:22,662 - __main__ - INFO - Returning endSummary: False
+2025-05-08 09:50:35,139 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 09:50:35,140 - __main__ - INFO - Total AI messages: 3
+2025-05-08 09:50:35,142 - __main__ - INFO - Force end: False
+2025-05-08 09:50:35,142 - __main__ - INFO - Vague answers: 1
+2025-05-08 09:50:35,143 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:50:39,864 - __main__ - INFO - Returning endSummary: False
+2025-05-08 09:50:56,905 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 09:50:56,906 - __main__ - INFO - Total AI messages: 4
+2025-05-08 09:50:56,906 - __main__ - INFO - Force end: False
+2025-05-08 09:50:56,908 - __main__ - INFO - Vague answers: 2
+2025-05-08 09:50:56,910 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:51:01,676 - __main__ - INFO - Returning endSummary: False
+2025-05-08 09:51:36,300 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 09:51:36,302 - __main__ - INFO - Total AI messages: 5
+2025-05-08 09:51:36,304 - __main__ - INFO - Force end: False
+2025-05-08 09:51:36,305 - __main__ - INFO - Vague answers: 2
+2025-05-08 09:51:36,306 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:51:41,306 - __main__ - INFO - Returning endSummary: False
+2025-05-08 09:51:52,814 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 09:51:52,814 - __main__ - INFO - Total AI messages: 6
+2025-05-08 09:51:52,815 - __main__ - INFO - Force end: False
+2025-05-08 09:51:52,816 - __main__ - INFO - Vague answers: 3
+2025-05-08 09:51:52,817 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: dict, attempt 1/3)
+2025-05-08 09:52:00,251 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 09:52:00,252 - __main__ - INFO - Raw summary response: {
+  "passed": false,
+  "rating": 45,
+  "improvements": [
+    "Demonstrating specific technical knowledge in Python frameworks like Django and Flask",
+    "Providing detailed examples of REST API endpoint implementation and validation logic"
+  ],
+  "summary": "The candidate's responses were largely vague and lacked specific technical details. While they claimed experience with Python and Flask, they could not provide concrete examples of projects or explain how they handled validation, database transactions, or SQL implementation in a Flask app. The lack of depth in their answers indicates a need for significant improvement in demonstrating actual technical knowledge and providing concrete examples.",
+  "learning_roadmap": {
+    "key_areas": [
+      "REST API endpoint design and implementation with Flask",
+      "Database transaction management and SQL best practices",
+      "Django framework fundamentals and advanced features"
+    ],
+    "resources": [
+      {
+        "title": "Flask Web Development",
+        "type": "book",
+        "description": "A comprehensive guide to building web applications with Flask, covering routing, request handling, and REST API design.",
+        "difficulty": "intermediate",
+        "url": "https://www.packtpub.com/product/flask-web-development/9781789954134"
+      },
+      {
+        "title": "SQL for Data Analysis",
+        "type": "book",
+        "description": "A practical guide to writing efficient SQL queries and managing database transactions.",
+        "difficulty": "intermediate",
+        "url": "https://www.packtpub.com/product/sql-for-data-analysis/9781789954134"
+      },
+      {
+        "title": "Django for Beginners",
+        "type": "book",
+        "description": "A hands-on introduction to building web applications with Django, focusing on best practices and real-world examples.",
+        "difficulty": "beginner",
+        "url": "https://www.packtpub.com/product/django-for-beginners/9781789954134"
+      },
+      {
+        "title": "Real Python: Flask Web Development",
+        "type": "article",
+        "description": "A series of tutorials covering Flask framework fundamentals, REST API creation, and advanced topics like authentication and database integration.",
+        "difficulty": "intermediate",
+        "url": "https://realpython.com/flask-by-example/"
+      }
+    ],
+    "suggested_timeline": "Focus on foundational concepts for the first 2 weeks, then move to advanced topics and practical projects over the next 4 weeks."
+  }
+}
+2025-05-08 09:52:00,254 - __main__ - INFO - resources array contains 4 items
+2025-05-08 09:52:00,254 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 09:52:03,532 - __main__ - INFO - Returning endSummary: True
+2025-05-08 09:52:03,533 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 09:53:45,335 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.277s
+2025-05-08 09:53:49,467 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.142s
+2025-05-08 09:58:46,384 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.044s
+2025-05-08 09:58:50,581 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.109s
+2025-05-08 10:02:49,744 - app.services.job_matching_service - INFO - Starting AI job matching (snake_case) with 55 jobs, keyword: 'Backend'
+2025-05-08 10:02:49,748 - app.utils.skill_extractor - INFO - Extracted 2 skills from text
+2025-05-08 10:02:49,750 - app.utils.skill_extractor - INFO - Determined experience level: junior
+2025-05-08 10:02:49,751 - app.services.job_matching_service - INFO - Extracted skills for fallback: ['python', 'backend'], Experience: junior
+2025-05-08 10:02:49,753 - app.services.job_matching_service - INFO - Sending request to AI for job matching (snake_case).
+2025-05-08 10:02:50,908 - services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.154s
+2025-05-08 10:02:50,912 - services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: dict, attempt 1/3)
+2025-05-08 10:03:04,650 - services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 10:03:04,652 - app.services.job_matching_service - INFO - AI extracted 1 skills: ['python']
+2025-05-08 10:03:04,654 - app.services.job_matching_service - INFO - AI returned 10 job matches.
+2025-05-08 10:03:04,654 - app.services.job_matching_service - INFO - Returning 10 AI-matched jobs (snake_case).
+2025-05-08 10:03:38,022 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 10:03:38,023 - __main__ - INFO - Total AI messages: 0
+2025-05-08 10:03:38,024 - __main__ - INFO - Technical questions asked: 0
+2025-05-08 10:03:38,025 - __main__ - INFO - Force end: False
+2025-05-08 10:03:38,026 - __main__ - INFO - Total AI messages: 0
+2025-05-08 10:03:38,026 - __main__ - INFO - Vague answers: 0
+2025-05-08 10:03:38,027 - __main__ - INFO - Force end: False
+2025-05-08 10:03:38,027 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 10:03:38,029 - __main__ - INFO - Vague answers: 0
+2025-05-08 10:03:38,032 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 10:03:44,160 - __main__ - INFO - Returning endSummary: False
+2025-05-08 10:03:47,538 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.150s
+2025-05-08 10:03:48,048 - __main__ - INFO - Returning endSummary: False
+2025-05-08 10:03:51,741 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.155s
+2025-05-08 10:04:23,207 - __main__ - INFO - Technical questions asked: 1
+2025-05-08 10:04:23,207 - __main__ - INFO - Total AI messages: 1
+2025-05-08 10:04:23,209 - __main__ - INFO - Force end: False
+2025-05-08 10:04:23,210 - __main__ - INFO - Vague answers: 0
+2025-05-08 10:04:23,210 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 10:04:28,708 - __main__ - INFO - Returning endSummary: False
+2025-05-08 10:04:46,250 - __main__ - INFO - Technical questions asked: 2
+2025-05-08 10:04:46,251 - __main__ - INFO - Total AI messages: 2
+2025-05-08 10:04:46,252 - __main__ - INFO - Force end: False
+2025-05-08 10:04:46,253 - __main__ - INFO - Vague answers: 0
+2025-05-08 10:04:46,253 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 10:04:51,127 - __main__ - INFO - Returning endSummary: False
+2025-05-08 10:05:05,697 - __main__ - INFO - Technical questions asked: 3
+2025-05-08 10:05:05,697 - __main__ - INFO - Total AI messages: 3
+2025-05-08 10:05:05,700 - __main__ - INFO - Force end: False
+2025-05-08 10:05:05,700 - __main__ - INFO - Vague answers: 0
+2025-05-08 10:05:05,701 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 10:05:10,696 - __main__ - INFO - Returning endSummary: False
+2025-05-08 10:05:38,255 - __main__ - INFO - Technical questions asked: 4
+2025-05-08 10:05:38,256 - __main__ - INFO - Total AI messages: 4
+2025-05-08 10:05:38,256 - __main__ - INFO - Force end: False
+2025-05-08 10:05:38,258 - __main__ - INFO - Vague answers: 0
+2025-05-08 10:05:38,258 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 10:05:42,534 - __main__ - INFO - Returning endSummary: False
+2025-05-08 10:05:55,536 - __main__ - INFO - Technical questions asked: 5
+2025-05-08 10:05:55,537 - __main__ - INFO - Total AI messages: 5
+2025-05-08 10:05:55,538 - __main__ - INFO - Force end: False
+2025-05-08 10:05:55,539 - __main__ - INFO - Vague answers: 0
+2025-05-08 10:05:55,540 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: dict, attempt 1/3)
+2025-05-08 10:06:01,378 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 10:06:01,382 - __main__ - INFO - Raw summary response: {
+  "passed": false,
+  "rating": 30,
+  "improvements": [
+    "The candidate needs to provide specific examples of projects and technical challenges they've solved",
+    "The candidate should demonstrate a deeper understanding of Django, REST framework, and SQL query optimization"
+  ],
+  "summary": "The candidate provided very vague responses throughout the interview, often just saying 'Yes I used...' without giving specific details about their projects, technical challenges, or how they solved problems. They failed to demonstrate actual knowledge of Python, Django, REST framework, or SQL query optimization. The candidate needs to provide concrete examples of their work and show a deeper understanding of the technologies required for the role.",
+  "learning_roadmap": {
+    "key_areas": [
+      "Django REST framework best practices",
+      "SQL query optimization techniques",
+      "Real-world project implementation"
+    ],
+    "resources": [
+      {
+        "title": "Django for Beginners",
+        "type": "book",
+        "description": "A comprehensive guide to building web applications with Django",
+        "difficulty": "beginner",
+        "url": "https://www.packtpub.com/product/django-for-beginners/9781789954973"
+      },
+      {
+        "title": "SQL for Data Analysis",
+        "type": "book",
+        "description": "A practical guide to writing efficient SQL queries for data analysis",
+        "difficulty": "intermediate",
+        "url": "https://www.packtpub.com/product/sql-for-data-analysis/9781789954973"
+      },
+      {
+        "title": "The Django REST Framework Book",
+        "type": "book",
+        "description": "A detailed guide to building APIs with Django REST framework",
+        "difficulty": "intermediate",
+        "url": "https://www.packtpub.com/product/the-django-rest-framework-book/9781789954973"
+      },
+      {
+        "title": "SQLZoo",
+        "type": "practice",
+        "description": "Interactive SQL learning platform with real-world exercises",
+        "difficulty": "beginner",
+        "url": "https://sqlzoo.net/"
+      }
+    ],
+    "suggested_timeline": "3-6 months of focused study and practice, with a focus on real-world project implementation and optimization techniques."
+  }
+}
+2025-05-08 10:06:01,385 - __main__ - INFO - resources array contains 4 items
+2025-05-08 10:06:01,386 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:8b, format: None, attempt 1/3)
+2025-05-08 10:06:04,614 - __main__ - INFO - Returning endSummary: True
+2025-05-08 10:06:04,614 - __main__ - INFO - EndSummary contains learning_roadmap: True
+2025-05-08 10:08:48,815 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.271s
+2025-05-08 10:08:52,681 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.935s
+2025-05-08 10:13:50,171 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.353s
+2025-05-08 10:13:53,965 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.281s
+2025-05-08 10:18:51,438 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.263s
+2025-05-08 10:18:55,136 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 1.165s
