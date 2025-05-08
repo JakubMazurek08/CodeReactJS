@@ -45,6 +45,7 @@ export const InterviewChatbot = () => {
     const { id } = useParams<{ id: string }>();
     const textareaRef = useRef<HTMLTextAreaElement>(null);
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const chatContainerRef = useRef<HTMLDivElement>(null);
     const { job, setJob } = useContext(jobContext);
     const [value, setValue] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -56,6 +57,18 @@ export const InterviewChatbot = () => {
     const [isSaving, setIsSaving] = useState(false);
     const [isSaved, setIsSaved] = useState(false);
     const [saveError, setSaveError] = useState<string | null>(null);
+
+    // Scroll to bottom of chat whenever messages change
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, isLoading]);
+
+    // Scroll to bottom function
+    const scrollToBottom = () => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     // Fetch job from Firebase if not in context
     useEffect(() => {
@@ -174,6 +187,12 @@ export const InterviewChatbot = () => {
         // Add user message to chat
         setMessages(prev => [...prev, userMessage]);
         setValue('');
+        
+        // Reset textarea height
+        if (textareaRef.current) {
+            textareaRef.current.style.height = "auto";
+        }
+        
         setIsLoading(true);
 
         try {
@@ -219,9 +238,6 @@ export const InterviewChatbot = () => {
         }
     };
 
-    // Create a color based on the rating (red to green gradient)
-
-
     const handleSaveInterview = async () => {
         if (!job || !interviewSummary || isSaving || isSaved) return;
 
@@ -250,12 +266,11 @@ export const InterviewChatbot = () => {
         }
     };
 
-
     useEffect(() => {
-    if (isInterviewEnded && interviewSummary && !isSaved && !isSaving && auth.currentUser) {
-        handleSaveInterview();
-    }
-}, [isInterviewEnded, interviewSummary, isSaved, isSaving, auth.currentUser]);
+        if (isInterviewEnded && interviewSummary && !isSaved && !isSaving && auth.currentUser) {
+            handleSaveInterview();
+        }
+    }, [isInterviewEnded, interviewSummary, isSaved, isSaving, auth.currentUser]);
 
     // If job is loading, show loading state
     if (isJobLoading) {
@@ -324,7 +339,15 @@ export const InterviewChatbot = () => {
                 <Text type="h1">Interview - {job?.title || 'Loading...'}</Text>
                 <Text type="p" className="mt-2">{job?.company || ''}</Text>
 
-                <div className="w-full flex flex-col gap-10 mt-10">
+                {/* Chat container with overflow for scrolling but hidden scrollbar */}
+                <div 
+                    ref={chatContainerRef}
+                    className="w-full flex flex-col gap-10 mt-10 overflow-y-auto max-h-[calc(100vh-300px)] pb-4 scrollbar-hide"
+                    style={{ 
+                        scrollbarWidth: 'none', 
+                        msOverflowStyle: 'none' 
+                    }}
+                >
                     {messages.map((message) => (
                         message.isUser ? (
                             // User message
@@ -381,6 +404,20 @@ export const InterviewChatbot = () => {
                     </button>
                 </div>
             </div>
+
+            {/* Global CSS for hiding scrollbars */}
+            <style jsx global>{`
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                .scrollbar-hide::-webkit-scrollbar {
+                    display: none;
+                }
+                
+                /* Hide scrollbar for IE, Edge and Firefox */
+                .scrollbar-hide {
+                    -ms-overflow-style: none;  /* IE and Edge */
+                    scrollbar-width: none;  /* Firefox */
+                }
+            `}</style>
         </>
     );
 };
