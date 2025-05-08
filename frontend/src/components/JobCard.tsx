@@ -9,14 +9,14 @@ export const JobCard = ({data}:any) => {
     const {setJob} = useContext(jobContext);
 
     return (
-        <div className="bg-white shadow-lg rounded-[10px] w-full max-w-4xl p-6 flex flex-col md:flex-row justify-between gap-6">
+        <div className="bg-white shadow-md rounded-[10px] w-full p-6 flex flex-col md:flex-row justify-between gap-6">
             <div className="flex-1 flex flex-col justify-between gap-4">
                 <Text type="h2">{data.title} - {data.company}</Text>
                 <div>
                     <Text type="p">{data.location}</Text>
                 </div>
             </div>
-            <div className="flex flex-col w-1/3 justify-between gap-4 items-start">
+            <div className="flex flex-col md:w-1/3 w-full justify-between gap-4 items-start">
                 <div className="flex gap-2 items-center">
                     <img className="h-5" src="iconMoney.png" alt="Salary"/>
                     <Text>{data.salary_range}</Text>
@@ -25,7 +25,7 @@ export const JobCard = ({data}:any) => {
                     <img className="h-5" src="iconTime.png" alt="Time"/>
                     <Text>{data.employment_type}</Text>
                 </div>
-                <Button onClick={()=>{setJob(data);navigate(`/interview/${data.id}`)}} color={'green'}>Practice Interview</Button>
+                <Button onClick={()=>{setJob(data);navigate(`/interview/${data.id}`)}} color={'green'} className="w-full">Practice Interview</Button>
             </div>
         </div>
     );

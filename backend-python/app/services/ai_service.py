@@ -10,7 +10,7 @@ from typing import Dict, List, Union, Optional, Any, Generator
 logger = logging.getLogger(__name__)
 
 # AI Model configuration
-AI_MODEL = "qwen3:4b"  # Default model
+AI_MODEL = "qwen3:8b"  # Default model
 
 # Server configuration
 OLLAMA_SERVERS = [

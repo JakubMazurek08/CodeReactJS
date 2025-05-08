@@ -1,5 +1,5 @@
 // src/components/InterviewSummary.tsx
-import {useEffect, useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Text } from './Text.tsx';
 import { Roadmap } from './RoadMap.tsx';
 import { auth } from '../lib/firebase.ts';
@@ -46,8 +46,8 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
     const [isSaved, setIsSaved] = useState(Boolean(savedId));
     const [saveError, setSaveError] = useState<string | null>(null);
     const [saveId, setSaveId] = useState<string | null>(savedId || null);
+    const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-    // Get color based on rating
     const getRatingColor = (rating: number) => {
         if (rating >= 80) return 'bg-green-500';
         if (rating >= 60) return 'bg-green-400';
@@ -56,11 +56,16 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
         return 'bg-red-500';
     };
 
-    // Handle saving interview summary to Firebase
+
     const handleSaveInterview = async () => {
         if (!job || !summaryData || isSaving || isSaved || saveId) return;
 
-        // Check if user is logged in
+        // Cancel auto-save timer if it's still pending
+        if (timerRef.current) {
+            clearTimeout(timerRef.current);
+            timerRef.current = null;
+        }
+
         if (!auth.currentUser) {
             setSaveError("Please log in to save your interview summary");
             return;
@@ -99,22 +104,23 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
                     }
                 } catch (error) {
                     console.error("Auto-save error:", error);
-                    // Don't set error for auto-save attempts
                 } finally {
                     setIsSaving(false);
                 }
             }
         };
 
-        // We'll let the component fully mount before attempting auto-save
-        const timer = setTimeout(autoSave, 1000);
-        return () => clearTimeout(timer);
+        timerRef.current = setTimeout(autoSave, 1000);
+        return () => {
+            if (timerRef.current) {
+                clearTimeout(timerRef.current);
+                timerRef.current = null;
+            }
+        };
     }, []);
-
 
     return (
         <div className="w-full space-y-8">
-            {/* Result Card */}
             <div className="bg-white rounded-lg shadow-xl p-8 mb-8">
                 <div className="flex justify-between items-center mb-6">
                     <div>
@@ -126,7 +132,6 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
                             {summaryData.passed ? 'Passed' : 'Needs Improvement'}
                         </div>
 
-                        {/* Save status indicator */}
                         {!savedId && (
                             <>
                                 {isSaving ? (
@@ -199,16 +204,13 @@ export const InterviewSummary = ({ summaryData, job, messages, showTranscript = 
                 </div>
             </div>
 
-            {/* Learning Roadmap */}
             {summaryData.learning_roadmap && (
                 <Roadmap roadmap={summaryData.learning_roadmap} />
             )}
 
-            {/* Transcript Card */}
             {showTranscript && messages.length > 0 && (
                 <div className="bg-white rounded-lg shadow-xl p-8">
                     <Text type="h3" className="font-semibold mb-4">Interview Transcript</Text>
-
                     <div className="space-y-4 max-h-96 overflow-y-auto">
                         {messages.map((message) => (
                             <div key={message.id} className={`p-3 rounded-lg ${message.isUser ? 'bg-blue-50 ml-8' : 'bg-gray-50 mr-8'}`}>

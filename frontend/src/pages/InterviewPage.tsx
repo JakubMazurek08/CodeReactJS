@@ -6,45 +6,54 @@ import { Footer } from '../components/Footer';
 import { getUserInterviews, type SavedInterview } from '../lib/summaryService.ts';
 import { Link } from 'react-router-dom';
 import { auth } from '../lib/firebase.ts';
-import {InterviewSummary} from "../components/InterviewSummary.tsx";
+import { InterviewSummary } from "../components/InterviewSummary.tsx";
+import { onAuthStateChanged } from 'firebase/auth';
 
 export const InterviewPage = () => {
     const [interviews, setInterviews] = useState<SavedInterview[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [selectedInterview, setSelectedInterview] = useState<SavedInterview | null>(null);
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
+    // Listen for auth state changes
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setIsAuthenticated(!!user);
+            if (user) {
+                fetchInterviews();
+            } else {
+                setIsLoading(false);
+                setInterviews([]);
+            }
+        });
+
+        return () => unsubscribe();
+    }, []);
 
     // Fetch user's interviews
-    useEffect(() => {
-        const fetchInterviews = async () => {
-            setIsLoading(true);
-            setError(null);
+    const fetchInterviews = async () => {
+        setIsLoading(true);
+        setError(null);
 
-            try {
-                const userInterviews = await getUserInterviews();
-                // Sort by date (newest first)
-                userInterviews.sort((a, b) => {
-                    // Handle Firestore timestamps
-                    const dateA = a.date?.toDate ? a.date.toDate() : new Date(a.date);
-                    const dateB = b.date?.toDate ? b.date.toDate() : new Date(b.date);
-                    return dateB.getTime() - dateA.getTime();
-                });
+        try {
+            const userInterviews = await getUserInterviews();
+            // Sort by date (newest first)
+            userInterviews.sort((a, b) => {
+                // Handle Firestore timestamps
+                const dateA = a.date?.toDate ? a.date.toDate() : new Date(a.date);
+                const dateB = b.date?.toDate ? b.date.toDate() : new Date(b.date);
+                return dateB.getTime() - dateA.getTime();
+            });
 
-                setInterviews(userInterviews);
-            } catch (err) {
-                console.error("Error fetching interviews:", err);
-                setError("Failed to load your interviews. Please try again later.");
-            } finally {
-                setIsLoading(false);
-            }
-        };
-
-        if (auth.currentUser) {
-            fetchInterviews();
-        } else {
+            setInterviews(userInterviews);
+        } catch (err) {
+            console.error("Error fetching interviews:", err);
+            setError("Failed to load your interviews. Please try again later.");
+        } finally {
             setIsLoading(false);
         }
-    }, []);
+    };
 
     // Format date for display
     const formatDate = (timestamp: any) => {
@@ -67,7 +76,7 @@ export const InterviewPage = () => {
                 <div className="w-full max-w-5xl">
                     <Text type="h1" className="mb-6">Your Interview History</Text>
 
-                    {!auth.currentUser ? (
+                    {!isAuthenticated ? (
                         <div className="bg-white p-8 rounded-lg shadow-lg text-center">
                             <Text type="h3" className="mb-4">Please Log In</Text>
                             <Text type="p">You need to be logged in to view your interview history.</Text>
@@ -129,13 +138,13 @@ export const InterviewPage = () => {
                                                         <div className="text-sm text-gray-500">{formatDate(interview.date)}</div>
                                                     </td>
                                                     <td className="px-6 py-4 whitespace-nowrap">
-                              <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                                  interview.summary.passed
-                                      ? 'bg-green-100 text-green-800'
-                                      : 'bg-red-100 text-red-800'
-                              }`}>
-                                {interview.summary.passed ? 'Passed' : 'Needs Improvement'}
-                              </span>
+                                                        <span className={`px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                                                            interview.summary.passed
+                                                                ? 'bg-green-100 text-green-800'
+                                                                : 'bg-red-100 text-red-800'
+                                                        }`}>
+                                                          {interview.summary.passed ? 'Passed' : 'Needs Improvement'}
+                                                        </span>
                                                     </td>
                                                     <td className="px-6 py-4 whitespace-nowrap text-sm">
                                                         <button

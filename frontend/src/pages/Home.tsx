@@ -1,14 +1,64 @@
+// Update your Home component with this code
+
 import { Navbar } from "../components/Navbar.tsx";
 import { Text } from "../components/Text.tsx";
 import { Input } from "../components/Input.tsx";
 import { JobCard } from "../components/JobCard.tsx";
-import { useRef, useState, useEffect } from "react";
+import {useRef, useState, useEffect} from "react";
 import { Button } from "../components/Button.tsx";
-import { Footer } from "../components/Footer.tsx";
-import { useSearchHistory } from "../hooks/useSearchHistory"; // This would be a custom hook you'd create
+import {Footer} from "../components/Footer.tsx";
 
+
+const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="256"
+      height="256"
+      viewBox="0 0 256 256"
+      fill="none"
+      {...props}
+    >
+      <g
+        transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+        fill="none"
+        fillRule="nonzero"
+      >
+        <path
+          d="
+            M87.803 77.194
+            L68.212 57.602
+            c9.5-14.422 7.912-34.054-4.766-46.732
+           c0 0-.001 0-.001 0
+            c-14.495-14.493-38.08-14.494-52.574 0
+            c-14.494 14.495-14.494 38.079 0 52.575
+            c7.248 7.247 16.767 10.87 26.287 10.87
+            c7.134 0 14.267-2.035 20.445-6.104
+            l19.591 19.591
+            C78.659 89.267 80.579 90 82.498 90
+            s3.84-.733 5.305-2.197
+            C90.732 84.873 90.732 80.124 87.803 77.194
+            z
+  
+            M21.48 52.837
+            c-8.645-8.646-8.645-22.713 0-31.358
+            c4.323-4.322 10-6.483 15.679-6.483
+            c5.678 0 11.356 2.161 15.678 6.483
+            c8.644 8.644 8.645 22.707.005 31.352
+            c-.002.002-.004.003-.005.005
+            c-.002.002-.003.003-.004.005
+            C44.184 61.481 30.123 61.48 21.48 52.837
+            z
+          "
+          fill="black"
+          strokeLinecap="round"
+        />
+      </g>
+    </svg>
+  );
 export const Home = () => {
+    const positionRef = useRef<HTMLTextAreaElement>(null);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
     const [experience, setExperience] = useState("");
     const [position, setPosition] = useState("");
     interface Job {
@@ -22,6 +72,7 @@ export const Home = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({ position: "", experience: "" });
+<<<<<<< HEAD
     const [errorMessage, setErrorMessage] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const [sortOption, setSortOption] = useState("match_percentage"); // Default sort by match percentage
@@ -41,6 +92,13 @@ export const Home = () => {
         }
     }, []);
 
+=======
+    const [show, setShow] = useState(false);
+    const [showJobs, setShowJobs] = useState<number[]>([]);
+    const [cvFile, setCvFile] = useState<File | null>(null);
+    
+    useEffect(() => { setShow(true); }, []);
+>>>>>>> a5a584d41740176b169a45d514d530255d16293e
 
     const handleTextareaInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setExperience(e.target.value);
@@ -54,15 +112,39 @@ export const Home = () => {
             textarea.style.height = `${Math.min(textarea.scrollHeight, 300)}px`;
         }
     };
-
-    const handlePositionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    useEffect(() => {
+        const textarea = positionRef.current;
+        if (textarea) {
+          textarea.style.height = "auto";
+          textarea.style.height = `${Math.min(textarea.scrollHeight, 300)}px`;
+        }
+      }, [position]);
+    const handlePositionChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setPosition(e.target.value);
         if (errors.position) {
             setErrors(prev => ({ ...prev, position: "" }));
         }
     };
 
-    // Auto-resize textarea on content change
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            if (file.type === 'application/pdf') {
+                setCvFile(file);
+                // Clear validation errors when CV is uploaded
+                setErrors(prev => ({ ...prev, experience: "", position: "" }));
+                console.log("PDF uploaded successfully:", file.name);
+            } else {
+                alert('Please upload a PDF file only');
+                e.target.value = '';
+            }
+        }
+    };
+
+    const triggerFileInput = () => {
+        fileInputRef.current?.click();
+    };
+
     useEffect(() => {
         const textarea = textareaRef.current;
         if (textarea) {
@@ -75,16 +157,13 @@ export const Home = () => {
         let valid = true;
         const newErrors = { position: "", experience: "" };
 
-        if (!position.trim()) {
+        if (!position.trim() && !cvFile) {
             newErrors.position = "Position field cannot be empty";
             valid = false;
         }
 
-        if (!experience.trim()) {
+        if (!experience.trim() && !cvFile) {
             newErrors.experience = "Experience field cannot be empty";
-            valid = false;
-        } else if (experience.trim().length < 50) {
-            newErrors.experience = "Please provide more details about your experience (at least 50 characters)";
             valid = false;
         }
 
@@ -105,65 +184,113 @@ export const Home = () => {
 
         try {
             setIsLoading(true);
-            setErrorMessage("");
-            setCurrentPage(1); // Reset to first page on new search
 
-            const data = {
-                profile_text: experience,
-                job_keyword: position,
-            };
-
-            const URL = "http://localhost:5000/api/match-jobs";
-            const response = await fetch(URL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            });
-
-            if (!response.ok) {
-                throw new Error(`Error: ${response.status} ${response.statusText}`);
+            let formData;
+            let URL;
+            
+            if (cvFile) {
+                // Use FormData for file upload
+                formData = new FormData();
+                formData.append('pdf_file', cvFile); // Changed from 'cv_file' to 'pdf_file'
+                formData.append('job_keyword', position);
+                
+                // First extract the text from the PDF
+                URL = "http://localhost:5000/api/extract-pdf";
+                
+                const extractResponse = await fetch(URL, {
+                    method: "POST",
+                    body: formData
+                });
+                
+                if (!extractResponse.ok) {
+                    throw new Error(`PDF extraction failed: ${extractResponse.status}: ${extractResponse.statusText}`);
+                }
+                
+                const extractData = await extractResponse.json();
+                
+                if (extractData.error) {
+                    throw new Error(`PDF extraction error: ${extractData.error}`);
+                }
+                
+                // Now use the extracted text to match jobs
+                const analysis = extractData.analysis || {};
+                const profileText = analysis.user_summary || extractData.text || "";
+                
+                // Use the regular match-jobs API with the extracted text
+                URL = "http://localhost:5000/api/match-jobs";
+                const matchResponse = await fetch(URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        profile_text: profileText,
+                        job_keyword: position
+                    })
+                });
+                
+                if (!matchResponse.ok) {
+                    throw new Error(`Job matching failed: ${matchResponse.status}: ${matchResponse.statusText}`);
+                }
+                
+                const responseData = await matchResponse.json();
+                
+                if (responseData.error) {
+                    throw new Error(responseData.error);
+                }
+                
+                setJobs(responseData.matches || []);
+                
+                // Log success message
+                console.log(`Found ${responseData.matches?.length || 0} jobs matching your CV for position: ${position}`);
+            } else {
+                // Use regular JSON for text-based submission
+                const data = {
+                    profile_text: experience,
+                    job_keyword: position,
+                };
+                
+                URL = "http://localhost:5000/api/match-jobs";
+                const response = await fetch(URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Server returned ${response.status}: ${response.statusText}`);
+                }
+                
+                const responseData = await response.json();
+                
+                if (responseData.error) {
+                    throw new Error(responseData.error);
+                }
+                
+                setJobs(responseData.matches || []);
             }
 
-            const responseData = await response.json();
-
-            // Set jobs and sort initially by match percentage
-            const sortedJobs = [...responseData.matches].sort((a, b) =>
-                b.match_percentage - a.match_percentage
-            );
-
-            setJobs(sortedJobs);
-
-            // Add to search history
-            addSearch({
-                id: Date.now(),
-                position,
-                experience,
-                timestamp: new Date().toISOString(),
-                resultCount: sortedJobs.length
-            });
-
-            // Save to localStorage
-            localStorage.setItem('lastSearch', JSON.stringify({
-                position,
-                experience,
-                jobs: sortedJobs
-            }));
-
-        } catch (error) {
+        } catch (error: any) {
             console.error("Error fetching jobs:", error);
+<<<<<<< HEAD
             if (error instanceof Error) {
                 setErrorMessage(error.message);
             } else {
                 setErrorMessage("An error occurred while searching for jobs. Please try again.");
             }
+=======
+            alert(`Error fetching jobs: ${error.message || "Please try again later."}`);
+>>>>>>> a5a584d41740176b169a45d514d530255d16293e
         } finally {
             setIsLoading(false);
         }
     };
 
+    // This function is now removed since we're handling CV submission in the main submit function
 
+<<<<<<< HEAD
     // Handle sorting of jobs
     const handleSortChange = (e) => {
         const option = e.target.value;
@@ -209,131 +336,127 @@ export const Home = () => {
     // Change page
     const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
+=======
+    useEffect(() => {
+        if (jobs.length > 0) {
+            setShowJobs([]);
+            jobs.forEach((_, i) => {
+                setTimeout(() => setShowJobs(prev => [...prev, i]), 150 * i);
+            });
+        }
+    }, [jobs]);
+>>>>>>> a5a584d41740176b169a45d514d530255d16293e
 
     return (
         <>
             <Navbar />
-            <main className="px-6 md:px-10 py-20 md:py-30 min-h-screen bg-background flex flex-col items-center">
-                <div className="w-full max-w-4xl">
+            <main className="px-6 py-30 min-h-screen bg-background flex flex-col items-center">
+                <div className="w-full max-w-5xl">
                     <Text type="h1">Find a Job</Text>
 
-                    {/* Search Form */}
-                    <div className="mt-6 flex flex-col gap-4 bg-white p-6 rounded-lg shadow-md">
+                    <div className="mt-6 flex flex-col gap-4">
                         <div>
-                            <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-1">
-                                Position / Role
-                            </label>
-                            <Input
-                                id="position"
-                                placeholder="e.g. Frontend Developer, Data Scientist"
+                            <textarea
+                                placeholder="Position / Role"
                                 value={position}
+                                ref={positionRef}
                                 onChange={handlePositionChange}
-                                className={errors.position ? "border-red-500" : ""}
+                                rows={1}
+                                className={`bg-white w-full p-4 shadow-md resize-none rounded-lg overflow-y-auto leading-relaxed focus:outline-none transition-all duration-150 ease-in-out max-h-[300px] min-h-[4rem] border ${
+                                    errors.position ? "border-red-500" : "border-gray-200"
+                                } focus:ring-2 focus:ring-blue-400`}
                             />
                             {errors.position && (
                                 <p className="text-red-500 text-sm mt-1">{errors.position}</p>
                             )}
                         </div>
 
-                        <div>
-                            <label htmlFor="experience" className="block text-sm font-medium text-gray-700 mb-1">
-                                Your Experience & Skills
-                            </label>
+                        <div className="relative flex items-center">
                             <textarea
-                                id="experience"
                                 ref={textareaRef}
                                 value={experience}
                                 onChange={handleTextareaInput}
-                                placeholder="Describe your work experience, technical skills, education, and projects..."
+                                placeholder="Describe your work experience and skills..."
                                 className={`bg-white w-full p-4 shadow-md resize-none rounded-lg overflow-y-auto leading-relaxed focus:outline-none transition-all duration-150 ease-in-out max-h-[300px] min-h-[4rem] border ${
                                     errors.experience ? "border-red-500" : "border-gray-200"
                                 } focus:ring-2 focus:ring-blue-400`}
                                 rows={1}
-                            />
-                            {errors.experience && (
-                                <p className="text-red-500 text-sm mt-1">{errors.experience}</p>
-                            )}
-                        </div>
-
-                        <Button
+                            />  
+                            <Button
+                                type={'submit'}
                             color={'blue'}
                             onClick={submit}
-                            disabled={isLoading}
-                            className={`transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 ${isLoading ? "opacity-70 cursor-not-allowed" : ""}`}
-                        >
-                            {isLoading ? "Searching..." : "Search"}
-                        </Button>
+                            disabled={isLoading} 
+                            className={`absolute right-3 bottom-0 transform bg-transparent -translate-y-1/2 text-white { isLoading ? "search-wiggle" : ""} `}
+                            >
+                            <SearchIcon className="w-6 h-6 " />
+                            </Button>
+                        
+                        </div>
+                        {errors.experience && (
+                                <p className="text-red-500 text-sm mt-1">{errors.experience}</p>
+                            )}
+                            
+                        
+                        <div className="flex items-center justify-center gap-2 text-gray-500">
+                        <span className="text-gray-500">━━━━━━━━━━━━━━━━━━━━{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}OR{'\u00A0'}{'\u00A0'}{'\u00A0'}{'\u00A0'}━━━━━━━━━━━━━━━━━━━━</span>
+                        </div>
+
+                        {/* CV Upload button */}
+                        <div className="flex flex-col items-center gap-4">
+                            <div className="flex items-center gap-3">
+                                <div 
+                                    onClick={triggerFileInput}
+                                    className="flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-500 text-white px-6 py-3 rounded-lg cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                    </svg>
+                                    <span className="font-medium">Upload CV (PDF)</span>
+                                </div>
+                            
+                                {cvFile && (
+                                    <span className="text-green-600 flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                        {cvFile.name}
+                                    </span>
+                                )}
+                            </div>
+                            
+                            {/* No need for a separate search button as the main search will handle CV uploads */}
+                        </div>
+                        
+                        {/* Hidden file input */}
+                        <input 
+                            type="file"
+                            ref={fileInputRef}
+                            onChange={handleFileChange}
+                            accept=".pdf"
+                            className="hidden"
+                        />
                     </div>
 
-                    {/* Recent Searches */}
-                    {searchHistory.length > 0 && (
-                        <div className="mt-6 bg-white p-6 rounded-lg shadow-md">
-                            <div className="flex justify-between items-center mb-4">
-                                <Text type="h3">Recent Searches</Text>
-                                <button
-                                    onClick={clearHistory}
-                                    className="text-sm text-gray-500 hover:text-gray-700"
-                                >
-                                    Clear History
-                                </button>
-                            </div>
-                            <div className="space-y-2">
-                                {searchHistory.slice(0, 3).map((search) => (
-                                    <div key={search.id} className="flex justify-between p-3 bg-gray-50 rounded-md hover:bg-gray-100">
-                                        <div>
-                                            <p className="font-medium">{search.position}</p>
-                                            <p className="text-sm text-gray-500">
-                                                {new Date(search.timestamp).toLocaleDateString()} •
-                                                {search.resultCount} results
-                                            </p>
-                                        </div>
-                                        <button
-                                            onClick={() => loadSearch(search)}
-                                            className="text-blue-500 hover:text-blue-700"
-                                        >
-                                            Load
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Error Message */}
-                    {errorMessage && (
-                        <div className="mt-6 p-4 bg-red-50 text-red-700 rounded-md">
-                            {errorMessage}
-                        </div>
-                    )}
-
-                    {/* Loading Indicator */}
                     {isLoading && (
                         <div className="flex justify-center mt-8">
                             <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-500"></div>
                         </div>
                     )}
 
-                    {/* Results Section */}
-                    {jobs.length > 0 && !isLoading && (
-                        <div className="mt-10">
-                            <div className="flex justify-between items-center mb-6">
-                                <Text type="h2">Matching Jobs ({jobs.length})</Text>
-                                <div className="flex items-center">
-                                    <label htmlFor="sort" className="mr-2 text-sm text-gray-600">Sort by:</label>
-                                    <select
-                                        id="sort"
-                                        value={sortOption}
-                                        onChange={handleSortChange}
-                                        className="bg-white p-2 border border-gray-300 rounded-md text-sm"
-                                    >
-                                        <option value="match_percentage">Match %</option>
-                                        <option value="title">Job Title</option>
-                                        <option value="company">Company</option>
-                                        <option value="date">Date Posted</option>
-                                    </select>
+                    <div className="flex flex-col items-center gap-10 mt-10">
+                        {jobs.length > 0 ? (
+                            jobs.map((job, index) => (
+                                <div key={index}
+                                     className="w-full transition-all duration-700 mb-4 ${showJobs.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}">
+                                    <JobCard data={job}/>
                                 </div>
-
+                            ))
+                        ) : !isLoading && jobs.length === 0 && ((position.trim() !== "" && experience.trim() !== "") || cvFile) ? (
+                            <div className="text-center py-8">
+                                <p className="text-gray-500">No matching jobs found. Try adjusting your search criteria.</p>
                             </div>
+<<<<<<< HEAD
 
                             <div className="flex flex-col items-center gap-6">
                                 {currentJobs.map((job, index) => (
@@ -395,7 +518,12 @@ export const Home = () => {
                             <p className="text-gray-500 mt-2">Try adjusting your search terms or adding more details to your experience.</p>
                         </div>
                     )}
+=======
+                        ) : null}
+                    </div>
+>>>>>>> a5a584d41740176b169a45d514d530255d16293e
                 </div>
+
             </main>
             <Footer/>
         </>
