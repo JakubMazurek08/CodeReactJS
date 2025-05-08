@@ -7,7 +7,9 @@ import { JobCard } from "../components/JobCard.tsx";
 import {useRef, useState, useEffect} from "react";
 import { Button } from "../components/Button.tsx";
 import {Footer} from "../components/Footer.tsx";
-export const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
+
+
+const SearchIcon: React.FC<React.SVGProps<SVGSVGElement>> = props => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="256"
@@ -297,7 +299,7 @@ export const Home = () => {
                             color={'blue'}
                             onClick={submit}
                             disabled={isLoading} 
-                            className={`absolute top-1/2 right-1 transform -translate-y-1/2 bg-white text-white px-4 py-1 rounded-r-lg  h-5/10 ${ isLoading ? "search-wiggle" : ""} `}
+                            className={`absolute right-3 bottom-0 transform bg-transparent -translate-y-1/2 text-white { isLoading ? "search-wiggle" : ""} `}
                             >
                             <SearchIcon className="w-6 h-6 " />
                             </Button>
@@ -357,8 +359,9 @@ export const Home = () => {
                     <div className="flex flex-col items-center gap-10 mt-10">
                         {jobs.length > 0 ? (
                             jobs.map((job, index) => (
-                                <div key={index} className={`w-full transition-all duration-700 ${showJobs.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-                                    <JobCard data={job} />
+                                <div key={index}
+                                     className="w-full transition-all duration-700 mb-4 ${showJobs.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}">
+                                    <JobCard data={job}/>
                                 </div>
                             ))
                         ) : !isLoading && jobs.length === 0 && ((position.trim() !== "" && experience.trim() !== "") || cvFile) ? (
