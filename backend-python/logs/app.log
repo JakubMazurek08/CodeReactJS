@@ -508,3 +508,23 @@ pdf2image.exceptions.PDFInfoNotInstalledError: Unable to get page count. Is popp
 2025-05-08 02:34:04,361 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
 2025-05-08 02:34:04,361 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
 2025-05-08 02:34:04,388 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:35:12,194 - app - INFO - Using local storage
+2025-05-08 02:35:12,196 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:35:12,197 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:35:12,652 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.446s
+2025-05-08 02:35:12,652 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:35:12,652 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:35:12,720 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.515s
+2025-05-08 02:35:13,294 - app - INFO - Using local storage
+2025-05-08 02:35:13,297 - sample_jobs - INFO - Wczytano 55 ofert pracy z jobs.json
+2025-05-08 02:35:13,297 - app - INFO - JobPrepAI application initialized
+2025-05-08 02:35:13,519 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.213s
+2025-05-08 02:35:13,519 - __main__ - INFO - AI server available: https://ollama4.kkhost.pl
+2025-05-08 02:35:13,519 - __main__ - INFO - Available models: ['qwen3:32b', 'qwen3:30b-a3b', 'granite3.3:8b', 'phi4:14b', 'qwen3:4b', 'qwen3:8b', 'qwen3:14b', 'mxbai-embed-large:latest']
+2025-05-08 02:35:13,531 - werkzeug - WARNING -  * Debugger is active!
+2025-05-08 02:35:13,548 - app.services.ai_service - INFO - AI Server available: https://ollama4.kkhost.pl, ping: 0.242s
+2025-05-08 02:35:30,363 - __main__ - WARNING - Failed to extract text from cv.pdf with all methods
+2025-05-08 02:37:14,868 - __main__ - INFO - Successfully extracted 1276 characters from CV_Mateusz_Tasiemski.pdf
+2025-05-08 02:37:14,868 - app.services.ai_service - INFO - Sending request to API: https://ollama4.kkhost.pl/api/chat (model: qwen3:4b, format: dict, attempt 1/3)
+2025-05-08 02:37:17,260 - app.services.ai_service - INFO - Successfully parsed structured JSON output from AI.
+2025-05-08 02:37:17,260 - __main__ - INFO - Successfully analyzed CV for CV_Mateusz_Tasiemski.pdf

@@ -2,7 +2,7 @@ import { Navbar } from "../components/Navbar.tsx";
 import { Text } from "../components/Text.tsx";
 import { Input } from "../components/Input.tsx";
 import { JobCard } from "../components/JobCard.tsx";
-import {useRef, useState, useEffect,t} from "react";
+import {useRef, useState, useEffect} from "react";
 import { Button } from "../components/Button.tsx";
 import {Footer} from "../components/Footer.tsx";
 
@@ -13,6 +13,9 @@ export const Home = () => {
     const [jobs, setJobs] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({ position: "", experience: "" });
+    const [show, setShow] = useState(false);
+    const [showJobs, setShowJobs] = useState<number[]>([]);
+    useEffect(() => { setShow(true); }, []);
 
     const handleTextareaInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setExperience(e.target.value);
@@ -100,6 +103,15 @@ export const Home = () => {
         }
     };
 
+    useEffect(() => {
+        if (jobs.length > 0) {
+            setShowJobs([]);
+            jobs.forEach((_, i) => {
+                setTimeout(() => setShowJobs(prev => [...prev, i]), 150 * i);
+            });
+        }
+    }, [jobs]);
+
     return (
         <>
             <Navbar />
@@ -140,7 +152,7 @@ export const Home = () => {
                             color={'blue'}
                             onClick={submit}
                             disabled={isLoading}
-                            className={isLoading ? "opacity-70 cursor-not-allowed" : ""}
+                            className={`transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 ${isLoading ? "opacity-70 cursor-not-allowed" : ""}`}
                         >
                             {isLoading ? "Searching..." : "Search"}
                         </Button>
@@ -155,7 +167,9 @@ export const Home = () => {
                     <div className="flex flex-col items-center gap-10 mt-10">
                         {jobs.length > 0 ? (
                             jobs.map((job, index) => (
-                                <JobCard key={index} data={job} />
+                                <div key={index} className={`w-full transition-all duration-700 ${showJobs.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                                    <JobCard data={job} />
+                                </div>
                             ))
                         ) : !isLoading && jobs.length === 0 && position.trim() !== "" && experience.trim() !== "" ? (
                             <div className="text-center py-8">

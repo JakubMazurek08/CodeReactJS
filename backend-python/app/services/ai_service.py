@@ -16,6 +16,7 @@ AI_MODEL = "qwen3:4b"  # Default model
 OLLAMA_SERVERS = [
     "https://ollama4.kkhost.pl",
 ]
+
 CURRENT_SERVER = OLLAMA_SERVERS[0]
 last_server_switch_time = time.time()
 
