@@ -308,7 +308,7 @@ export const Home = () => {
                                 color={'blue'}
                                 onClick={submit}
                                 disabled={isLoading}
-                                className={`absolute right-3 bottom-0 transform bg-transparent -translate-y-1/2 text-white { isLoading ? "search-wiggle" : ""} `}
+                                className={`absolute right-3 bottom-0 transform bg-transparent -translate-y-1/2 text-white ${ isLoading ? "search-wiggle" : ""} `}
                             >
                                 <SearchIcon className="w-6 h-6 " />
                             </Button>
