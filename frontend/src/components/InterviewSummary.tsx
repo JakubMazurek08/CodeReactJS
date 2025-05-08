@@ -287,7 +287,7 @@ export const InterviewSummary = ({
                             {/* Toggle between summary and flashcards */}
                             <button
                                 onClick={toggleFlashcardsView}
-                                className={`px-3 py-1 text-sm rounded-md border ${
+                                className={`px-3 py-1 text-sm rounded-md border cursor-pointer${
                                     showFlashcards
                                         ? 'bg-blue-600 text-white border-blue-600'
                                         : 'bg-white text-blue-600 border-blue-600'

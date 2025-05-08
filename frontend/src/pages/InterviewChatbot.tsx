@@ -102,6 +102,21 @@ export const InterviewChatbot = () => {
         }
     }, [job]);
 
+    // Scroll to bottom when messages change
+    useEffect(() => {
+        if (messagesEndRef.current) {
+            messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [messages]);
+
+    // Reset textarea height when value changes to empty
+    useEffect(() => {
+        if (value === "" && textareaRef.current) {
+            // Reset the height when the value is empty
+            textareaRef.current.style.height = "auto";
+        }
+    }, [value]);
+
     const startInterview = async () => {
         if (!job) return;
 
@@ -161,6 +176,13 @@ export const InterviewChatbot = () => {
         }
     };
 
+    const resetTextareaHeight = () => {
+        if (textareaRef.current) {
+            // Reset the textarea height to its default
+            textareaRef.current.style.height = "auto";
+        }
+    };
+
     const handleSubmit = async () => {
         if (value.trim() === '' || isLoading || !job || isInterviewEnded) return;
 
@@ -173,7 +195,11 @@ export const InterviewChatbot = () => {
 
         // Add user message to chat
         setMessages(prev => [...prev, userMessage]);
+
+        // Clear the input and reset textarea height
         setValue('');
+        resetTextareaHeight();
+
         setIsLoading(true);
 
         try {
@@ -219,9 +245,6 @@ export const InterviewChatbot = () => {
         }
     };
 
-    // Create a color based on the rating (red to green gradient)
-
-
     const handleSaveInterview = async () => {
         if (!job || !interviewSummary || isSaving || isSaved) return;
 
@@ -250,12 +273,11 @@ export const InterviewChatbot = () => {
         }
     };
 
-
     useEffect(() => {
-    if (isInterviewEnded && interviewSummary && !isSaved && !isSaving && auth.currentUser) {
-        handleSaveInterview();
-    }
-}, [isInterviewEnded, interviewSummary, isSaved, isSaving, auth.currentUser]);
+        if (isInterviewEnded && interviewSummary && !isSaved && !isSaving && auth.currentUser) {
+            handleSaveInterview();
+        }
+    }, [isInterviewEnded, interviewSummary, isSaved, isSaving, auth.currentUser]);
 
     // If job is loading, show loading state
     if (isJobLoading) {
@@ -308,6 +330,7 @@ export const InterviewChatbot = () => {
                         job={job}
                         messages={messages}
                         showTranscript={true}
+                        hideFlashcardsButton={false} // We want to show flashcards here
                     />
                 </main>
             </>
@@ -363,7 +386,7 @@ export const InterviewChatbot = () => {
                         value={value}
                         onChange={handleInput}
                         onKeyDown={handleKeyDown}
-                        className="bg-white w-full p-4 pr-10 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out max-h-60 min-h-[3rem]"
+                        className="bg-white w-full p-4 pr-10 shadow-lg resize-none rounded-md overflow-y-auto leading-relaxed focus:outline-none transition-all duration-100 ease-in-out min-h-[3rem]"
                         placeholder={isInterviewEnded ? "Interview Complete" : "Respond..."}
                         rows={1}
                         disabled={isLoading || isInterviewEnded}
