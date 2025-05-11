@@ -24,11 +24,10 @@ IntervYou creates realistic interview simulations tailored to specific job roles
 ## 🛠️ Tech Stack
 
 - **Frontend**: React, TypeScript, TailwindCSS
-- **Backend**: Node.js, Express
+- **Backend**: Python, Flask
 - **Database**: Firebase Firestore
 - **Authentication**: Firebase Auth
-- **AI**: OpenAI API
-- **Deployment**: Vercel (Frontend), Render (Backend)
+- **AI**: Ollama Glean
 
 
 ## 🚀 The Journey
@@ -93,7 +92,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - TechniCodeCamp for organizing the hackathon
 - The judges for their valuable feedback
 - Our mentors who provided guidance during the competition
-- Kamil Krzywda for his powerful AI models
+- Kamil Krzywda for hosting his powerful AI models
 - All the caffeinated beverages that kept us awake for 24 hours
 
 ---
