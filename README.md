@@ -1,7 +1,5 @@
 # IntervYou 🚀
 
-![IntervYou Logo](https://placeholder.co/600x200?text=IntervYou)
-
 ## 🏆 TechniCodeCamp Hackathon Winner - 1st Place
 
 Built in just 24 hours at TechniCodeCamp Hackathon, IntervYou is an AI-powered interview preparation platform that helps job seekers practice interviews, get instant feedback, and improve their skills through personalized flashcards and learning roadmaps.
